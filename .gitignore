@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+.venv/
+
+# Cache do tradutor
+cache.json
+
+# Ren'Py temporários
+*.rpyc
+*.rpy~
+*.log
+*.bak
+
+# Editor
+.idea/
+.vscode/
+*.swp
