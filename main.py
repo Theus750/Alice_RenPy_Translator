@@ -1,39 +1,34 @@
+from pathlib import Path
+
 from extractor import extract_from_folder
 from translator import translate_text, load_cache, save_cache
 from generator import generate_strings_rpy
 
 
-texts = extract_from_folder("game")
-cache = load_cache()
+def main():
+    game_path = r"c:\Users\mathe\OneDrive\Área de Trabalho\jogo_teste\Beachfront-0.4-pc\game"
 
-total = len(texts)
-done = len(cache)
+    texts = extract_from_folder(game_path)
+    total = len(texts)
 
-print(f"{total} textos encontrados")
-print(f"{done} já traduzidos (cache)\n")
+    print(f"🔹 {total} textos encontrados")
 
-MAX_PER_RUN = 20
-count = 0
+    cache = load_cache()
 
-for text in texts:
-    if text in cache:
-        continue  # já foi, não toca
+    for i, text in enumerate(texts, start=1):
+        if text in cache:
+            continue
 
-    current = len(cache) + 1
-    print(f"[{current}/{total}] Traduzindo: {text}")
+        print(f"[{i}/{total}] Traduzindo: {text}")
+        translate_text(text, cache)
 
-    try:
-        pt = translate_text(text, cache=cache)
-        print(" ->", pt)
-        count += 1
-    except Exception as e:
-        print(" ERRO:", e)
-        break  # para no 429, sem insistir
+    save_cache(cache)
 
-    if count >= MAX_PER_RUN:
-        print("\n⏸ Limite desta execução atingido.")
-        break
+    # 👉 GERA O strings.rpy USANDO O generator.py
+    generate_strings_rpy(cache)
 
-save_cache(cache)
+    print(f"🎯 Tradução finalizada: {len(cache)}/{total}")
 
-print(f"\n✅ Progresso atual: {len(cache)}/{total}")
+
+if __name__ == "__main__":
+    main()

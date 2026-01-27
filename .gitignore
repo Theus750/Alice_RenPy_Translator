@@ -15,8 +15,14 @@ cache.json
 *.rpy~
 *.log
 *.bak
+log/
+saves/
+persistent/
 
-# Editor
+# Pastas de tradução
+tl/*/*.rpyc
+
+# Editor / IDE
 .idea/
 .vscode/
 *.swp
