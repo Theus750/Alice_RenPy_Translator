@@ -1,5 +1,4 @@
 import re
-import unicodedata
 from pathlib import Path
 
 # Regex seguro para Ren'Py
@@ -7,37 +6,21 @@ STRING_PATTERN = re.compile(
     r'"([^"]+)"|\'([^\']+)\''
 )
 
-
-def normalize_text(text: str) -> str:
-    """
-    Normaliza unicode (’ … → consistentes)
-    """
-    return unicodedata.normalize("NFKC", text)
-
-
 def looks_like_code(text: str) -> bool:
-    """
-    Heurística simples para ignorar código/lixo
-    """
     return text.startswith(("{", "[", "$", "#"))
 
-
 def is_valid_string(text: str) -> bool:
-    text = normalize_text(text.strip())
+    text = text.strip()
 
-    # vazio ou muito curto
     if len(text) < 3:
         return False
 
-    # ignora código
     if looks_like_code(text):
         return False
 
-    # ignora traduções existentes
     if "translate " in text.lower():
         return False
 
-    # ignora linhas muito técnicas
     if text.isupper() and len(text.split()) <= 2:
         return False
 
@@ -52,7 +35,6 @@ def extract_strings_from_file(path: Path):
             for line in f:
                 stripped = line.lstrip()
 
-                # ignora blocos de tradução
                 if stripped.startswith("translate "):
                     continue
 
@@ -60,7 +42,10 @@ def extract_strings_from_file(path: Path):
 
                 for g1, g2 in matches:
                     text = g1 or g2
-                    text = normalize_text(text)
+
+                    # 🚨 NÃO NORMALIZA
+                    # 🚨 NÃO CONVERTE
+                    # 🚨 NÃO ALTERA UNICODE
 
                     if is_valid_string(text):
                         results.append(text)
