@@ -1,67 +1,30 @@
 import re
 from pathlib import Path
 
-from langdetect import detect, LangDetectException
+# Regex seguro para Ren'Py
+STRING_PATTERN = re.compile(
+    r'"([^"]+)"|\'([^\']+)\''
+)
 
-# regex para pegar strings entre aspas simples ou duplas
-STRING_PATTERN = re.compile(r'["\']([^"\']+)["\']')
-
-# cache para não detectar idioma repetido
-_lang_cache = {}
-
-
-def looks_english_fast(text: str) -> bool:
-    """
-    Filtro ultra-rápido:
-    elimina japonês, chinês, emojis, etc.
-    """
-    for ch in text:
-        if ord(ch) > 0x3000:
-            return False
-    return True
-
-
-def is_english(text: str) -> bool:
-    """
-    Detecta se é inglês com cache
-    """
-    if text in _lang_cache:
-        return _lang_cache[text]
-
-    try:
-        result = detect(text) == "en"
-    except LangDetectException:
-        result = False
-
-    _lang_cache[text] = result
-    return result
-
+def looks_like_code(text: str) -> bool:
+    return text.startswith(("{", "[", "$", "#"))
 
 def is_valid_string(text: str) -> bool:
     text = text.strip()
 
-    # muito curto ou vazio
     if len(text) < 3:
         return False
 
-    # ignora código / lixo técnico
-    if text.startswith(("{", "[", "$", "#")):
+    if looks_like_code(text):
         return False
 
-    # ignora linhas de tradução
     if "translate " in text.lower():
         return False
 
-    # frases muito curtas: assume inglês (ganho enorme de performance)
-    if len(text.split()) < 3:
-        return True
-
-    # filtro rápido de unicode
-    if not looks_english_fast(text):
+    if text.isupper() and len(text.split()) <= 2:
         return False
 
-    # detecção real (com cache)
-    return is_english(text)
+    return True
 
 
 def extract_strings_from_file(path: Path):
@@ -70,14 +33,23 @@ def extract_strings_from_file(path: Path):
     try:
         with open(path, "r", encoding="utf-8") as f:
             for line in f:
-                # ignora blocos de tradução
-                if line.lstrip().startswith("translate "):
+                stripped = line.lstrip()
+
+                if stripped.startswith("translate "):
                     continue
 
                 matches = STRING_PATTERN.findall(line)
-                for m in matches:
-                    if is_valid_string(m):
-                        results.append(m)
+
+                for g1, g2 in matches:
+                    text = g1 or g2
+
+                    # 🚨 NÃO NORMALIZA
+                    # 🚨 NÃO CONVERTE
+                    # 🚨 NÃO ALTERA UNICODE
+
+                    if is_valid_string(text):
+                        results.append(text)
+
     except Exception as e:
         print(f"Erro ao ler {path}: {e}")
 
@@ -85,10 +57,15 @@ def extract_strings_from_file(path: Path):
 
 
 def extract_from_folder(folder: str):
-    all_strings = set()
+    all_strings = []
+    seen = set()
+
     folder_path = Path(folder)
 
     for file in folder_path.rglob("*.rpy"):
-        all_strings.update(extract_strings_from_file(file))
+        for text in extract_strings_from_file(file):
+            if text not in seen:
+                seen.add(text)
+                all_strings.append(text)
 
-    return sorted(all_strings)
+    return all_strings
