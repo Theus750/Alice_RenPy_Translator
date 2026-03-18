@@ -1,24 +1,29 @@
-from extractor_dialogue import extract_dialogues
-from translator import translate_text, load_cache, save_cache
-from generator_dialogue import generate_dialogue_rpy
+﻿from translation_pipeline import TranslationPipeline
+from translator import load_cache, save_cache, translate_raw_text
 
-def main():
+
+def main() -> None:
     game_path = r"c:\Users\mathe\OneDrive\Área de Trabalho\jogo_teste\Beachfront-0.4-pc\game"
-
-    dialogues = extract_dialogues(game_path)
-
     cache = load_cache()
 
-    for label, items in dialogues.items():
-        for who, text in items:
-            if text not in cache:
-                print(f"Traduzindo: {text}")
-                translate_text(text, cache)
-
+    pipeline = TranslationPipeline(
+        project_path=game_path,
+        output_path="extracted_entries.json",
+    )
+    result = pipeline.run(
+        translator=translate_raw_text,
+        cache=cache,
+        language="portuguese",
+        dialogue_output_path="game/tl/portuguese/dialogue.rpy",
+    )
     save_cache(cache)
-    generate_dialogue_rpy(dialogues, cache)
 
-    print("🎯 Diálogos traduzidos com sucesso")
+    print(f"Pipeline finalizado em {result.stage.value}")
+    print(f"Entradas extraídas: {len(result.entries)}")
+    print(f"Saída salva em: {result.output_file}")
+    if result.dialogue_file:
+        print(f"dialogue.rpy salvo em: {result.dialogue_file}")
+
 
 if __name__ == "__main__":
     main()

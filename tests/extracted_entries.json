@@ -1,0 +1,38 @@
+[
+  {
+    "original_text": "Hello [player_name]!",
+    "file_path": "sample_game.rpy",
+    "line_number": 2,
+    "entry_type": "dialogue",
+    "context_path": "global",
+    "translation_id": "389625ad2140ea2f",
+    "speaker": "e"
+  },
+  {
+    "original_text": "Narration text",
+    "file_path": "sample_game.rpy",
+    "line_number": 3,
+    "entry_type": "narration",
+    "context_path": "global",
+    "translation_id": "d76e09afd72f69f2",
+    "speaker": null
+  },
+  {
+    "original_text": "Go to beach",
+    "file_path": "sample_game.rpy",
+    "line_number": 5,
+    "entry_type": "menu_choice",
+    "context_path": "menu:block",
+    "translation_id": "b06f8d016223b063",
+    "speaker": null
+  },
+  {
+    "original_text": "You got {points} points",
+    "file_path": "sample_game.rpy",
+    "line_number": 10,
+    "entry_type": "dialogue",
+    "context_path": "label:branch > if:points > 5",
+    "translation_id": "9b5b8d250346c0a4",
+    "speaker": "e"
+  }
+]
