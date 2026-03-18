@@ -18,37 +18,41 @@ O fluxo principal atual está em [translation_pipeline.py](/c:/Users/mathe/OneDr
 
 ```text
 Projeto_traducao_renpy/
-|-- README.md
-|-- requirements.txt
-|-- .gitignore
-|-- cache.json
-|-- extracted_entries.json
-|-- translation_pipeline.py
-|-- translator.py
-|-- text_source_parser.py
-|-- translation_entry.py
-|-- syntax_guard.py
-|-- dialogue_output.py
-|-- main_dialogue.py
-|-- extractor.py
-|-- extractor_dialogue.py
-|-- generator.py
-|-- generator_dialogue.py
-|-- generate_strings.py
-|-- main.py
-|-- test.py
-|-- game/
-|   `-- tl/
-|       `-- portuguese/
-|           |-- dialogue.rpy
-|           `-- strings.rpy
-|-- tests/
-|   |-- extracted_entries.json
-|   |-- test_text_source_parser.py
-|   `-- fixtures/
-|       `-- sample_game.rpy
-|-- venv/
-`-- __pycache__/
+│
+├── game/
+│   └── tl/
+│       └── portuguese/
+│           ├── dialogue.rpy
+│           └── strings.rpy
+│
+├── tests/
+│   ├── fixtures/
+│   │   └── sample_game.rpy
+│   ├── extracted_entries.json
+│   └── test_text_source_parser.py
+│
+├── venv/
+├── __pycache__/
+│
+├── .gitignore
+├── cache.json
+├── dialogue_output.py
+├── extractor.py
+├── extractor_dialogue.py
+├── extracted_entries.json
+├── generate_strings.py
+├── generator.py
+├── generator_dialogue.py
+├── main.py
+├── main_dialogue.py
+├── README.md
+├── requirements.txt
+├── syntax_guard.py
+├── test.py
+├── text_source_parser.py
+├── translation_entry.py
+├── translation_pipeline.py
+└── translator.py
 ```
 
 ## Arquivos Principais
