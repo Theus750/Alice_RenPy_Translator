@@ -3,7 +3,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Callable, Dict, List, Optional
 
-from dialogue_output import save_dialogue_rpy
+from dialogue_output import save_dialogue_rpy, save_strings_rpy
 from syntax_guard import protect_placeholders, restore_placeholders
 from text_source_parser import extract_translation_entries, save_entries
 from translation_entry import TranslationEntry
@@ -23,6 +23,7 @@ class PipelineResult:
     output_file: Optional[Path] = None
     translations: Optional[Dict[str, str]] = None
     dialogue_file: Optional[Path] = None
+    strings_file: Optional[Path] = None
 
 
 class TranslationPipeline:
@@ -36,6 +37,7 @@ class TranslationPipeline:
         cache: Optional[Dict[str, str]] = None,
         language: str = "portuguese",
         dialogue_output_path: str = "game/tl/portuguese/dialogue.rpy",
+        strings_output_path: str = "game/tl/portuguese/strings.rpy",
     ) -> PipelineResult:
         self._validate()
         entries = extract_translation_entries(str(self.project_path))
@@ -57,12 +59,19 @@ class TranslationPipeline:
 
         output_file = save_entries(entries, self.output_path)
         dialogue_file = None
+        strings_file = None
         if translator is not None:
             dialogue_file = save_dialogue_rpy(
                 entries=entries,
                 translations_by_id=translations,
                 language=language,
                 output_path=dialogue_output_path,
+            )
+            strings_file = save_strings_rpy(
+                entries=entries,
+                translations_by_id=translations,
+                language=language,
+                output_path=strings_output_path,
             )
 
         return PipelineResult(
@@ -71,6 +80,7 @@ class TranslationPipeline:
             output_file=output_file,
             translations=translations or None,
             dialogue_file=dialogue_file,
+            strings_file=strings_file,
         )
 
     def _validate(self) -> None:

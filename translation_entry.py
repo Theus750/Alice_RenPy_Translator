@@ -13,6 +13,7 @@ class TranslationEntry:
     context_path: str
     translation_id: str
     speaker: str | None = None
+    raw_code: str | None = None
 
     def to_dict(self) -> dict:
         return asdict(self)

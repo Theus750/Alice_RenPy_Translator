@@ -15,6 +15,7 @@ def main() -> None:
         cache=cache,
         language="portuguese",
         dialogue_output_path="game/tl/portuguese/dialogue.rpy",
+        strings_output_path="game/tl/portuguese/strings.rpy",
     )
     save_cache(cache)
 
@@ -23,6 +24,8 @@ def main() -> None:
     print(f"Saída salva em: {result.output_file}")
     if result.dialogue_file:
         print(f"dialogue.rpy salvo em: {result.dialogue_file}")
+    if result.strings_file:
+        print(f"strings.rpy salvo em: {result.strings_file}")
 
 
 if __name__ == "__main__":

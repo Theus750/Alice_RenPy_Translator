@@ -18,6 +18,28 @@ DIALOGUE_PATTERN = re.compile(
     r"\(\s*_\(\s*'((?:[^'\\]|\\.)*)'\s*\)\s*\)"
     r')\s*(?:#.*)?$'
 )
+SCREEN_LANGUAGE_KEYWORDS = {
+    "add",
+    "bar",
+    "button",
+    "fixed",
+    "frame",
+    "grid",
+    "hbox",
+    "id",
+    "imagebutton",
+    "input",
+    "key",
+    "null",
+    "side",
+    "text",
+    "textbutton",
+    "timer",
+    "transform",
+    "vbox",
+    "viewport",
+    "window",
+}
 NARRATOR_PATTERN = re.compile(
     r'^\s*(?:'
     r'"((?:[^"\\]|\\.)*)"|'
@@ -43,7 +65,7 @@ def _is_false_positive(text: str) -> bool:
     candidate = text.strip()
     if not candidate or len(candidate) < 2:
         return True
-    if candidate.startswith(("{", "[", "$", "#")):
+    if candidate.startswith(("[", "$", "#")):
         return True
     if "translate " in candidate.lower():
         return True
@@ -80,6 +102,8 @@ def extract_translation_entries(game_path: str) -> List[TranslationEntry]:
 
         with file_path.open("r", encoding="utf-8") as source:
             for line_number, line in enumerate(source, start=1):
+                if line_number == 1:
+                    line = line.lstrip("\ufeff")
                 if not line.strip() or line.lstrip().startswith("#"):
                     continue
 
@@ -134,8 +158,11 @@ def extract_translation_entries(game_path: str) -> List[TranslationEntry]:
 
                 if extracted is None or _is_false_positive(extracted):
                     continue
-
                 relative_path = str(file_path.relative_to(base_path)).replace("\\", "/")
+                if current_label is None:
+                    continue
+                if entry_type == "dialogue" and speaker in SCREEN_LANGUAGE_KEYWORDS:
+                    continue
                 context_path = _normalize_context(context_stack, current_label)
                 translation_id = build_translation_id(
                     original_text=extracted,
@@ -143,6 +170,9 @@ def extract_translation_entries(game_path: str) -> List[TranslationEntry]:
                     context_path=context_path,
                     entry_type=entry_type,
                 )
+                raw_code = line.strip()
+                if "#" in raw_code:
+                    raw_code = raw_code.split("#", 1)[0].rstrip()
                 entries.append(
                     TranslationEntry(
                         original_text=extracted,
@@ -152,6 +182,7 @@ def extract_translation_entries(game_path: str) -> List[TranslationEntry]:
                         context_path=context_path,
                         translation_id=translation_id,
                         speaker=speaker,
+                        raw_code=raw_code,
                     )
                 )
 
