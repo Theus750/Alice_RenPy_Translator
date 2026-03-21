@@ -19,6 +19,7 @@ cache.json
 
 # Ren'Py temporarios
 *.rpyc
+*.json
 *.rpy~
 *.log
 *.bak
