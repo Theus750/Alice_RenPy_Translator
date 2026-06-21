@@ -145,3 +145,20 @@ def save_strings_rpy(
 
     out_file.write_text("\n".join(lines).rstrip() + "\n", encoding="utf-8")
     return out_file
+
+
+def save_language_rpy(
+    language: str,
+    output_path: str,
+) -> Path:
+    out_file = Path(output_path)
+    out_file.parent.mkdir(parents=True, exist_ok=True)
+
+    lines: List[str] = [
+        "# Arquivo de ativacao de idioma gerado automaticamente",
+        f'define config.language = "{language}"',
+        "",
+    ]
+
+    out_file.write_text("\n".join(lines), encoding="utf-8")
+    return out_file

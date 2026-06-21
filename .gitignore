@@ -16,6 +16,8 @@ venv/
 
 # Cache e artefatos locais do pipeline
 cache.json
+!config.json
+!tests/extracted_entries.json
 
 # Ren'Py temporarios
 *.rpyc
@@ -28,6 +30,9 @@ saves/
 persistent/
 tl/
 tl/*/*.rpyc
+game/tl/**/dialogue.rpy
+game/tl/**/strings.rpy
+game/tl/**/zzz_renlocalizer_language.rpy
 
 # Editor / IDE
 .idea/

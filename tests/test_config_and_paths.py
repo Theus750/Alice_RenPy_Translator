@@ -1,0 +1,168 @@
+import io
+import unittest
+from contextlib import redirect_stdout
+from pathlib import Path
+from tempfile import TemporaryDirectory
+from unittest.mock import patch
+
+from config_manager import AppConfig, ConfigManager
+import run_cli
+from run_cli import _infer_renpy_language, _resolve_relative_path
+from translation_pipeline import TranslationPipeline
+
+
+class ConfigAndPathTests(unittest.TestCase):
+    def test_config_manager_loads_defaults_when_missing(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            config_path = Path(temp_dir) / "config.json"
+            manager = ConfigManager(config_path)
+
+            config = manager.load()
+
+        self.assertEqual(config.project.project_path, "")
+        self.assertEqual(config.translation.selected_engine, "libretranslate")
+        self.assertEqual(config.ui.locale, "pt-BR")
+
+    def test_config_manager_roundtrip(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            config_path = Path(temp_dir) / "config.json"
+            manager = ConfigManager(config_path)
+            original = AppConfig()
+            original.project.project_path = r"C:\Games\MeuJogo"
+            original.translation.target_language = "es"
+            original.ui.locale = "es"
+
+            manager.save(original)
+            loaded = manager.load()
+
+        self.assertEqual(loaded.project.project_path, r"C:\Games\MeuJogo")
+        self.assertEqual(loaded.translation.target_language, "es")
+        self.assertEqual(loaded.ui.locale, "es")
+
+    def test_config_manager_sections_are_gui_friendly(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            config_path = Path(temp_dir) / "config.json"
+            manager = ConfigManager(config_path)
+
+            sections = manager.sections()
+
+        self.assertEqual(set(sections.keys()), {"project", "translation", "ui"})
+        self.assertIn("project_path", sections["project"])
+        self.assertIn("target_language", sections["translation"])
+        self.assertIn("theme", sections["ui"])
+
+    def test_update_section_persists_partial_changes(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            config_path = Path(temp_dir) / "config.json"
+            manager = ConfigManager(config_path)
+
+            manager.update_section("ui", {"theme": "dark", "locale": "es"})
+            loaded = manager.load()
+
+        self.assertEqual(loaded.ui.theme, "dark")
+        self.assertEqual(loaded.ui.locale, "es")
+
+    def test_cli_edit_config_saves_values(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            config_path = Path(temp_dir) / "config.json"
+            argv = [
+                "run_cli.py",
+                "--config",
+                str(config_path),
+                "--edit-config",
+                "--set-theme",
+                "dark",
+                "--set-last-opened-project",
+                r"C:\Games\MeuJogo",
+            ]
+
+            with patch.object(run_cli.sys, "argv", argv):
+                with redirect_stdout(io.StringIO()):
+                    run_cli.main()
+
+            saved = ConfigManager(config_path).load()
+
+        self.assertEqual(saved.ui.theme, "dark")
+        self.assertEqual(saved.ui.last_opened_project, r"C:\Games\MeuJogo")
+
+    def test_cli_can_skip_language_file_generation(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root_path = Path(temp_dir)
+            game_path = root_path / "game"
+            game_path.mkdir()
+            (game_path / "script.rpy").write_text('label start:\n    e "Hello"\n', encoding="utf-8")
+
+            argv = [
+                "run_cli.py",
+                str(root_path),
+                "--skip-language-file",
+            ]
+
+            with patch.object(run_cli.sys, "argv", argv):
+                with redirect_stdout(io.StringIO()):
+                    run_cli.main()
+
+            self.assertFalse((game_path / "zzz_renlocalizer_language.rpy").exists())
+
+    def test_resolve_relative_path_handles_relative_and_absolute_values(self) -> None:
+        base_path = Path(r"C:\Base")
+        relative = _resolve_relative_path(base_path, "folder/output.json")
+        absolute = _resolve_relative_path(base_path, r"C:\Other\output.json")
+
+        self.assertEqual(relative, Path(r"C:\Base\folder\output.json"))
+        self.assertEqual(absolute, Path(r"C:\Other\output.json"))
+
+    def test_translation_pipeline_resolves_project_root_from_game_folder(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root_path = Path(temp_dir)
+            game_path = root_path / "game"
+            game_path.mkdir()
+
+            pipeline = TranslationPipeline(project_path=str(root_path), output_path="")
+            nested = TranslationPipeline(project_path=str(game_path), output_path="")
+
+        self.assertEqual(pipeline.project_root, root_path)
+        self.assertEqual(pipeline.game_path, game_path)
+        self.assertEqual(nested.project_root, root_path)
+        self.assertEqual(nested.game_path, game_path)
+
+    def test_infer_renpy_language_uses_output_folder_name(self) -> None:
+        config = AppConfig()
+        config.project.dialogue_output_path = "game/tl/portuguese/dialogue.rpy"
+
+        self.assertEqual(_infer_renpy_language(config), "portuguese")
+
+    def test_infer_renpy_language_replaces_hyphens(self) -> None:
+        config = AppConfig()
+        config.project.dialogue_output_path = "game/tl/pt-BR/dialogue.rpy"
+
+        self.assertEqual(_infer_renpy_language(config), "pt_BR")
+
+    def test_translation_pipeline_emits_progress_logs(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root_path = Path(temp_dir)
+            game_path = root_path / "game"
+            game_path.mkdir()
+            script = game_path / "script.rpy"
+            script.write_text('label start:\n    e "Hello"\n', encoding="utf-8")
+
+            pipeline = TranslationPipeline(project_path=str(root_path), output_path=str(root_path / "extracted_entries.json"))
+
+            with self.assertLogs("translation_pipeline", level="INFO") as logs:
+                result = pipeline.run(
+                    translator=lambda text: f"pt::{text}",
+                    cache={},
+                    language="portuguese",
+                )
+
+            self.assertTrue(result.output_file.exists())
+            self.assertIsNotNone(result.language_file)
+            self.assertTrue(result.language_file.exists())
+            self.assertEqual(result.language_file.name, "zzz_renlocalizer_language.rpy")
+            self.assertTrue(any("Iniciando tradução de" in message for message in logs.output))
+            self.assertTrue(any("traduzindo:" in message for message in logs.output))
+            self.assertTrue(any("Arquivos gerados" in message for message in logs.output))
+
+
+if __name__ == "__main__":
+    unittest.main()

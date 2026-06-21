@@ -12,19 +12,40 @@ Este projeto foi feito para:
 - salvar as entradas extraídas em JSON
 - gerar arquivos `.rpy` de tradução
 
-O fluxo principal atual está em [translation_pipeline.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/translation_pipeline.py) e [main_dialogue.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/main_dialogue.py).
+O fluxo principal atual está em [cli/run_cli.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/cli/run_cli.py) e [core/translation_pipeline.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/core/translation_pipeline.py). Os arquivos na raiz, como [run_cli.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/run_cli.py) e [main.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/main.py), ficaram como wrappers de compatibilidade.
 
 ## Estrutura do Projeto
 
 ```text
 Projeto_traducao_renpy/
 │
+├── cli/
+│   └── run_cli.py
+
+├── core/
+│   ├── config_manager.py
+│   ├── dialogue_output.py
+│   ├── syntax_guard.py
+│   ├── text_source_parser.py
+│   ├── translation_entry.py
+│   ├── translation_pipeline.py
+│   └── translator.py
+
 ├── game/
 │   └── tl/
 │       └── portuguese/
 │           ├── dialogue.rpy
 │           └── strings.rpy
 │
+├── legacy/
+│   ├── extractor.py
+│   ├── extractor_dialogue.py
+│   ├── generator.py
+│   ├── generator_dialogue.py
+│   ├── generate_strings.py
+│   ├── main_menu.py
+│   └── test.py
+
 ├── tests/
 │   ├── fixtures/
 │   │   └── sample_game.rpy
@@ -36,7 +57,6 @@ Projeto_traducao_renpy/
 │
 ├── .gitignore
 ├── cache.json
-├── dialogue_output.py
 ├── extractor.py
 ├── extractor_dialogue.py
 ├── extracted_entries.json
@@ -163,18 +183,12 @@ docker run -p 5000:5000 libretranslate/libretranslate
 
 ### Pipeline Atual
 
-Em [main_dialogue.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/main_dialogue.py), o caminho do jogo está fixo em:
-
-```python
-game_path = r"c:\Users\mathe\OneDrive\Área de Trabalho\jogo_teste\Beachfront-0.4-pc\game"
-```
-
-Se você for usar outro projeto Ren'Py, ajuste esse valor antes de executar.
+O ponto de entrada recomendado é [run_cli.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/run_cli.py). Ele aceita o caminho do projeto como argumento e usa `config.json` como base de configuração.
 
 Depois execute:
 
 ```powershell
-python main_dialogue.py
+python run_cli.py "c:\caminho\para\seu\projeto\game"
 ```
 
 Esse comando:
@@ -201,14 +215,15 @@ requests
 
 ## Fluxos Legados
 
-O repositório também contém um fluxo mais antigo baseado em scripts separados:
+O repositório também contém um fluxo mais antigo baseado em scripts separados, agora reunidos em [legacy/](legacy/).
 
-- [main.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/main.py)
-- [extractor.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/extractor.py)
-- [generator.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/generator.py)
-- [generate_strings.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/generate_strings.py)
-- [extractor_dialogue.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/extractor_dialogue.py)
-- [generator_dialogue.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/generator_dialogue.py)
+- [legacy/main_menu.py](legacy/main_menu.py)
+- [legacy/extractor.py](legacy/extractor.py)
+- [legacy/generator.py](legacy/generator.py)
+- [legacy/generate_strings.py](legacy/generate_strings.py)
+- [legacy/extractor_dialogue.py](legacy/extractor_dialogue.py)
+- [legacy/generator_dialogue.py](legacy/generator_dialogue.py)
+- [legacy/test.py](legacy/test.py)
 
 Esses arquivos podem ser úteis para referência, mas o fluxo mais consistente hoje é o de `TranslationPipeline`.
 

@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def escape_renpy(text: str) -> str:
     """
     Escapa caracteres que quebram o Ren'Py:
@@ -7,6 +8,7 @@ def escape_renpy(text: str) -> str:
     - Barras invertidas
     """
     return text.replace('\\', '\\\\').replace('"', '\\"')
+
 
 def generate_dialogue_rpy(dialogues: dict, translations: dict, language="portuguese"):
     """

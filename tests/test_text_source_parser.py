@@ -2,7 +2,7 @@ import unittest
 from pathlib import Path
 from tempfile import TemporaryDirectory
 
-from dialogue_output import save_dialogue_rpy, save_strings_rpy
+from dialogue_output import save_dialogue_rpy, save_language_rpy, save_strings_rpy
 from syntax_guard import protect_placeholders, restore_placeholders
 from text_source_parser import extract_translation_entries
 
@@ -104,6 +104,14 @@ class ParserTests(unittest.TestCase):
         self.assertNotIn("translate portuguese start:", content)
         self.assertIn('    # e ("This was inside parentheses")', content)
         self.assertIn('    e ("pt::This was inside parentheses")', content)
+
+    def test_save_language_rpy_writes_config_language(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            output_path = Path(temp_dir) / "zzz_portuguese_language.rpy"
+            save_language_rpy("portuguese", str(output_path))
+            content = output_path.read_text(encoding="utf-8")
+
+        self.assertIn('define config.language = "portuguese"', content)
 
     def test_ignores_screen_language_false_positives_outside_labels(self) -> None:
         with TemporaryDirectory() as temp_dir:
