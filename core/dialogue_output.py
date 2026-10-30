@@ -1,4 +1,5 @@
 import hashlib
+import re
 from pathlib import Path
 from typing import Dict, List
 
@@ -12,15 +13,30 @@ def _escape_renpy(text: str) -> str:
 def _label_from_context(context_path: str) -> str | None:
     if not context_path.startswith("label:"):
         return None
+    for segment in context_path.split(" > "):
+        if segment.startswith("menu:"):
+            menu_name = segment.split(":", 1)[1]
+            if menu_name != "block":
+                return menu_name
     first_segment = context_path.split(" > ", 1)[0]
     return first_segment.split(":", 1)[1]
 
 
 def _encode_say_string(text: str) -> str:
-    encoded = text.replace("\\", "\\\\")
+    escape_tokens = {
+        "\\n": "\x00REN_LOCALIZER_N\x00",
+        "\\r": "\x00REN_LOCALIZER_R\x00",
+        "\\t": "\x00REN_LOCALIZER_T\x00",
+    }
+    encoded = text
+    for escape, token in escape_tokens.items():
+        encoded = encoded.replace(escape, token)
+    encoded = encoded.replace("\\", "\\\\")
     encoded = encoded.replace("\n", "\\n")
     encoded = encoded.replace('"', '\\"')
     encoded = encoded.replace("  ", " \\ ")
+    for escape, token in escape_tokens.items():
+        encoded = encoded.replace(token, escape)
     return f'"{encoded}"'
 
 
@@ -43,10 +59,9 @@ def _replace_first_string_literal(code: str, text: str) -> str:
                 i += 2
                 continue
             if code[i] == quote:
-                escaped = text.replace("\\", "\\\\").replace("\n", "\\n")
-                if quote == '"':
-                    escaped = escaped.replace('"', '\\"')
-                else:
+                encoded = _encode_say_string(text)
+                escaped = encoded[1:-1]
+                if quote == "'":
                     escaped = escaped.replace("'", "\\'")
                 return code[: start + 1] + escaped + code[i:]
             i += 1
@@ -67,7 +82,10 @@ def _dialogue_identifier(entry: TranslationEntry, used_identifiers: set[str]) ->
         return None
 
     digest = hashlib.md5(
-        (_dialogue_code(entry, entry.original_text) + "\r\n").encode("utf-8")
+        (
+            _dialogue_code(entry, re.sub(r" {2,}", " ", entry.original_text))
+            + "\r\n"
+        ).encode("utf-8")
     ).hexdigest()[:8]
     base = f"{label.replace('.', '_')}_{digest}"
     identifier = base
@@ -131,7 +149,12 @@ def save_strings_rpy(
     seen: set[str] = set()
 
     for entry in sorted(entries, key=lambda item: (item.file_path, item.line_number)):
-        if entry.entry_type != "menu_choice":
+        if entry.entry_type not in {
+            "input_string",
+            "menu_caption",
+            "menu_choice",
+            "screen_string",
+        }:
             continue
         if entry.original_text in seen:
             continue

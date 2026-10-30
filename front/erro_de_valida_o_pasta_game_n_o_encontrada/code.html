@@ -1,0 +1,530 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-caption-mono text-caption-mono text-text-muted">Sincronização</span><span class="font-caption-mono text-caption-mono text-secondary">Online</span></div><div class="w-full bg-surface-container-high h-1 rounded overflow-hidden"><div class="bg-secondary h-full w-full"></div></div></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full">
+<!-- Banner Crítico de Diagnóstico de Falha -->
+<div class="bg-error-red-bg px-5 py-3 shadow-md flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-7 h-7 rounded bg-error-container flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-error text-[18px]">gpp_maybe</span>
+</div>
+<div class="flex items-baseline gap-2">
+<span class="font-caption-mono text-caption-mono text-error font-semibold uppercase tracking-wider">Falha de Integridade Estrutural</span>
+<span class="text-text-muted font-caption-mono text-caption-mono">|</span>
+<span class="font-body-dense text-body-dense text-on-surface">Diretório não atende aos requisitos do analisador estático AST de Ren'Py.</span>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-caption-mono text-caption-mono text-text-muted">Código: <span class="text-error font-semibold">ERR_RENPY_GAME_DIR_MISSING</span></span>
+<button class="px-2 py-1 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest text-caption-mono font-caption-mono transition-colors" onclick="window.history.back()" type="button">
+        Voltar à sessão anterior
+      </button>
+</div>
+</div>
+<div class="p-6 flex flex-col gap-6 max-w-7xl mx-auto w-full">
+<!-- Hero Card de Erro Principal -->
+<div class="bg-surface-container-low rounded-xl p-6 shadow-xl relative overflow-hidden">
+<!-- Glow sutil de erro no canto -->
+<div class="absolute -top-16 -right-16 w-56 h-56 bg-error-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 relative z-10">
+<div class="flex items-start gap-4">
+<div class="w-14 h-14 rounded-xl bg-error-container/30 flex items-center justify-center flex-shrink-0 mt-0-5">
+<span class="material-symbols-outlined text-error text-[32px]">folder_off</span>
+</div>
+<div class="flex flex-col gap-1-5">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0-5 rounded bg-error-container text-error font-caption-mono text-caption-mono font-semibold uppercase tracking-wider">
+                Diretório Inválido
+              </span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Validação de Raiz</span>
+</div>
+<h1 class="font-display text-display text-text-primary tracking-tight leading-tight">
+              Este diretório não parece ser um projeto Ren'Py
+            </h1>
+<p class="font-body-base text-body-base text-text-secondary max-w-3xl">
+              A pasta obrigatória <code class="font-label-code text-label-code text-error bg-error-red-bg px-1-5 py-0-5 rounded">game/</code> não foi localizada no diretório raiz inspecionado. Sem ela, o motor não pode extrair scripts <code class="font-label-code text-label-code text-tag-renpy-token">.rpy</code> nem registrar blocos de tradução.
+            </p>
+<div class="mt-2 flex items-center gap-2 px-3 py-2 bg-surface-container-lowest rounded-lg max-w-2xl">
+<span class="material-symbols-outlined text-outline text-[16px] flex-shrink-0">place</span>
+<span class="font-caption-mono text-caption-mono text-text-muted flex-shrink-0">Inspecionado:</span>
+<span class="font-label-code text-label-code text-error truncate select-all">C:\Users\Dev\Projetos\OutroProjetoSemGame\</span>
+<button class="ml-auto text-text-muted hover:text-on-surface transition-colors p-1" onclick="navigator.clipboard.writeText('C:\\Users\\Dev\\Projetos\\OutroProjetoSemGame\\')" title="Copiar caminho">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Bloco de Ações Imediatas -->
+<div class="flex flex-col sm:flex-row md:flex-col gap-2 w-full md:w-auto flex-shrink-0">
+<button class="px-4 py-2-5 rounded-lg bg-primary text-on-primary font-headline-sm text-headline-sm font-semibold flex items-center justify-center gap-2 shadow-lg hover:bg-primary-fixed transition-all active:scale-[0.98]" id="btnSelectFolder">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+<span>Escolher outra pasta</span>
+<kbd class="ml-1 px-1-5 py-0-5 text-[10px] font-caption-mono bg-on-primary/20 text-on-primary rounded uppercase">Ctrl+O</kbd>
+</button>
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-body-dense text-body-dense hover:bg-surface-container-highest transition-colors flex items-center justify-center gap-2" id="btnRescan">
+<span class="material-symbols-outlined text-[18px]">refresh</span>
+<span>Re-escanear diretório</span>
+</button>
+<a class="px-3 py-1-5 rounded text-center text-text-muted hover:text-secondary font-caption-mono text-caption-mono transition-colors flex items-center justify-center gap-1" href="#solucoes">
+<span class="material-symbols-outlined text-[14px]">help</span>
+<span>Como estruturar seu projeto?</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Comparação Lado a Lado: Detectada vs Esperada -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Coluna Esquerda: Estrutura Detectada com Falha -->
+<div class="bg-surface-container-low rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Estrutura Atual Detectada</span>
+</div>
+<span class="px-2 py-0-5 bg-error-red-bg text-error rounded font-caption-mono text-caption-mono font-medium">
+              Não Reconhecido
+            </span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary mb-4">
+            O analisador localizou apenas arquivos complementares ou uma árvore de arquivos sem a arquitetura de compilação do Ren'Py.
+          </p>
+<!-- Árvore de Arquivos Inspecionada -->
+<div class="bg-surface-container-lowest rounded-lg p-3 font-caption-mono text-caption-mono flex flex-col gap-1.5 overflow-x-auto">
+<div class="flex items-center gap-2 text-on-surface font-semibold">
+<span class="material-symbols-outlined text-outline text-[16px]">folder_open</span>
+<span>OutroProjetoSemGame/</span>
+<span class="text-text-muted text-[10px]">(Raiz selecionada)</span>
+</div>
+<!-- Linha com Erro Flagrante -->
+<div class="ml-4 pl-2 py-1 bg-error-red-bg/50 rounded flex items-center gap-2 text-error">
+<span class="material-symbols-outlined text-error text-[16px]">close</span>
+<span class="line-through opacity-80">game/</span>
+<span class="ml-auto font-caption-mono text-[10px] bg-error/20 px-1.5 py-0.5 rounded font-bold uppercase tracking-wider">Ausente (Crítico)</span>
+</div>
+<div class="ml-4 pl-2 flex items-center gap-2 text-text-secondary">
+<span class="material-symbols-outlined text-outline-variant text-[16px]">folder</span>
+<span>assets/</span>
+<span class="text-text-muted text-[10px] ml-auto">12 itens</span>
+</div>
+<div class="ml-4 pl-2 flex items-center gap-2 text-text-secondary">
+<span class="material-symbols-outlined text-outline-variant text-[16px]">description</span>
+<span>readme.txt</span>
+<span class="text-text-muted text-[10px] ml-auto">2.4 KB</span>
+</div>
+<div class="ml-4 pl-2 flex items-center gap-2 text-text-secondary">
+<span class="material-symbols-outlined text-outline-variant text-[16px]">terminal</span>
+<span>main.py</span>
+<span class="text-text-muted text-[10px] ml-auto">1.1 KB</span>
+</div>
+<div class="ml-4 pl-2 flex items-center gap-2 text-text-muted italic">
+<span class="material-symbols-outlined text-outline-variant text-[14px]">more_horiz</span>
+<span>Nenhum arquivo de diálogo ou script .rpy mapeado</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center gap-2 font-caption-mono text-caption-mono text-error">
+<span class="material-symbols-outlined text-[16px]">warning</span>
+<span>Impossível construir o banco de dados de tokens e chaves de tradução.</span>
+</div>
+</div>
+<!-- Coluna Direita: Estrutura Padrão Esperada -->
+<div class="bg-surface-container-low rounded-xl p-5 shadow-sm flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Estrutura Esperada (SDK 7 &amp; 8)</span>
+</div>
+<span class="px-2 py-0-5 bg-success-emerald-bg text-secondary rounded font-caption-mono text-caption-mono font-medium">
+              Padrão Ren'Py
+            </span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary mb-4">
+            A pasta raiz deve conter a subpasta <span class="text-text-primary font-semibold">game/</span> com os scripts de diálogo, menus e definições de idioma.
+          </p>
+<!-- Árvore de Arquivos Ideal -->
+<div class="bg-surface-container-lowest rounded-lg p-3 font-caption-mono text-caption-mono flex flex-col gap-1.5 overflow-x-auto">
+<div class="flex items-center gap-2 text-secondary font-semibold">
+<span class="material-symbols-outlined text-secondary text-[16px]">folder_open</span>
+<span>MeuJogo/</span>
+<span class="text-text-muted text-[10px]">(Diretório raiz válido)</span>
+</div>
+<div class="ml-4 pl-2 flex flex-col gap-1 bg-surface-container-high/40 p-2 rounded">
+<div class="flex items-center gap-2 text-secondary font-medium">
+<span class="material-symbols-outlined text-secondary text-[16px]">check_circle</span>
+<span class="font-bold">game/</span>
+<span class="text-secondary text-[10px] ml-auto">Obrigatório</span>
+</div>
+<div class="ml-6 flex flex-col gap-1 text-text-secondary text-[11px]">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-renpy-token text-[14px]">code</span>
+<span class="text-on-surface">script.rpy</span>
+<span class="text-text-muted text-[9px] ml-auto">Diálogos e labels</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-renpy-token text-[14px]">code</span>
+<span class="text-on-surface">screens.rpy</span>
+<span class="text-text-muted text-[9px] ml-auto">Interface e menus</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tag-renpy-token text-[14px]">code</span>
+<span class="text-on-surface">options.rpy</span>
+<span class="text-text-muted text-[9px] ml-auto">Configurações globais</span>
+</div>
+<div class="flex items-center gap-2 text-secondary font-medium">
+<span class="material-symbols-outlined text-secondary text-[14px]">folder</span>
+<span>tl/</span>
+<span class="text-secondary text-[9px] ml-auto">Pasta de traduções geradas</span>
+</div>
+</div>
+</div>
+<div class="ml-4 pl-2 flex items-center gap-2 text-text-muted">
+<span class="material-symbols-outlined text-outline text-[16px]">folder</span>
+<span>renpy/</span>
+<span class="text-text-muted text-[10px] ml-auto">Opcional (motor)</span>
+</div>
+<div class="ml-4 pl-2 flex items-center gap-2 text-text-muted">
+<span class="material-symbols-outlined text-outline text-[16px]">play_circle</span>
+<span>MeuJogo.exe</span>
+<span class="text-text-muted text-[10px] ml-auto">Binário do jogo</span>
+</div>
+</div>
+</div>
+<div class="mt-4 pt-3 flex items-center gap-2 font-caption-mono text-caption-mono text-secondary">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Compatível com gerador de arquivos .rpy e extração AST.</span>
+</div>
+</div>
+</div>
+<!-- Seção de Troubleshooting / Como Resolver -->
+<div class="flex flex-col gap-3" id="solucoes">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">lightbulb</span>
+<h2 class="font-headline-lg text-headline-lg text-text-primary">Como Resolver Este Erro?</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-8 h-8 rounded bg-primary/20 flex items-center justify-center text-primary font-caption-mono text-caption-mono font-bold">
+              01
+            </div>
+<span class="font-headline-sm text-headline-sm text-text-primary">Selecionou uma subpasta?</span>
+<p class="font-body-dense text-body-dense text-text-secondary">
+              Se você abriu diretamente uma subpasta como <code class="font-label-code text-[11px] text-primary">images/</code>, <code class="font-label-code text-[11px] text-primary">audio/</code> ou a pasta do motor, suba um nível no explorador para selecionar a raiz onde a pasta <code class="font-label-code text-[11px] text-on-surface font-semibold">game/</code> se encontra.
+            </p>
+</div>
+<button class="mt-4 text-left font-caption-mono text-caption-mono text-primary hover:underline flex items-center gap-1" onclick="alert('Navegue até a pasta pai e selecione-a.')">
+<span>Ver como navegar à pasta correta</span>
+<span class="material-symbols-outlined text-[14px]">arrow_forward</span>
+</button>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-8 h-8 rounded bg-secondary/20 flex items-center justify-center text-secondary font-caption-mono text-caption-mono font-bold">
+              02
+            </div>
+<span class="font-headline-sm text-headline-sm text-text-primary">Projeto criado recentemente?</span>
+<p class="font-body-dense text-body-dense text-text-secondary">
+              Certifique-se de ter criado o projeto no Ren'Py Launcher oficial antes de tentar a tradução. O iniciador cria automaticamente toda a hierarquia de pastas e templates obrigatórios necessários para a indexação.
+            </p>
+</div>
+<a class="mt-4 text-left font-caption-mono text-caption-mono text-secondary hover:underline flex items-center gap-1" href="https://www.renpy.org/doc/html/quickstart.html" rel="noopener noreferrer" target="_blank">
+<span>Documentação oficial Ren'Py</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</a>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-4 rounded-lg flex flex-col justify-between shadow-sm hover:bg-surface-container transition-colors">
+<div class="flex flex-col gap-2">
+<div class="w-8 h-8 rounded bg-tertiary/20 flex items-center justify-center text-tertiary font-caption-mono text-caption-mono font-bold">
+              03
+            </div>
+<span class="font-headline-sm text-headline-sm text-text-primary">Abrir no Explorador</span>
+<p class="font-body-dense text-body-dense text-text-secondary">
+              Abra a pasta inspecionada diretamente no explorador do Windows para verificar se os arquivos foram descompactados corretamente ou se estão corrompidos em outro diretório.
+            </p>
+</div>
+<button class="mt-4 py-1.5 px-2.5 rounded bg-surface-container-high text-on-surface hover:bg-surface-container-highest font-caption-mono text-caption-mono flex items-center justify-center gap-1.5 transition-colors" onclick="alert('Invocando gerenciador de arquivos do sistema operacional...')">
+<span class="material-symbols-outlined text-[14px]">folder_special</span>
+<span>Abrir no Explorador de Arquivos</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Painel de Alternância Rápida: Projetos Recentes Válidos -->
+<div class="bg-surface-container-low rounded-xl p-4 shadow-sm flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-outline text-[18px]">history</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Retomar um Projeto Válido Recente</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Projetos validados em sessões anteriores</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<!-- Item Recente 1 (Válido) -->
+<div class="p-3 bg-surface-container-lowest rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors group cursor-pointer" onclick="window.location.reload();">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded bg-secondary/10 text-secondary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">sports_esports</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-dense text-body-dense font-semibold text-text-primary">MeuJogo</span>
+<span class="px-1.5 py-0.2 bg-success-emerald-bg text-secondary text-[10px] font-caption-mono rounded">game/ detectado</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">C:\Games\MeuJogo\</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 ml-2">
+<span class="font-caption-mono text-caption-mono text-secondary hidden sm:inline">Carregar</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-[18px]">arrow_forward</span>
+</div>
+</div>
+<!-- Item Recente 2 (Válido) -->
+<div class="p-3 bg-surface-container-lowest rounded-lg flex items-center justify-between hover:bg-surface-container transition-colors group cursor-pointer" onclick="alert('Carregando projeto VisualNovelBR...');">
+<div class="flex items-center gap-3 min-w-0">
+<div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-[18px]">movie_filter</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-2">
+<span class="font-body-dense text-body-dense font-semibold text-text-primary">VisualNovelBR</span>
+<span class="px-1.5 py-0.2 bg-success-emerald-bg text-secondary text-[10px] font-caption-mono rounded">game/ detectado</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">D:\RenPyProjects\VisualNovelBR\</span>
+</div>
+</div>
+<div class="flex items-center gap-2 flex-shrink-0 ml-2">
+<span class="font-caption-mono text-caption-mono text-secondary hidden sm:inline">Carregar</span>
+<span class="material-symbols-outlined text-text-muted group-hover:text-primary transition-colors text-[18px]">arrow_forward</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Ação de seleção de pasta nativa
+  document.getElementById('btnSelectFolder').addEventListener('click', () => {
+    // Simulação visual de invocação de diálogo nativo de sistema
+    const simulatedPath = prompt('Simular seleção de caminho de pasta Ren\'Py:', 'C:\\Games\\MeuJogo');
+    if (simulatedPath && simulatedPath.toLowerCase().includes('game')) {
+      alert('Diretório válido reconhecido! Carregando projeto...');
+      window.location.reload();
+    } else if (simulatedPath) {
+      alert('Aviso: O caminho fornecido ainda não contém a pasta game/ obrigatória.');
+    }
+  });
+
+  // Re-escaneamento com feedback
+  document.getElementById('btnRescan').addEventListener('click', function() {
+    const icon = this.querySelector('.material-symbols-outlined');
+    icon.classList.add('animate-spin');
+    this.disabled = true;
+    setTimeout(() => {
+      icon.classList.remove('animate-spin');
+      this.disabled = false;
+      alert('Re-escaneamento concluído: A pasta "game/" continua ausente em C:\\Users\\Dev\\Projetos\\OutroProjetoSemGame\\');
+    }, 700);
+  });
+
+  // Atalho de teclado global Ctrl+O
+  window.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'o') {
+      e.preventDefault();
+      document.getElementById('btnSelectFolder').click();
+    }
+  });
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>

@@ -1,5 +1,6 @@
 import json
 import re
+from dataclasses import dataclass
 from pathlib import Path
 from typing import Iterable, List
 
@@ -8,8 +9,9 @@ from .translation_entry import TranslationEntry, build_translation_id
 
 LABEL_PATTERN = re.compile(r"^\s*label\s+([A-Za-z_]\w*)\s*:")
 BLOCK_PATTERN = re.compile(r"^\s*(menu|if|elif|else|while|for)\b(.*):\s*$")
+NAMED_MENU_PATTERN = re.compile(r"^\s*menu\s+([A-Za-z_]\w*)\s*:")
 DIALOGUE_PATTERN = re.compile(
-    r'^\s*([A-Za-z_]\w*)\s+(?:'
+    r'^\s*([A-Za-z_]\w*)\s*(?:'
     r'"((?:[^"\\]|\\.)*)"|'
     r'\(\s*"((?:[^"\\]|\\.)*)"\s*\)|'
     r'_\(\s*"((?:[^"\\]|\\.)*)"\s*\)|'
@@ -59,13 +61,17 @@ MENU_CHOICE_PATTERN = re.compile(
     r"\(\s*_\(\s*'((?:[^'\\]|\\.)*)'\s*\)\s*\)"
     r')\s*:\s*(?:#.*)?$'
 )
+INPUT_PATTERN = re.compile(r'\brenpy\.input\(\s*"((?:[^"\\]|\\.)*)"')
+SCREEN_STRING_PATTERN = re.compile(
+    r'_\(\s*(?:"((?:[^"\\]|\\.)*)"|\'((?:[^\'\\]|\\.)*)\')\s*\)'
+)
 
 
 def _is_false_positive(text: str) -> bool:
     candidate = text.strip()
     if not candidate or len(candidate) < 2:
         return True
-    if candidate.startswith(("[", "$", "#")):
+    if candidate.startswith(("$", "#")):
         return True
     if "translate " in candidate.lower():
         return True
@@ -89,6 +95,34 @@ def _iter_rpy_files(game_path: Path) -> Iterable[Path]:
         if "tl" in file.parts:
             continue
         yield file
+
+
+@dataclass(frozen=True)
+class NamedMenu:
+    file_path: str
+    line_number: int
+    name: str
+
+
+def find_named_menus(game_path: str) -> list[NamedMenu]:
+    base_path = Path(game_path)
+    menus: list[NamedMenu] = []
+
+    for file_path in _iter_rpy_files(base_path):
+        for line_number, line in enumerate(
+            file_path.read_text(encoding="utf-8").splitlines(), start=1
+        ):
+            match = NAMED_MENU_PATTERN.match(line)
+            if match:
+                menus.append(
+                    NamedMenu(
+                        file_path=str(file_path.relative_to(base_path)).replace("\\", "/"),
+                        line_number=line_number,
+                        name=match.group(1),
+                    )
+                )
+
+    return menus
 
 
 def extract_translation_entries(game_path: str) -> List[TranslationEntry]:
@@ -125,41 +159,56 @@ def extract_translation_entries(game_path: str) -> List[TranslationEntry]:
                     block_desc = block_tail.strip() or "block"
                     context_stack.append(f"{block_name}:{block_desc}")
                     context_indents.append(indent)
+                    if block_name == "menu" and block_tail.strip():
+                        current_label = block_tail.strip()
                     continue
 
-                match = DIALOGUE_PATTERN.match(line)
                 entry_type = "dialogue"
                 extracted = None
                 speaker = None
-                if match:
-                    speaker, t1, t2, t3, t4, t5, t6 = match.groups()
-                    extracted = next(
-                        (item for item in (t1, t2, t3, t4, t5, t6) if item is not None),
-                        None,
-                    )
+                input_match = INPUT_PATTERN.search(line)
+                if input_match:
+                    extracted = input_match.group(1)
+                    entry_type = "input_string"
                 else:
-                    menu_match = MENU_CHOICE_PATTERN.match(line)
-                    if menu_match:
-                        m1, m2, m3, m4, m5 = menu_match.groups()
+                    match = DIALOGUE_PATTERN.match(line)
+                    if match:
+                        speaker, t1, t2, t3, t4, t5, t6 = match.groups()
                         extracted = next(
-                            (item for item in (m1, m2, m3, m4, m5) if item is not None),
+                            (item for item in (t1, t2, t3, t4, t5, t6) if item is not None),
                             None,
                         )
-                        entry_type = "menu_choice"
                     else:
-                        narrator_match = NARRATOR_PATTERN.match(line)
-                        if narrator_match:
-                            t1, t2, t3, t4, t5, t6 = narrator_match.groups()
+                        menu_match = MENU_CHOICE_PATTERN.match(line)
+                        if menu_match:
+                            m1, m2, m3, m4, m5 = menu_match.groups()
                             extracted = next(
-                                (item for item in (t1, t2, t3, t4, t5, t6) if item is not None),
+                                (item for item in (m1, m2, m3, m4, m5) if item is not None),
                                 None,
                             )
-                            entry_type = "narration"
+                            entry_type = "menu_choice"
+                        else:
+                            narrator_match = NARRATOR_PATTERN.match(line)
+                            if narrator_match:
+                                t1, t2, t3, t4, t5, t6 = narrator_match.groups()
+                                extracted = next(
+                                    (item for item in (t1, t2, t3, t4, t5, t6) if item is not None),
+                                    None,
+                                )
+                                entry_type = "narration"
+                                if context_stack and context_stack[-1].startswith("menu:"):
+                                    entry_type = "menu_caption"
+                            else:
+                                screen_match = SCREEN_STRING_PATTERN.search(line)
+                                if screen_match:
+                                    s1, s2 = screen_match.groups()
+                                    extracted = s1 if s1 is not None else s2
+                                    entry_type = "screen_string"
 
                 if extracted is None or _is_false_positive(extracted):
                     continue
                 relative_path = str(file_path.relative_to(base_path)).replace("\\", "/")
-                if current_label is None:
+                if current_label is None and entry_type != "screen_string":
                     continue
                 if entry_type == "dialogue" and speaker in SCREEN_LANGUAGE_KEYWORDS:
                     continue

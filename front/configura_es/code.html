@@ -1,0 +1,726 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-caption-mono text-caption-mono text-text-muted">Sincronização</span><span class="font-caption-mono text-caption-mono text-secondary">Online</span></div><div class="w-full bg-surface-container-high h-1 rounded overflow-hidden"><div class="bg-secondary h-full w-full"></div></div></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full">
+<!-- Interactive script to sync sidebar active state -->
+<script>
+    (function() {
+      const activeNav = document.querySelector('aside nav a[data-path="configuracoes"]');
+      if (activeNav) {
+        document.querySelectorAll('aside nav a').forEach(a => {
+          a.classList.remove('bg-slate-surface-elevated', 'text-on-surface', 'font-medium');
+          a.classList.add('text-on-surface-variant');
+        });
+        activeNav.classList.add('bg-slate-surface-elevated', 'text-on-surface', 'font-medium');
+        activeNav.classList.remove('text-on-surface-variant');
+      }
+    })();
+  </script>
+<!-- Main Viewport Container -->
+<div class="p-6 flex flex-col gap-6 max-w-7xl mx-auto w-full">
+<!-- Header Section -->
+<header class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-3 flex-wrap">
+<h1 class="font-display text-display text-text-primary tracking-tight">Configurações do RenLocalizer</h1>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-surface-container font-caption-mono text-caption-mono text-primary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            v2.4.0-desktop · Persistência config.json ativa
+          </span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary max-w-3xl">
+          Gerencie os parâmetros do motor de tradução neural, topologia de arquivos e pastas do projeto Ren'Py, blindagem de integridade sintática e comportamento do ambiente local.
+        </p>
+</div>
+<!-- Quick Header Actions -->
+<div class="flex items-center gap-2 self-start lg:self-center">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-text-secondary hover:text-text-primary font-body-dense text-body-dense shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">restart_alt</span>
+<span>Restaurar Padrões</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-text-secondary hover:text-text-primary font-body-dense text-body-dense shadow-sm transition-all" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Exportar config.json</span>
+</button>
+<button class="inline-flex items-center gap-2 px-4 py-1.5 rounded bg-primary text-on-primary font-body-dense text-body-dense font-medium hover:bg-primary-fixed-dim active:bg-primary-container shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">save</span>
+<span>Salvar Configurações</span>
+</button>
+</div>
+</header>
+<!-- Navigation Tabs Ribbon -->
+<nav class="flex items-center gap-1 p-1 bg-surface-container-low rounded-xl overflow-x-auto shadow-inner" id="settings-tab-bar">
+<button class="tab-btn flex items-center gap-2 px-4 py-2 rounded font-body-dense text-body-dense text-text-primary bg-slate-surface-elevated font-medium shadow-sm transition-all" id="btn-tab-motor" onclick="switchTab('tab-motor')" type="button">
+<span class="material-symbols-outlined text-[18px] text-primary">translate</span>
+<span>Tradução &amp; Motor</span>
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-4 py-2 rounded font-body-dense text-body-dense text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all" id="btn-tab-diretorios" onclick="switchTab('tab-diretorios')" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_copy</span>
+<span>Diretórios do Projeto</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-4 py-2 rounded font-body-dense text-body-dense text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all" id="btn-tab-blindagem" onclick="switchTab('tab-blindagem')" type="button">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Blindagem &amp; Integridade Ren'Py</span>
+</button>
+<button class="tab-btn flex items-center gap-2 px-4 py-2 rounded font-body-dense text-body-dense text-text-secondary hover:text-text-primary hover:bg-surface-container transition-all" id="btn-tab-sistema" onclick="switchTab('tab-sistema')" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Interface &amp; Sistema</span>
+</button>
+</nav>
+<!-- TAB 1: Tradução & Motor Neural -->
+<section class="tab-pane flex flex-col gap-6" id="tab-motor">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Left Column: Motor Parameters (8 cols) -->
+<div class="lg:col-span-8 flex flex-col gap-6">
+<!-- Neural Engine Selection Card -->
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">smart_toy</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary">Motor Neural Primário</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Serviço de tradução automatizado e pipelines de NLP</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded bg-success-emerald-bg font-caption-mono text-caption-mono text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-ping"></span>
+                Ativo &amp; Operacional
+              </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Idioma de Origem (Source)</label>
+<div class="relative flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">language</span>
+<select class="w-full bg-transparent font-body-dense text-body-dense text-text-primary outline-none cursor-pointer pr-4">
+<option class="bg-surface-container text-on-surface" selected="">Inglês (en_US)</option>
+<option class="bg-surface-container text-on-surface">Japonês (ja_JP)</option>
+<option class="bg-surface-container text-on-surface">Espanhol (es_ES)</option>
+<option class="bg-surface-container text-on-surface">Chinês Simplificado (zh_CN)</option>
+</select>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Idioma de Destino (Target)</label>
+<div class="relative flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">flag</span>
+<select class="w-full bg-transparent font-body-dense text-body-dense text-text-primary outline-none cursor-pointer pr-4">
+<option class="bg-surface-container text-on-surface" selected="">Português do Brasil (pt_BR)</option>
+<option class="bg-surface-container text-on-surface">Português de Portugal (pt_PT)</option>
+<option class="bg-surface-container text-on-surface">Espanhol Latino (es_LA)</option>
+</select>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Provedor do Motor</label>
+<div class="relative flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">memory</span>
+<select class="w-full bg-transparent font-body-dense text-body-dense text-text-primary outline-none cursor-pointer">
+<option class="bg-surface-container text-on-surface" selected="">LibreTranslate (Local Host / API - Recomendado Offline)</option>
+<option class="bg-surface-container text-on-surface">DeepL API Pro / Free</option>
+<option class="bg-surface-container text-on-surface">OpenAI GPT-4o-mini (Modo Raciocínio Ren'Py)</option>
+<option class="bg-surface-container text-on-surface">Google Cloud Translation v3</option>
+</select>
+</div>
+</div>
+<!-- API Endpoint with Live Diagnostics -->
+<div class="flex flex-col gap-1.5 pt-1">
+<div class="flex items-center justify-between">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Endpoint da API / Instância Local</label>
+<span class="inline-flex items-center gap-1 text-[11px] font-caption-mono text-secondary">
+<span>● Conectado (latência 18ms)</span>
+</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex-1 flex items-center bg-surface-container-high rounded px-3 py-1.5 focus-within:bg-slate-surface-elevated transition-colors">
+<span class="font-caption-mono text-caption-mono text-text-muted select-none mr-1.5">URL</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" type="text" value="http://localhost:5000/translate">
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container-high hover:bg-slate-surface-elevated text-primary font-body-dense text-body-dense transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">network_ping</span>
+<span>Testar Conexão</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Chave de API / Bearer Token (Opcional para instâncias locais)</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-1.5">
+<span class="material-symbols-outlined text-text-muted text-[16px] mr-2">key</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" id="api-key-input" type="password" value="sk-lt-local-dev-instance-b7782ac9014">
+<button class="text-text-muted hover:text-text-primary ml-2" onclick="const f = document.getElementById('api-key-input'); f.type = f.type === 'password' ? 'text' : 'password';" title="Exibir / Ocultar Chave" type="button">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Network Cadence and Batch Settings -->
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-4 shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">tune</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary">Cadência de Requisição &amp; Tolerância a Falhas</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Ajustes finos para balanceamento de carga e prevenção de throttling</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Tamanho do Lote (Batch)</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-1.5">
+<input class="w-full bg-transparent font-metric-val text-headline-sm text-text-primary outline-none" max="500" min="10" type="number" value="100">
+<span class="font-caption-mono text-caption-mono text-text-muted ml-2">strings</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Reduza se o motor retornar timeout HTTP 504.</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Tentativas (Retries)</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-1.5">
+<input class="w-full bg-transparent font-metric-val text-headline-sm text-text-primary outline-none" max="10" min="1" type="number" value="3">
+<span class="font-caption-mono text-caption-mono text-text-muted ml-2">tentativas</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Com backoff exponencial (1.5s, 3s, 6s).</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Timeout de Conexão</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-1.5">
+<input class="w-full bg-transparent font-metric-val text-headline-sm text-text-primary outline-none" max="180" min="5" type="number" value="60">
+<span class="font-caption-mono text-caption-mono text-text-muted ml-2">segundos</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Desiste e enfileira para revisão humana.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Visual Health, Cache & Diagnostics (4 cols) -->
+<div class="lg:col-span-4 flex flex-col gap-6">
+<!-- Performance & Diagnostics Widget -->
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-4 shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono uppercase text-text-secondary">Estatísticas do Motor</span>
+<span class="material-symbols-outlined text-secondary text-[18px]">speed</span>
+</div>
+<!-- SVG Latency Sparkline Graph -->
+<div class="flex flex-col gap-2 p-3 bg-surface-container-low rounded-lg">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted">Variação de Latência (últimas 20 reqs)</span>
+<span class="font-caption-mono text-caption-mono text-secondary font-medium">Méd. 18.4 ms</span>
+</div>
+<div class="h-16 w-full flex items-end">
+<svg class="w-full h-full overflow-visible" preserveAspectRatio="none" viewBox="0 0 240 50">
+<path class="text-primary" d="M0,35 Q15,30 30,38 T60,25 T90,20 T120,24 T150,15 T180,19 T210,14 T240,18" fill="none" stroke="currentColor" stroke-width="2"></path>
+<path class="text-primary/10" d="M0,35 Q15,30 30,38 T60,25 T90,20 T120,24 T150,15 T180,19 T210,14 T240,18 L240,50 L0,50 Z" fill="currentColor"></path>
+</svg>
+</div>
+</div>
+<!-- Health Indicator Rows -->
+<div class="flex flex-col gap-2.5 pt-1">
+<div class="flex items-center justify-between py-1 bg-surface-container-high px-2.5 rounded">
+<span class="font-body-dense text-body-dense text-text-secondary">Disponibilidade</span>
+<span class="font-caption-mono text-caption-mono text-secondary font-medium">99.98%</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-high px-2.5 rounded">
+<span class="font-body-dense text-body-dense text-text-secondary">Taxa de Erros HTTP</span>
+<span class="font-caption-mono text-caption-mono text-text-primary font-medium">0.00% (0 / 12,490)</span>
+</div>
+<div class="flex items-center justify-between py-1 bg-surface-container-high px-2.5 rounded">
+<span class="font-body-dense text-body-dense text-text-secondary">Modo Concorrência</span>
+<span class="font-caption-mono text-caption-mono text-primary font-medium">4 Threads Assíncronas</span>
+</div>
+</div>
+</div>
+<!-- Quick Cache Card -->
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-3 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[18px]">cached</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Cache Operacional</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-secondary">Ativo</span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary">
+              Contém <span class="font-metric-val text-body-dense text-text-primary">936</span> pares originais/traduzidos validados salvos localmente.
+            </p>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-secondary h-full" style="width: 78%;"></div>
+</div>
+<div class="flex items-center justify-between pt-1">
+<span class="font-caption-mono text-caption-mono text-text-muted">640 KB em cache.json</span>
+<button class="font-caption-mono text-caption-mono text-error hover:text-error-red transition-colors flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[14px]">delete</span>
+                Limpar Cache
+              </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 2: Diretórios do Projeto & Saída -->
+<section class="tab-pane hidden flex-col gap-6" id="tab-diretorios">
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-5 shadow-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">folder_special</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary">Mapeamento de Pastas Ren'Py</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Defina a raiz do jogo e o destino de compilação dos scripts .rpy</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-success-emerald-bg font-caption-mono text-caption-mono text-secondary">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+            game/ detectado ✓
+          </span>
+</div>
+<div class="grid grid-cols-1 gap-4">
+<!-- Root Game Dir -->
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Pasta do Projeto Ren'Py</label>
+<div class="flex items-center gap-2">
+<div class="flex-1 flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">home_repair_service</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" type="text" value="C:\Games\MeuJogo\">
+</div>
+<button class="inline-flex items-center gap-1.5 px-3 py-2 rounded bg-surface-container-high hover:bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">folder_open</span>
+<span>Procurar...</span>
+</button>
+</div>
+</div>
+<!-- TL Destination -->
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Diretório de Saída (TL)</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-primary text-[18px] mr-2">output</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" type="text" value="game/tl/portuguese/">
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Estrutura padrão de localização Ren'Py: pasta de destino mapeada como dialeto oficial do jogo.</span>
+</div>
+<!-- File Naming Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Arquivo de Diálogos</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">chat_bubble</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" type="text" value="dialogue.rpy">
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Arquivo de Telas e Strings da UI</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">space_dashboard</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" type="text" value="strings.rpy">
+</div>
+</div>
+</div>
+<!-- Auto Language Switcher Hook -->
+<div class="flex flex-col gap-2 p-4 bg-surface-container-low rounded-lg mt-2">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Arquivo de Ativação Automática de Idioma</label>
+<div class="flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mr-2">bolt</span>
+<input class="w-full bg-transparent font-caption-mono text-caption-mono text-text-code outline-none" type="text" value="zzz_renlocalizer_language.rpy">
+</div>
+<div class="flex items-center gap-2 pt-1">
+<input checked="" class="w-4 h-4 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" id="chk-hook" type="checkbox">
+<label class="font-body-dense text-body-dense text-text-primary cursor-pointer select-none" for="chk-hook">
+                Injetar hook <code class="font-caption-mono text-caption-mono bg-surface-container px-1 py-0.5 rounded text-primary">config.language = 'portuguese'</code> na inicialização do jogo para carregar automaticamente o PT-BR.
+              </label>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- TAB 3: Blindagem e Segurança de Sintaxe Ren'Py -->
+<section class="tab-pane hidden flex-col gap-6" id="tab-blindagem">
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-5 shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">security</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary">Regras de Sanitização Sintática</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Previne corrupção de variáveis em tempo de execução e falhas de parser do Ren'Py</span>
+</div>
+</div>
+<!-- Protection Checklist Elements -->
+<div class="flex flex-col gap-3">
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-high hover:bg-slate-surface-elevated cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 mt-1 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-primary flex items-center gap-2">
+                Preservar tags de interpolação com hashes seguros
+                <span class="px-1.5 py-0.2 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-caption-mono text-caption-mono">[player]</span>
+<span class="px-1.5 py-0.2 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-caption-mono text-caption-mono">[points]</span>
+</span>
+<span class="font-caption-mono text-caption-mono text-text-muted mt-0.5">
+                Substitui identificadores por tokens alfanuméricos hexadecimais imutáveis antes de enviar ao motor neural e restaura com validação de escape.
+              </span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-high hover:bg-slate-surface-elevated cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 mt-1 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-primary flex items-center gap-2">
+                Preservar formatação textual Ren'Py
+                <span class="px-1 py-0.2 rounded bg-surface-container text-text-code font-caption-mono text-caption-mono">{b}</span>
+<span class="px-1 py-0.2 rounded bg-surface-container text-text-code font-caption-mono text-caption-mono">{i}</span>
+<span class="px-1 py-0.2 rounded bg-surface-container text-text-code font-caption-mono text-caption-mono">{color=...}</span>
+<span class="px-1 py-0.2 rounded bg-surface-container text-text-code font-caption-mono text-caption-mono">{size=...}</span>
+</span>
+<span class="font-caption-mono text-caption-mono text-text-muted mt-0.5">
+                Garante que marcadores de estilo e posicionamento visual nunca sejam traduzidos ou tenham suas chaves removidas.
+              </span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-high hover:bg-slate-surface-elevated cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 mt-1 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-primary">
+                Criar backup automático (.rpy.bak) antes de sobrescrever qualquer arquivo existente
+              </span>
+<span class="font-caption-mono text-caption-mono text-text-muted mt-0.5">
+                Mantém uma cópia com timestamp da versão anterior na pasta .renlocalizer_backups/ para rollback sem perda de dados.
+              </span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-high hover:bg-slate-surface-elevated cursor-pointer transition-colors">
+<input checked="" class="w-4 h-4 mt-1 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-primary">
+                Ignorar linhas comentadas (#) e nós com metadados no_translate
+              </span>
+<span class="font-caption-mono text-caption-mono text-text-muted mt-0.5">
+                Economiza consumo de tokens de API descartando linhas que não representam textos exibíveis na gameplay.
+              </span>
+</div>
+</label>
+<label class="flex items-start gap-3 p-3 rounded-lg bg-surface-container-high hover:bg-slate-surface-elevated cursor-pointer transition-colors">
+<input class="w-4 h-4 mt-1 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" type="checkbox">
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-secondary flex items-center gap-2">
+                Fazer varredura profunda em arquivos compilados .rpyc e pacotes arquivados .rpa
+                <span class="px-1.5 py-0.5 rounded bg-warning-amber-bg text-tertiary font-caption-mono text-caption-mono">Avançado / Experimental</span>
+</span>
+<span class="font-caption-mono text-caption-mono text-text-muted mt-0.5">
+                Tenta descompilar em memória scripts sem código fonte .rpy disponível utilizando un.rpyc embutido.
+              </span>
+</div>
+</label>
+</div>
+</div>
+</section>
+<!-- TAB 4: Interface & Sistema -->
+<section class="tab-pane hidden flex-col gap-6" id="tab-sistema">
+<div class="p-5 rounded-xl bg-surface-container flex flex-col gap-5 shadow-sm">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">display_settings</span>
+</div>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary">Preferências da Interface Desktop</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Aparência do aplicativo, nível de telemetria e comportamento de persistência</span>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<!-- Theme selector -->
+<div class="flex flex-col gap-2">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Tema Visual</label>
+<div class="grid grid-cols-3 gap-2">
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">dark_mode</span>
+<span>Escuro (Padrão)</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded bg-surface-container-high hover:bg-slate-surface-elevated text-text-secondary hover:text-text-primary font-body-dense text-body-dense transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">light_mode</span>
+<span>Claro</span>
+</button>
+<button class="flex items-center justify-center gap-2 py-2 px-3 rounded bg-surface-container-high hover:bg-slate-surface-elevated text-text-secondary hover:text-text-primary font-body-dense text-body-dense transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">desktop_windows</span>
+<span>Sistema</span>
+</button>
+</div>
+</div>
+<!-- UI Language -->
+<div class="flex flex-col gap-2">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Idioma da Interface</label>
+<div class="relative flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">translate</span>
+<select class="w-full bg-transparent font-body-dense text-body-dense text-text-primary outline-none cursor-pointer">
+<option class="bg-surface-container text-on-surface" selected="">Português (Brasil)</option>
+<option class="bg-surface-container text-on-surface">English (US)</option>
+<option class="bg-surface-container text-on-surface">Español</option>
+</select>
+</div>
+</div>
+<!-- Logging level -->
+<div class="flex flex-col gap-2">
+<label class="font-caption-mono text-caption-mono text-text-secondary uppercase">Nível de Detalhamento dos Logs</label>
+<div class="relative flex items-center bg-surface-container-high rounded px-3 py-2">
+<span class="material-symbols-outlined text-text-muted text-[18px] mr-2">terminal</span>
+<select class="w-full bg-transparent font-body-dense text-body-dense text-text-primary outline-none cursor-pointer">
+<option class="bg-surface-container text-on-surface" selected="">INFO (Recomendado)</option>
+<option class="bg-surface-container text-on-surface">DEBUG (Detalhado / Rastreio Completo)</option>
+<option class="bg-surface-container text-on-surface">WARN (Apenas Avisos e Erros)</option>
+<option class="bg-surface-container text-on-surface">ERROR (Somente Exceções Críticas)</option>
+</select>
+</div>
+</div>
+<!-- Safety Confirmation Toggle -->
+<div class="flex flex-col justify-end">
+<label class="flex items-center justify-between p-3 rounded bg-surface-container-high cursor-pointer">
+<div class="flex flex-col pr-3">
+<span class="font-body-dense text-body-dense font-medium text-text-primary">Confirmar sobrescrita de arquivos</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Abre diálogo modal antes de gravar em arquivos .rpy pré-existentes.</span>
+</div>
+<input checked="" class="w-4 h-4 rounded bg-surface-container border-none text-primary focus:ring-0 cursor-pointer" type="checkbox">
+</label>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Status Notification Card & Actions Bar -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col md:flex-row items-center justify-between gap-4 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-container flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">sync_saved_locally</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-primary">
+            Sincronização persistente com <code class="font-caption-mono text-caption-mono text-primary">config.json</code>
+</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">
+            Todas as alterações são sincronizadas automaticamente na raiz do projeto. Último salvamento manual: há 12 minutos.
+          </span>
+</div>
+</div>
+<div class="flex items-center gap-2 self-end md:self-center">
+<button class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container hover:bg-surface-container-high text-text-secondary hover:text-text-primary font-body-dense text-body-dense transition-colors" type="button">
+<span>Descartar Alterações</span>
+</button>
+<button class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded bg-primary text-on-primary font-body-dense text-body-dense font-medium hover:bg-primary-fixed-dim active:bg-primary-container shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Salvar Todas as Configurações</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Vanilla Tabs Logic -->
+<script>
+    function switchTab(targetId) {
+      document.querySelectorAll('.tab-pane').forEach(el => {
+        el.classList.add('hidden');
+        el.classList.remove('flex');
+      });
+      const targetPane = document.getElementById(targetId);
+      if (targetPane) {
+        targetPane.classList.remove('hidden');
+        targetPane.classList.add('flex');
+      }
+
+      document.querySelectorAll('.tab-btn').forEach(btn => {
+        btn.classList.remove('bg-slate-surface-elevated', 'text-text-primary', 'font-medium', 'shadow-sm');
+        btn.classList.add('text-text-secondary');
+      });
+
+      const activeBtn = document.getElementById('btn-' + targetId);
+      if (activeBtn) {
+        activeBtn.classList.add('bg-slate-surface-elevated', 'text-text-primary', 'font-medium', 'shadow-sm');
+        activeBtn.classList.remove('text-text-secondary');
+      }
+    }
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>

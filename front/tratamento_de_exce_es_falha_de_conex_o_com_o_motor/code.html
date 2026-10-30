@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"/><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-caption-mono text-caption-mono text-text-muted">Sincronização</span><span class="font-caption-mono text-caption-mono text-secondary">Online</span></div><div class="w-full bg-surface-container-high h-1 rounded overflow-hidden"><div class="bg-secondary h-full w-full"></div></div></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full">
+<div class="p-6 flex flex-col gap-6 max-w-[1600px] mx-auto w-full">
+<!-- BANNER DE ALERTA CRÍTICO / CABEÇALHO DE ERRO -->
+<section class="bg-surface-container-low rounded-xl p-5 shadow-xl relative overflow-hidden flex flex-col gap-4">
+<div class="absolute top-0 left-0 bottom-0 w-1.5 bg-error-red"></div>
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-error-red-bg text-error font-caption-mono text-caption-mono tracking-wider font-semibold">
+<span class="w-2 h-2 rounded-full bg-error-red animate-ping"></span>
+<span>EXECUÇÃO INTERROMPIDA · ERRO 503 / TIMEOUT DO MOTOR</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-caption-mono text-caption-mono">
+            Lote 3/4 Interrompido
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-caption-mono text-caption-mono flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">memory</span>
+            Motor: LibreTranslate (localhost:5000)
+          </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-text-muted font-caption-mono text-caption-mono">
+            Timestamp: 14:43:18 UTC-3
+          </span>
+</div>
+<!-- Ações Imediatas Topo -->
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-3.5 py-1.5 rounded bg-primary text-on-primary font-body-dense text-body-dense font-medium hover:bg-primary-container hover:text-on-primary-container shadow-md transition-all" id="btn-reconnect-primary">
+<span class="material-symbols-outlined text-[18px]">replay</span>
+<span>Reconectar e Retomar Pipeline</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container text-on-surface hover:bg-surface-container-high font-body-dense text-body-dense transition-colors">
+<span class="material-symbols-outlined text-[18px] text-secondary">save</span>
+<span>Salvar Estado e Sair</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1.5 rounded bg-surface-container text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high font-body-dense text-body-dense transition-colors">
+<span class="material-symbols-outlined text-[18px]">download_for_offline</span>
+<span>Modo Offline / Apenas Extrair</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 max-w-4xl">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight flex items-center gap-2">
+<span class="material-symbols-outlined text-error-red text-[24px]">cloud_off</span>
+          Falha de Conexão com o Motor de Tradução
+        </h1>
+<p class="font-body-base text-body-base text-text-secondary">
+          O worker do <strong class="text-on-surface">LibreTranslate</strong> parou de responder durante o processamento do <strong class="text-on-surface">Lote 3</strong>. O pipeline de tradução neural foi pausado preventivamente para evitar corrupção de sintaxe ou perda de dados no Ren'Py. Todo o progresso anterior está preservado no cache persistente.
+        </p>
+</div>
+</section>
+<!-- PAINEL DE STATUS DE PRESERVAÇÃO E DIAGNÓSTICO -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<!-- Card 1: Progresso Salvo -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Integridade de Cache</span>
+<span class="p-1 rounded bg-success-emerald-bg text-secondary material-symbols-outlined text-[18px]">check_circle</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-2">
+<span class="font-metric-val text-metric-val text-text-primary">982</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">/ 1.284 strings</span>
+<span class="font-caption-mono text-caption-mono text-secondary ml-auto font-semibold">76,4%</span>
+</div>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden mt-2">
+<div class="bg-secondary h-full rounded-full" style="width: 76.4%"></div>
+</div>
+</div>
+<div class="font-body-dense text-body-dense text-text-secondary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Preservadas na Translation Memory local sem perdas</span>
+</div>
+</div>
+<!-- Card 2: Lote Afetado -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Lote 3 Interrompido</span>
+<span class="p-1 rounded bg-warning-amber-bg text-tertiary material-symbols-outlined text-[18px]">pending_actions</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-2">
+<span class="font-metric-val text-metric-val text-tertiary">146</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">strings em fila</span>
+</div>
+<div class="font-caption-mono text-caption-mono text-text-muted mt-1">
+            Interrompido no dispatch HTTP #18 (say_chapter1_intro_0484)
+          </div>
+</div>
+<div class="font-body-dense text-body-dense text-text-secondary flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+<span>Sincronização atômica revertida para estado seguro</span>
+</div>
+</div>
+<!-- Card 3: Diagnóstico de Porta -->
+<div class="bg-surface-container-low rounded-xl p-4 flex flex-col justify-between shadow-md relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Porta 5000 (Localhost)</span>
+<span class="p-1 rounded bg-error-red-bg text-error material-symbols-outlined text-[18px]">signal_disconnected</span>
+</div>
+<div class="my-2">
+<div class="flex items-baseline gap-2">
+<span class="font-metric-val text-metric-val text-error">ECONNREFUSED</span>
+</div>
+<div class="font-caption-mono text-caption-mono text-text-muted mt-1">
+            3/3 tentativas falharam · Timeout de 60s excedido
+          </div>
+</div>
+<div class="font-body-dense text-body-dense text-error flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 rounded-full bg-error-red"></span>
+<span>Nenhum processo escutando em 127.0.0.1:5000</span>
+</div>
+</div>
+</section>
+<!-- ÁREA CENTRAL DIVIDIDA EM DUAS COLUNAS OPERACIONAIS -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Coluna Esquerda: Assistente de Solução Rápida do Motor (7 colunas) -->
+<div class="lg:col-span-7 bg-surface-container-low rounded-xl p-5 shadow-lg flex flex-col gap-4">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">build_circle</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Assistente de Solução Rápida do Motor</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Passos de Restauração</span>
+</div>
+<div class="flex flex-col gap-4">
+<!-- Passo 1: Iniciar Serviço -->
+<div class="bg-surface-container rounded-lg p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-dense text-body-dense font-medium text-text-primary flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">1</span>
+                Reiniciar o container ou binário do LibreTranslate
+              </span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Terminal / CLI</span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary">
+              Abra seu terminal e execute o comando abaixo para restabelecer a API local:
+            </p>
+<div class="bg-surface-container-lowest rounded px-3 py-2 flex items-center justify-between font-label-code text-label-code text-text-code">
+<code>docker start libretranslate || libretranslate --host 127.0.0.1 --port 5000</code>
+<button class="text-text-muted hover:text-primary transition-colors p-1" onclick="navigator.clipboard.writeText('docker start libretranslate || libretranslate --host 127.0.0.1 --port 5000')" title="Copiar Comando">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+</button>
+</div>
+</div>
+<!-- Passo 2: Testar Conexão Direta -->
+<div class="bg-surface-container rounded-lg p-3.5 flex flex-col gap-2.5">
+<div class="flex items-center justify-between">
+<span class="font-body-dense text-body-dense font-medium text-text-primary flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">2</span>
+                Testar Conexão e Handshake (Ping)
+              </span>
+<span class="font-caption-mono text-caption-mono px-2 py-0.5 rounded bg-error-red-bg text-error" id="ping-badge">
+                Offline
+              </span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary">
+              Executa um probe HTTP <span class="text-primary font-bold">GET /languages</span> diretamente no endpoint local configurado.
+            </p>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high text-on-surface hover:bg-slate-surface-elevated font-body-dense text-body-dense transition-colors" id="btn-ping">
+<span class="material-symbols-outlined text-[16px] text-primary" id="ping-icon">sync</span>
+<span id="ping-text">Disparar Ping de Teste</span>
+</button>
+<span class="font-caption-mono text-caption-mono text-text-muted" id="ping-latency">Último probe: Falha (Sem resposta em 5000ms)</span>
+</div>
+</div>
+<!-- Passo 3: Servidor Alternativo -->
+<div class="bg-surface-container rounded-lg p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-dense text-body-dense font-medium text-text-primary flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">3</span>
+                Alternar para Servidor / Motor Alternativo
+              </span>
+<span class="font-caption-mono text-caption-mono text-secondary">Fallback Automático</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2 mt-1">
+<div class="flex flex-col gap-1">
+<label class="font-caption-mono text-caption-mono text-text-muted">Provedor ou Instância</label>
+<select class="bg-surface-container-lowest text-on-surface font-body-dense text-body-dense rounded px-2.5 py-1.5 outline-none focus:bg-surface-container-high transition-colors">
+<option selected="">LibreTranslate Local (127.0.0.1:5000)</option>
+<option>Servidor Remoto LAN (192.168.1.120:5000)</option>
+<option>LibreTranslate Cloud Oficial (API Key)</option>
+<option>DeepL API (Chave de Contingência)</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-caption-mono text-caption-mono text-text-muted">API Key / Token Opcional</label>
+<input class="bg-surface-container-lowest text-on-surface font-body-dense text-body-dense rounded px-2.5 py-1.5 outline-none placeholder:text-text-muted" placeholder="Não necessária para host local" type="password" value=""/>
+</div>
+</div>
+</div>
+<!-- Passo 4: Reduzir Tamanho do Lote -->
+<div class="bg-surface-container rounded-lg p-3.5 flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-dense text-body-dense font-medium text-text-primary flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-high text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">4</span>
+                Otimização de Lote de Envio
+              </span>
+<span class="font-caption-mono text-caption-mono text-tertiary">Prevenção de Out-Of-Memory (OOM)</span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary">
+              Reduza o número de strings simultâneas enviadas por payload se o modelo neural estiver colapsando a memória de GPU/VRAM.
+            </p>
+<div class="flex items-center gap-4 mt-1">
+<input class="w-full accent-primary bg-surface-container-lowest h-1.5 rounded cursor-pointer" id="batch-slider" max="100" min="10" step="5" type="range" value="25"/>
+<div class="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-lowest rounded min-w-[100px] justify-center">
+<span class="font-label-code text-label-code text-primary font-bold" id="batch-value">25</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">strings/req</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Coluna Direita: Inspeção da Última Requisição e Payload (5 colunas) -->
+<div class="lg:col-span-5 bg-surface-container-low rounded-xl p-5 shadow-lg flex flex-col justify-between gap-4">
+<div class="flex flex-col gap-3">
+<div class="flex items-center justify-between pb-2 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-tertiary text-[20px]">troubleshoot</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Inspeção do Payload da Falha</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-error font-medium">HTTP 503</span>
+</div>
+<!-- Metadados da String que Falhou -->
+<div class="flex flex-col gap-1 bg-surface-container rounded p-3">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted">Identificador Ren'Py:</span>
+<span class="font-label-token text-label-token text-primary font-mono">#0484 · say_chapter1_intro_0484</span>
+</div>
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted">Arquivo Origem:</span>
+<span class="font-caption-mono text-caption-mono text-on-surface">game/story/chapter1.rpy:484</span>
+</div>
+</div>
+<!-- Payload Sanitizado com Tokens Ren'Py -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Payload Sanitizado (Protegido)</span>
+<span class="font-caption-mono text-caption-mono text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">verified_user</span>
+                Tokens Preservados
+              </span>
+</div>
+<div class="bg-surface-container-lowest rounded p-3 font-label-code text-label-code text-text-code flex flex-col gap-1 overflow-x-auto leading-relaxed">
+<div class="text-text-muted">// Texto original com tokens Ren'Py isolados:</div>
+<div>
+<span class="text-tertiary">"Hello, </span>
+<span class="px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token border border-indigo-900 font-label-token text-label-token">[player]</span>
+<span class="text-tertiary">! Welcome to </span>
+<span class="px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token border border-indigo-900 font-label-token text-label-token">{color=#fff}</span>
+<span class="text-tertiary">Neo-Kyoto</span>
+<span class="px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token border border-indigo-900 font-label-token text-label-token">{/color}</span>
+<span class="text-tertiary">."</span>
+</div>
+<div class="mt-2 text-text-muted">// String submetida para inferência:</div>
+<div class="text-on-surface-variant font-mono">
+                "Hello, <span class="text-primary font-bold">__TOKEN_VAR_0__</span>! Welcome to <span class="text-primary font-bold">__TOKEN_TAG_1__</span>Neo-Kyoto<span class="text-primary font-bold">__TOKEN_TAG_2__</span>."
+              </div>
+</div>
+</div>
+<!-- Resposta do Servidor -->
+<div class="flex flex-col gap-1.5">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Diagnóstico do Host Remoto</span>
+<div class="bg-error-red-bg/40 rounded p-3 font-caption-mono text-caption-mono text-error flex flex-col gap-1">
+<div class="font-bold flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">error</span>
+                HTTP 503: Worker Process Terminated Unexpectedly
+              </div>
+<div class="text-on-error-container">
+                CUDA Out of Memory exception at allocation of 1.42GB tensor buffer. Process PID 14920 killed by OOM killer or host daemon.
+              </div>
+</div>
+</div>
+</div>
+<!-- Alerta de Segurança e Garantia -->
+<div class="bg-surface-container rounded p-3 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-success-emerald-bg flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-secondary text-[20px]">shield</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-medium text-text-primary">Integridade de Scripts Garantida</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">
+              Nenhum arquivo <span class="text-on-surface">.rpy</span> original do jogo foi sobrescrito ou danificado.
+            </span>
+</div>
+</div>
+</div>
+</section>
+<!-- TERMINAL DE LOGS DE FALHA COM RASTREAMENTO DE PILHA (TRACEBACK) -->
+<section class="bg-surface-container-low rounded-xl shadow-lg overflow-hidden flex flex-col">
+<!-- Header do Terminal com Abas -->
+<div class="bg-surface-container px-4 py-2 flex flex-wrap items-center justify-between gap-2 border-b border-surface-container-high">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-text-muted text-[18px]">terminal</span>
+<span class="font-caption-mono text-caption-mono uppercase tracking-wider text-text-primary font-bold">Terminal de Diagnóstico &amp; Exceções</span>
+</div>
+<div class="flex items-center gap-1 bg-surface-container-lowest p-0.5 rounded">
+<button class="px-2.5 py-1 rounded bg-surface-container-high text-primary font-caption-mono text-caption-mono font-medium" id="tab-traceback">Traceback Python</button>
+<button class="px-2.5 py-1 rounded text-text-muted hover:text-on-surface font-caption-mono text-caption-mono" id="tab-http">Requisições HTTP (18)</button>
+<button class="px-2.5 py-1 rounded text-text-muted hover:text-on-surface font-caption-mono text-caption-mono" id="tab-threads">Threads &amp; Fila</button>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high hover:bg-slate-surface-elevated text-text-muted hover:text-on-surface font-caption-mono text-caption-mono transition-colors" id="btn-copy-log">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copiar Relatório Completo</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container-high hover:bg-slate-surface-elevated text-text-muted hover:text-on-surface font-caption-mono text-caption-mono transition-colors">
+<span class="material-symbols-outlined text-[14px]">folder_zip</span>
+<span>Abrir Pasta de Logs</span>
+</button>
+</div>
+</div>
+<!-- Área de Saída de Log Monospaçada -->
+<div class="bg-surface-container-lowest p-4 font-caption-mono text-caption-mono leading-relaxed overflow-x-auto max-h-64 select-text" id="log-content">
+<div class="text-text-muted"><span class="text-text-secondary">[14:43:08.112]</span> <span class="text-primary">[DISPATCHER]</span> Lote 3 iniciado. 146 strings segmentadas em 3 micro-batches de 50 entradas.</div>
+<div class="text-text-muted"><span class="text-text-secondary">[14:43:09.420]</span> <span class="text-secondary">[WORKER-1]</span> Micro-batch #1 (50 strings) enviado com sucesso para http://127.0.0.1:5000/translate (240ms).</div>
+<div class="text-text-muted"><span class="text-text-secondary">[14:43:10.890]</span> <span class="text-secondary">[WORKER-2]</span> Micro-batch #2 (50 strings) enviado com sucesso para http://127.0.0.1:5000/translate (310ms).</div>
+<div class="text-text-muted"><span class="text-text-secondary">[14:43:12.015]</span> <span class="text-primary">[WORKER-3]</span> Despachando lote de 46 strings remanescentes...</div>
+<div class="text-tertiary"><span class="text-text-secondary">[14:43:15.000]</span> [RETRY-1] Socket sem resposta após 3000ms. Tentativa de re-handshake...</div>
+<div class="text-tertiary"><span class="text-text-secondary">[14:43:17.000]</span> [RETRY-2] Socket sem resposta após 5000ms. Tentativa de ping no host...</div>
+<div class="text-error"><span class="text-text-secondary">[14:43:18.441]</span> [ERROR] urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='127.0.0.1', port=5000): Max retries exceeded with url: /translate</div>
+<div class="text-error pl-4">ConnectionResetError(10054, 'Uma conexão existente foi fechada pelo host remoto')</div>
+<div class="text-error pl-4">File "engine/libre_client.py", line 142, in dispatch_translation_batch</div>
+<div class="text-error pl-4">    response = session.post(f"{self.host}/translate", json=payload, timeout=60)</div>
+<div class="text-secondary"><span class="text-text-secondary">[14:43:18.520]</span> [ROLLBACK] Revertendo Lote 3 para a fila de pendências atômica. Nenhuma string incompleta salva.</div>
+<div class="text-secondary"><span class="text-text-secondary">[14:43:18.550]</span> [PERSISTENCE] Cache local atualizado: 982 chaves TM preservadas em SQLite db 'cache_game_ptbr.tm'.</div>
+<div class="text-primary font-bold"><span class="text-text-secondary">[14:43:18.555]</span> [PIPELINE] Pipeline pausado com segurança em estado 'WAIT_ENGINE_RECOVERY'.</div>
+</div>
+</section>
+<!-- BARRA DE RECUPERAÇÃO INFERIOR RÁPIDA -->
+<section class="bg-surface-container-high rounded-lg p-3 flex flex-wrap items-center justify-between gap-3 shadow-md">
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5 font-caption-mono text-caption-mono">
+<span class="w-2.5 h-2.5 rounded-full bg-error-red animate-pulse"></span>
+<span class="text-error font-semibold">Estado Atual: Pausado por Exceção</span>
+</div>
+<span class="text-surface-container-highest">|</span>
+<div class="font-caption-mono text-caption-mono text-text-secondary">
+          Motor Alvo: <span class="text-on-surface">LibreTranslate (Offline)</span>
+</div>
+<span class="text-surface-container-highest">|</span>
+<div class="font-caption-mono text-caption-mono text-text-secondary">
+          Cache Preservado: <span class="text-secondary font-bold">982 chaves salvas</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-2 px-4 py-1.5 rounded bg-primary text-on-primary font-body-dense text-body-dense font-medium hover:bg-primary-container hover:text-on-primary-container transition-colors shadow" id="btn-resume-footer">
+<span class="material-symbols-outlined text-[18px]">play_arrow</span>
+<span>Retomar Tradução a partir do Lote 3</span>
+</button>
+</div>
+</section>
+</div>
+</div>
+<script>
+  (function() {
+    // Interações de Micro-UI
+    const slider = document.getElementById('batch-slider');
+    const sliderVal = document.getElementById('batch-value');
+    if (slider && sliderVal) {
+      slider.addEventListener('input', function(e) {
+        sliderVal.textContent = e.target.value;
+      });
+    }
+
+    const btnPing = document.getElementById('btn-ping');
+    const pingIcon = document.getElementById('ping-icon');
+    const pingText = document.getElementById('ping-text');
+    const pingBadge = document.getElementById('ping-badge');
+    const pingLatency = document.getElementById('ping-latency');
+
+    if (btnPing) {
+      btnPing.addEventListener('click', function() {
+        pingIcon.classList.add('animate-spin');
+        pingText.textContent = 'Verificando localhost:5000...';
+        
+        setTimeout(() => {
+          pingIcon.classList.remove('animate-spin');
+          pingText.textContent = 'Disparar Ping de Teste';
+          pingBadge.textContent = 'Offline (ECONNREFUSED)';
+          pingLatency.textContent = 'Tentativa em ' + new Date().toLocaleTimeString() + ': Sem resposta (Connection refused)';
+        }, 1200);
+      });
+    }
+
+    const btnCopy = document.getElementById('btn-copy-log');
+    if (btnCopy) {
+      btnCopy.addEventListener('click', function() {
+        const logContent = document.getElementById('log-content');
+        if (logContent) {
+          navigator.clipboard.writeText(logContent.innerText).then(() => {
+            const originalHtml = btnCopy.innerHTML;
+            btnCopy.innerHTML = '<span class="material-symbols-outlined text-[14px] text-secondary">check</span><span class="text-secondary">Copiado!</span>';
+            setTimeout(() => {
+              btnCopy.innerHTML = originalHtml;
+            }, 2000);
+          });
+        }
+      });
+    }
+
+    // Alternador simples de abas
+    const tabs = ['tab-traceback', 'tab-http', 'tab-threads'];
+    tabs.forEach(tabId => {
+      const tabEl = document.getElementById(tabId);
+      if (tabEl) {
+        tabEl.addEventListener('click', function() {
+          tabs.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) {
+              el.className = 'px-2.5 py-1 rounded text-text-muted hover:text-on-surface font-caption-mono text-caption-mono';
+            }
+          });
+          tabEl.className = 'px-2.5 py-1 rounded bg-surface-container-high text-primary font-caption-mono text-caption-mono font-medium';
+        });
+      }
+    });
+
+    const reconnectBtn = document.getElementById('btn-reconnect-primary');
+    const resumeBtn = document.getElementById('btn-resume-footer');
+    function triggerReconnect() {
+      if (btnPing) btnPing.click();
+    }
+    if (reconnectBtn) reconnectBtn.addEventListener('click', triggerReconnect);
+    if (resumeBtn) resumeBtn.addEventListener('click', triggerReconnect);
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>

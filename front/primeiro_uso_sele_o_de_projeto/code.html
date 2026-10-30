@@ -1,0 +1,608 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-caption-mono text-caption-mono text-text-muted">Sincronização</span><span class="font-caption-mono text-caption-mono text-secondary">Online</span></div><div class="w-full bg-surface-container-high h-1 rounded overflow-hidden"><div class="bg-secondary h-full w-full"></div></div></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full">
+<div class="relative w-full px-8 py-6 max-w-[1580px] mx-auto flex flex-col gap-6">
+<!-- Ambient Grid & Glow Element -->
+<div class="absolute top-0 right-10 w-[520px] h-[340px] bg-gradient-to-bl from-primary-container/10 via-secondary-container/5 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
+<!-- Top Attention Ribbon: Zero-project context state -->
+<div class="flex items-center justify-between bg-surface-container-low px-4 py-2.5 rounded shadow-sm">
+<div class="flex items-center gap-3">
+<div class="flex items-center justify-center w-6 h-6 rounded bg-info-blue-bg text-primary">
+<span class="material-symbols-outlined text-[16px]">info</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-dense text-body-dense text-on-surface font-medium">Workspace Desconectado</span>
+<span class="text-outline-variant font-caption-mono text-caption-mono">•</span>
+<span class="font-caption-mono text-caption-mono text-text-secondary">Nenhum diretório .rpy em memória ativa. As ferramentas de Tradução, Revisão e Glossário aguardam a montagem do projeto.</span>
+</div>
+</div>
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container font-caption-mono text-caption-mono text-secondary">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>LibreTranslate: Ativo (localhost:5000)</span>
+</div>
+</div>
+</div>
+<!-- Main Workspace Split: Drag-Drop Hero + Recent Projects Bento -->
+<div class="grid grid-cols-12 gap-6 items-start">
+<!-- Left Column: Hero & Dropzone (7 cols) -->
+<div class="col-span-12 lg:col-span-7 flex flex-col gap-5">
+<!-- Hero Header Block -->
+<div class="bg-surface-container p-6 rounded shadow-md flex flex-col gap-4 relative overflow-hidden">
+<div class="flex flex-col gap-1.5 z-10">
+<div class="flex items-center gap-2">
+<span class="px-2 py-0.5 rounded bg-primary/10 text-primary font-caption-mono text-caption-mono uppercase tracking-wider font-semibold">Desktop Engine v2.4.0</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Ren'Py 7.x &amp; 8.x Ready</span>
+</div>
+<h1 class="font-display text-display text-text-primary tracking-tight">
+              Traduza seu projeto Ren'Py com segurança e precisão sintática
+            </h1>
+<p class="font-body-base text-body-base text-text-secondary leading-relaxed max-w-2xl">
+              Parser AST integrado que isola strings de diálogo, protege tags de formatação (<span class="font-label-token text-label-token text-tag-renpy-token bg-tag-renpy-token-bg px-1.5 py-0.5 rounded">{i}</span>, <span class="font-label-token text-label-token text-tag-renpy-token bg-tag-renpy-token-bg px-1.5 py-0.5 rounded">[player]</span>) e preserva a integridade de blocos python durante todo o fluxo bilíngue.
+            </p>
+</div>
+<!-- Master Call-to-action Dropzone -->
+<div class="relative group bg-surface-container-lowest hover:bg-surface-container-low transition-all duration-200 rounded-xl p-8 flex flex-col items-center justify-center text-center cursor-pointer shadow-inner" id="dropzoneRoot">
+<input class="absolute inset-0 opacity-0 cursor-pointer w-full h-full z-20" directory="" id="filePickerInput" multiple="" type="file" webkitdirectory="">
+<div class="w-16 h-16 rounded-2xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center text-primary mb-3 transition-transform group-hover:scale-105">
+<span class="material-symbols-outlined text-[34px]">drive_folder_upload</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-text-primary mb-1">
+              Arraste e solte a pasta raiz do seu projeto aqui
+            </span>
+<span class="font-body-dense text-body-dense text-text-secondary mb-5">
+              ou clique diretamente na área para navegar pelo explorador de arquivos local
+            </span>
+<div class="flex items-center gap-3 z-30">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-lg bg-primary-container hover:bg-inverse-primary text-text-primary font-body-dense text-body-dense font-medium shadow-md transition-all" type="button">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+<span>Abrir Projeto Ren'Py</span>
+<span class="ml-2 font-caption-mono text-caption-mono bg-on-primary-container px-2 py-0.5 rounded text-primary-fixed">Ctrl + O</span>
+</button>
+</div>
+<div class="flex items-center gap-2 mt-5 text-text-muted font-caption-mono text-caption-mono">
+<span class="material-symbols-outlined text-[15px] text-primary">auto_awesome</span>
+<span>Reconhecimento instantâneo de manifests <span class="text-on-surface font-mono">tl/</span>, <span class="text-on-surface font-mono">screens.rpy</span> e blocos de diálogo</span>
+</div>
+</div>
+<!-- Directory Validation Contract Indicator -->
+<div class="bg-surface-container-low p-3.5 rounded flex items-start gap-3 text-left">
+<div class="w-7 h-7 rounded bg-surface-container-highest flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[17px]">fact_check</span>
+</div>
+<div class="flex flex-col gap-1 w-full">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-dense font-semibold text-text-primary">Validação Inteligente de Diretório</span>
+<span class="font-caption-mono text-caption-mono text-secondary flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                  Analisador Sintático Ativo
+                </span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary">
+                A pasta selecionada deve conter o subdiretório obrigatório <span class="text-text-code bg-surface-container-highest px-1.5 py-0.5 rounded font-mono">game/</span> (exemplo: <span class="text-text-code font-mono">MeuJogo/game/</span> com arquivos <span class="text-text-code font-mono">.rpy</span> válidos).
+              </p>
+<!-- Mini visual mock of folder structure safety -->
+<div class="mt-2 bg-surface-container-lowest p-2 rounded font-caption-mono text-caption-mono flex flex-wrap items-center gap-3 text-text-muted">
+<span class="flex items-center gap-1 text-text-primary">
+<span class="material-symbols-outlined text-[14px] text-tertiary">folder</span> MeuJogo/
+                </span>
+<span class="text-outline-variant">→</span>
+<span class="flex items-center gap-1 text-secondary">
+<span class="material-symbols-outlined text-[14px] text-secondary">folder_check</span> game/
+                </span>
+<span class="text-outline-variant">→</span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">description</span> script.rpy
+                </span>
+<span class="flex items-center gap-1 text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">translate</span> tl/none/
+                </span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quickstart Guide Cards (Pre-translation protocol) -->
+<div class="bg-surface-container p-5 rounded shadow flex flex-col gap-3.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-tertiary">tips_and_updates</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Preparando seu projeto Ren'Py antes de traduzir</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Protocolo de Integridade</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+<!-- Tip 1 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">1</span>
+<span class="font-body-dense text-body-dense font-medium text-text-primary">Backup de .rpy</span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary leading-relaxed">
+                Mantenha uma cópia de segurança do diretório raiz. O RenLocalizer cria logs atômicos de diff, mas um checkpoint Git garante rollback absoluto.
+              </p>
+</div>
+<!-- Tip 2 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">2</span>
+<span class="font-body-dense text-body-dense font-medium text-text-primary">Compilação Limpa</span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary leading-relaxed">
+                Inicie o jogo via Ren'Py Launcher oficial pelo menos uma vez para compilar scripts e regenerar arquivos <span class="text-text-code">.rpyc</span> de checagem.
+              </p>
+</div>
+<!-- Tip 3 -->
+<div class="bg-surface-container-low p-3 rounded flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="w-5 h-5 rounded-full bg-surface-container-highest text-primary font-caption-mono text-caption-mono flex items-center justify-center font-bold">3</span>
+<span class="font-body-dense text-body-dense font-medium text-text-primary">Idiomas em tl/</span>
+</div>
+<p class="font-caption-mono text-caption-mono text-text-secondary leading-relaxed">
+                Defina <span class="text-text-code font-mono">config.language = "portuguese"</span> em <span class="text-text-code font-mono">options.rpy</span> para exportação de pacotes multilíngues automatizados.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Recent Projects & Visual Inspector Deck (5 cols) -->
+<div class="col-span-12 lg:col-span-5 flex flex-col gap-5">
+<!-- Recents Card -->
+<div class="bg-surface-container p-5 rounded shadow flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-primary">history</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Projetos Recentes</span>
+</div>
+<button class="text-text-muted hover:text-error-red transition-colors font-caption-mono text-caption-mono flex items-center gap-1 px-2 py-1 rounded hover:bg-surface-container-highest" id="clearHistoryBtn" type="button">
+<span class="material-symbols-outlined text-[14px]">delete_sweep</span>
+<span>Limpar Histórico</span>
+</button>
+</div>
+<!-- Project Cards List -->
+<div class="flex flex-col gap-2.5" id="recentProjectsContainer">
+<!-- Project 1: MeuJogo -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-3 rounded flex flex-col gap-2 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-primary/10 text-primary flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">videogame_asset</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-dense text-body-dense font-semibold text-text-primary">MeuJogo</span>
+<span class="px-1.5 py-0.2 font-caption-mono text-[10px] rounded bg-success-emerald-bg text-secondary font-medium">Pronto para tradução</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="text-tertiary hover:text-tertiary-fixed p-1 rounded hover:bg-surface-container" title="Fixar Projeto" type="button">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">push_pin</span>
+</button>
+<button class="text-text-muted hover:text-error-red p-1 rounded hover:bg-surface-container" title="Remover da Lista" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Metric Row -->
+<div class="flex items-center justify-between pt-2 mt-1 bg-surface-container-lowest/50 px-2.5 py-1.5 rounded font-caption-mono text-caption-mono text-text-secondary">
+<div class="flex items-center gap-3">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px] text-outline">description</span>
+<span class="text-text-primary font-medium">42</span> arquivos .rpy
+                  </span>
+<span>•</span>
+<span>Último acesso: <span class="text-text-primary">há 2 horas</span></span>
+</div>
+<button class="text-primary hover:text-primary-fixed flex items-center gap-0.5 font-medium" type="button">
+<span>Abrir</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Project 2: Echoes of Eternity -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-3 rounded flex flex-col gap-2 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-secondary/10 text-secondary flex items-center justify-center shrink-0 group-hover:bg-secondary group-hover:text-on-secondary transition-colors">
+<span class="material-symbols-outlined text-[18px]">auto_stories</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-dense text-body-dense font-semibold text-text-primary">Echoes of Eternity</span>
+<span class="px-1.5 py-0.2 font-caption-mono text-[10px] rounded bg-info-blue-bg text-primary font-medium">85% Concluído</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">D:\Projetos\EchoesOfEternity</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="text-text-muted hover:text-tertiary p-1 rounded hover:bg-surface-container" title="Fixar Projeto" type="button">
+<span class="material-symbols-outlined text-[16px]">push_pin</span>
+</button>
+<button class="text-text-muted hover:text-error-red p-1 rounded hover:bg-surface-container" title="Remover da Lista" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Mini Progress Gauge -->
+<div class="flex flex-col gap-1 mt-1">
+<div class="w-full bg-surface-container-highest h-1 rounded overflow-hidden">
+<div class="bg-primary h-full w-[85%]"></div>
+</div>
+<div class="flex items-center justify-between font-caption-mono text-caption-mono text-text-secondary">
+<span>118 scripts (.rpy)</span>
+<span>Último acesso: Ontem às 18:40</span>
+</div>
+</div>
+</div>
+<!-- Project 3: Coffee & Romance VN -->
+<div class="group bg-surface-container-low hover:bg-surface-container-high transition-all p-3 rounded flex flex-col gap-2 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-2.5">
+<div class="w-8 h-8 rounded bg-tertiary/10 text-tertiary flex items-center justify-center shrink-0 group-hover:bg-tertiary group-hover:text-on-tertiary transition-colors">
+<span class="material-symbols-outlined text-[18px]">local_cafe</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-dense text-body-dense font-semibold text-text-primary">Coffee &amp; Romance VN</span>
+<span class="px-1.5 py-0.2 font-caption-mono text-[10px] rounded bg-surface-container-highest text-tertiary font-medium">Alvo: pt_BR</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">C:\Users\Dev\RenPy\CoffeeRomance</span>
+</div>
+</div>
+<div class="flex items-center gap-1 opacity-80 group-hover:opacity-100">
+<button class="text-text-muted hover:text-tertiary p-1 rounded hover:bg-surface-container" title="Fixar Projeto" type="button">
+<span class="material-symbols-outlined text-[16px]">push_pin</span>
+</button>
+<button class="text-text-muted hover:text-error-red p-1 rounded hover:bg-surface-container" title="Remover da Lista" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+</div>
+<!-- Metric Row -->
+<div class="flex items-center justify-between pt-2 mt-1 bg-surface-container-lowest/50 px-2.5 py-1.5 rounded font-caption-mono text-caption-mono text-text-secondary">
+<div class="flex items-center gap-3">
+<span class="text-text-primary font-medium">12 scripts</span>
+<span>•</span>
+<span>Sincronizado: 08/Nov</span>
+</div>
+<button class="text-primary hover:text-primary-fixed flex items-center gap-0.5 font-medium" type="button">
+<span>Abrir</span>
+<span class="material-symbols-outlined text-[14px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Engine & Safety Diagnostics Mini Panel -->
+<div class="bg-surface-container p-4 rounded shadow flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-body-dense font-semibold text-text-primary">Integridade do Motor Local</span>
+<span class="flex items-center gap-1 font-caption-mono text-caption-mono text-secondary">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+              Operacional
+            </span>
+</div>
+<div class="flex flex-col gap-2 font-caption-mono text-caption-mono">
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded">
+<span class="text-text-muted">Serviço Neural:</span>
+<span class="text-text-primary">LibreTranslate 1.5.8 (CUDA Enabled)</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded">
+<span class="text-text-muted">Porta de Escuta:</span>
+<span class="text-text-primary">http://127.0.0.1:5000</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-low px-3 py-2 rounded">
+<span class="text-text-muted">Verificação de Tags:</span>
+<span class="text-secondary">Ativa (Regex &amp; AST Safe)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Directory Simulation Dialog / Dynamic Notification Area -->
+<div class="hidden flex items-center justify-between bg-success-emerald-bg/20 text-on-surface p-4 rounded transition-all" id="validationFeedback">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div class="flex flex-col">
+<span class="font-body-dense text-body-dense font-semibold text-text-primary">Diretório Ren'Py Validado com Sucesso!</span>
+<span class="font-caption-mono text-caption-mono text-text-secondary" id="validatedPathText">C:\Games\MeuJogo\game detectado com 42 arquivos .rpy legíveis.</span>
+</div>
+</div>
+<button class="px-4 py-1.5 rounded bg-secondary text-on-secondary font-body-dense text-body-dense font-medium shadow hover:opacity-90" type="button">
+        Continuar para Tradução
+      </button>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Dynamic updates for the zero-project initial state
+    const dropzone = document.getElementById('dropzoneRoot');
+    const filePicker = document.getElementById('filePickerInput');
+    const feedback = document.getElementById('validationFeedback');
+    const feedbackText = document.getElementById('validatedPathText');
+    const clearHistoryBtn = document.getElementById('clearHistoryBtn');
+    const recentsContainer = document.getElementById('recentProjectsContainer');
+
+    // Adapt Header UI to explicitly display zero project selected
+    const shellProjectBadge = document.querySelector('header .bg-surface-container span.text-primary')?.parentElement;
+    if (shellProjectBadge) {
+      shellProjectBadge.innerHTML = `
+        <span class="material-symbols-outlined text-text-muted text-[18px]">folder_off</span>
+        <div class="flex flex-col text-left">
+          <div class="flex items-center gap-1 cursor-pointer">
+            <span class="font-body-dense text-body-dense text-text-secondary font-medium">[ Nenhum projeto selecionado ]</span>
+            <span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span>
+          </div>
+          <span class="font-caption-mono text-caption-mono text-text-muted">Aguardando montagem de diretório</span>
+        </div>
+      `;
+    }
+
+    // Adapt Sidebar to disabled/waiting visual state
+    const navItems = document.querySelectorAll('aside nav a');
+    navItems.forEach(item => {
+      const path = item.getAttribute('data-path');
+      if (path !== 'visao-geral' && path !== 'configuracoes') {
+        item.classList.add('opacity-40', 'pointer-events-none');
+        item.setAttribute('title', 'Abra um projeto primeiro para acessar');
+      }
+    });
+
+    // Update footer status bar text
+    const footerStatus = document.querySelector('footer span.text-on-surface');
+    if (footerStatus && footerStatus.textContent.includes('Status:')) {
+      footerStatus.textContent = 'Status: Aguardando seleção de projeto';
+      const indicator = footerStatus.previousElementSibling;
+      if (indicator) {
+        indicator.classList.remove('bg-secondary', 'animate-pulse');
+        indicator.classList.add('bg-tertiary');
+      }
+    }
+
+    // Drag and Drop simulation micro-interactions
+    if (dropzone) {
+      ['dragenter', 'dragover'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.add('bg-surface-container-high', 'scale-[1.01]');
+        }, false);
+      });
+
+      ['dragleave', 'drop'].forEach(eventName => {
+        dropzone.addEventListener(eventName, (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          dropzone.classList.remove('bg-surface-container-high', 'scale-[1.01]');
+        }, false);
+      });
+
+      dropzone.addEventListener('drop', (e) => {
+        const dt = e.dataTransfer;
+        const files = dt.files;
+        if (files && files.length > 0) {
+          triggerSuccessSimulation('C:\\Projetos\\RenPyNovoProjeto\\game');
+        }
+      });
+    }
+
+    if (filePicker) {
+      filePicker.addEventListener('change', (e) => {
+        if (e.target.files && e.target.files.length > 0) {
+          const sample = e.target.files[0].webkitRelativePath || 'MeuJogo/game';
+          triggerSuccessSimulation(sample);
+        }
+      });
+    }
+
+    function triggerSuccessSimulation(path) {
+      if (feedback) {
+        feedback.classList.remove('hidden');
+        feedbackText.textContent = `Diretório validado: ${path} (Estrutura game/ confirmada com suporte a Ren'Py)`;
+      }
+    }
+
+    // Clear history action
+    if (clearHistoryBtn && recentsContainer) {
+      clearHistoryBtn.addEventListener('click', () => {
+        recentsContainer.innerHTML = `
+          <div class="p-6 text-center text-text-muted font-caption-mono text-caption-mono bg-surface-container-low rounded">
+            Nenhum histórico recente disponível. Abra um novo projeto através do seletor acima.
+          </div>
+        `;
+      });
+    }
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>

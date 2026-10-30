@@ -3,7 +3,7 @@ from typing import List, Tuple
 
 
 PLACEHOLDER_PATTERN = re.compile(
-    r"(\[[^\]]+\]|\{[^{}\n]+\}|%\([^)]+\)[a-zA-Z]|%[sd])"
+    r"(\\[nrt]|\[[^\]]+\]|\{[^{}\n]+\}|%\([^)]+\)[a-zA-Z]|%[sd])"
 )
 TOKEN_TEMPLATE = "[[[PH_{index}]]]"
 

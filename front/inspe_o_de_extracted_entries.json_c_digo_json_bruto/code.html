@@ -1,0 +1,623 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><button class="flex items-center gap-2 px-3 py-1-5 rounded text-text-secondary hover:text-on-surface font-body-dense text-body-dense transition-all" id="btn-view-grid" type="button">
+<span class="material-symbols-outlined text-[16px]">table_chart</span>
+<span>Tabela Estruturada (Grid)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-text-muted font-caption-mono text-caption-mono">1.284</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1-5 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm transition-all" id="btn-view-raw" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Código JSON Bruto</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full text-on-surface">
+<!-- Top Breadcrumbs & Header Bar -->
+<div class="flex flex-col gap-3 p-4 bg-surface-container-lowest">
+<div class="flex items-center justify-between">
+<!-- Breadcrumb Hierarchy -->
+<nav class="flex items-center gap-1-5 font-caption-mono text-caption-mono text-text-muted">
+<a class="hover:text-primary transition-colors flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[14px]">videogame_asset</span>
+<span>MeuJogo</span>
+</a>
+<span class="material-symbols-outlined text-[12px] text-outline-variant">chevron_right</span>
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">account_tree</span>
+<span>Varredura AST</span>
+</span>
+<span class="material-symbols-outlined text-[12px] text-outline-variant">chevron_right</span>
+<span class="text-secondary flex items-center gap-1 bg-surface-container-high px-1-5 py-0-5 rounded font-label-code text-label-code">
+<span class="material-symbols-outlined text-[14px] text-tertiary">data_object</span>
+          extracted_entries.json
+        </span>
+</nav>
+<!-- Action Buttons -->
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1-5 px-2-5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-body-dense text-body-dense shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Exportar JSON</span>
+</button>
+<button class="flex items-center gap-1-5 px-2-5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-body-dense text-body-dense shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px]">content_copy</span>
+<span>Copiar Caminho</span>
+</button>
+<button class="flex items-center gap-1-5 px-2-5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors font-body-dense text-body-dense shadow-sm" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
+<span>Re-validar Sintaxe</span>
+</button>
+<a class="flex items-center gap-1-5 px-3 py-1-5 rounded bg-primary-container hover:bg-inverse-primary text-text-primary transition-all font-body-dense text-body-dense shadow-md font-medium" data-path="traducao" href="#">
+<span class="material-symbols-outlined text-[18px]">translate</span>
+<span>Iniciar Tradução →</span>
+</a>
+</div>
+</div>
+<!-- Title & Metadata Ribbon -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+<div class="flex items-center gap-3">
+<div class="w-9 h-9 rounded bg-surface-container-high flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[22px]">code_blocks</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Inspeção de extracted_entries.json</h1>
+<span class="font-caption-mono text-caption-mono px-2 py-0-5 rounded bg-success-emerald-bg text-secondary font-medium">
+              AST v7.4.11 Sanitizado
+            </span>
+</div>
+<span class="font-body-dense text-body-dense text-text-muted">
+            Repositório de nós sintáticos gerados a partir do analisador léxico de scripts Ren'Py (.rpy).
+          </span>
+</div>
+</div>
+<!-- Quick Metrics Chips -->
+<div class="flex flex-wrap items-center gap-1-5 font-caption-mono text-caption-mono">
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-primary">layers</span>
+<span class="text-text-primary font-semibold">1.284</span> entradas cadastradas
+        </div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-text-muted">straighten</span>
+<span>Tamanho: <strong class="text-text-primary">1.2 MB</strong></span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-text-muted">lock</span>
+<span>Encoding: <strong class="text-text-primary">UTF-8 (BOM-Free)</strong></span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-on-surface-variant" title="8f4be20c9e7826315fa439e1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">fingerprint</span>
+<span>SHA-256: <strong class="text-text-primary font-label-code text-label-code">8f4b...39e1</strong></span>
+</div>
+<div class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-on-surface-variant">
+<span class="material-symbols-outlined text-[14px] text-secondary">schedule</span>
+<span>Gerado: Hoje às 14:22</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Dual Mode Switcher & Filter Controls Panel -->
+<div class="flex flex-col gap-3 p-4 bg-surface-container-low">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<!-- Dual View Tabs -->
+<div class="flex items-center p-0-5 bg-surface-container-lowest rounded"><button class="flex items-center gap-2 px-3 py-1-5 rounded text-text-secondary hover:text-on-surface font-body-dense text-body-dense transition-all" id="btn-view-grid" type="button">
+<span class="material-symbols-outlined text-[16px]">table_chart</span>
+<span>Tabela Estruturada (Grid)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-text-muted font-caption-mono text-caption-mono">1.284</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1-5 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm transition-all" id="btn-view-raw" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Código JSON Bruto</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button></div>
+<!-- Quick Toggles -->
+<div class="flex items-center gap-4">
+<label class="flex items-center gap-2 cursor-pointer select-none">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container text-primary-container focus:ring-0 cursor-pointer" type="checkbox">
+<span class="font-body-dense text-body-dense text-on-surface-variant hover:text-text-primary">Ocultar entradas idênticas em cache</span>
+</label>
+<div class="h-4 w-px bg-surface-variant"></div>
+<div class="flex items-center gap-1 text-text-muted font-caption-mono text-caption-mono">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span>Blindagem de Regex Ativa</span>
+</div>
+</div>
+</div>
+<!-- Search and Categorical Filtering Deck -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-2">
+<!-- Search Bar -->
+<div class="md:col-span-4 relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-text-muted text-[18px]">search</span>
+<input class="w-full pl-9 pr-8 py-1.5 rounded bg-surface-container-lowest text-text-primary placeholder:text-text-muted font-body-dense text-body-dense focus:outline-none focus:bg-surface-container-high transition-colors shadow-inner" placeholder="Buscar por chave, texto, tag ou label..." type="text" value="[player_name]"><button class="flex items-center gap-2 px-3 py-1-5 rounded text-text-secondary hover:text-on-surface font-body-dense text-body-dense transition-all" id="btn-view-grid" type="button">
+<span class="material-symbols-outlined text-[16px]">table_chart</span>
+<span>Tabela Estruturada (Grid)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-text-muted font-caption-mono text-caption-mono">1.284</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1-5 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm transition-all" id="btn-view-raw" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Código JSON Bruto</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button>
+<button class="absolute right-2.5 text-text-muted hover:text-on-surface flex items-center">
+<span class="material-symbols-outlined text-[16px]">close</span>
+</button>
+</div>
+<!-- Type Filter -->
+<div class="md:col-span-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-text-muted text-[16px]">category</span>
+<select class="w-full pl-8 pr-7 py-1.5 rounded bg-surface-container-lowest text-on-surface-variant font-body-dense text-body-dense appearance-none focus:outline-none focus:bg-surface-container cursor-pointer"><button class="flex items-center gap-2 px-3 py-1-5 rounded text-text-secondary hover:text-on-surface font-body-dense text-body-dense transition-all" id="btn-view-grid" type="button">
+<span class="material-symbols-outlined text-[16px]">table_chart</span>
+<span>Tabela Estruturada (Grid)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-text-muted font-caption-mono text-caption-mono">1.284</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1-5 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm transition-all" id="btn-view-raw" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Código JSON Bruto</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button></select>
+<span class="material-symbols-outlined absolute right-2 text-text-muted text-[16px] pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- Script File Filter -->
+<div class="md:col-span-3">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-text-muted text-[16px]">description</span>
+<select class="w-full pl-8 pr-7 py-1.5 rounded bg-surface-container-lowest text-on-surface-variant font-body-dense text-body-dense appearance-none focus:outline-none focus:bg-surface-container cursor-pointer"><button class="flex items-center gap-2 px-3 py-1-5 rounded text-text-secondary hover:text-on-surface font-body-dense text-body-dense transition-all" id="btn-view-grid" type="button">
+<span class="material-symbols-outlined text-[16px]">table_chart</span>
+<span>Tabela Estruturada (Grid)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-text-muted font-caption-mono text-caption-mono">1.284</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1-5 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm transition-all" id="btn-view-raw" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Código JSON Bruto</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button></select>
+<span class="material-symbols-outlined absolute right-2 text-text-muted text-[16px] pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+<!-- State Filter -->
+<div class="md:col-span-2">
+<div class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-2.5 text-text-muted text-[16px]">filter_alt</span>
+<select class="w-full pl-8 pr-7 py-1.5 rounded bg-surface-container-lowest text-on-surface-variant font-body-dense text-body-dense appearance-none focus:outline-none focus:bg-surface-container cursor-pointer"><button class="flex items-center gap-2 px-3 py-1-5 rounded text-text-secondary hover:text-on-surface font-body-dense text-body-dense transition-all" id="btn-view-grid" type="button">
+<span class="material-symbols-outlined text-[16px]">table_chart</span>
+<span>Tabela Estruturada (Grid)</span>
+<span class="px-1.5 py-0.2 rounded bg-surface-container-highest text-text-muted font-caption-mono text-caption-mono">1.284</span>
+</button>
+<button class="flex items-center gap-2 px-3 py-1-5 rounded bg-slate-surface-elevated text-text-primary font-body-dense text-body-dense font-medium shadow-sm transition-all" id="btn-view-raw" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">data_object</span>
+<span>Código JSON Bruto</span>
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+</button></select>
+<span class="material-symbols-outlined absolute right-2 text-text-muted text-[16px] pointer-events-none">arrow_drop_down</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Main Work Surface: Split Grid & AST Inspector Drawer -->
+<div class="flex flex-col flex-1 bg-surface-container-lowest border-t border-surface-container-high/60">
+<!-- Raw JSON Editor Sub-header & Action Toolbar -->
+<div class="flex flex-wrap items-center justify-between gap-3 px-4 py-2 bg-surface-container-low border-b border-surface-container-high/40">
+<!-- Left Controls: Formatters, Folding & File Info -->
+<div class="flex items-center flex-wrap gap-2">
+<!-- Format Mode Selector -->
+<div class="flex items-center p-0.5 bg-surface-container-lowest rounded font-caption-mono text-caption-mono">
+<button class="px-2.5 py-1 rounded bg-slate-surface-elevated text-primary font-medium flex items-center gap-1 shadow-sm">
+<span class="material-symbols-outlined text-[14px]">format_align_left</span>
+<span>Formatado (2 espaços)</span>
+</button>
+<button class="px-2.5 py-1 rounded text-text-muted hover:text-on-surface flex items-center gap-1 transition-colors">
+<span class="material-symbols-outlined text-[14px]">compress</span>
+<span>Minificado</span>
+</button>
+</div>
+<div class="h-4 w-px bg-surface-variant"></div>
+<!-- Block Folding Controls -->
+<div class="flex items-center gap-1">
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-text-primary text-caption-mono font-caption-mono transition-colors" title="Recolher todos os nós">
+<span class="material-symbols-outlined text-[14px]">unfold_less</span>
+<span>Recolher Todos</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-text-primary text-caption-mono font-caption-mono transition-colors" title="Expandir todos os nós">
+<span class="material-symbols-outlined text-[14px]">unfold_more</span>
+<span>Expandir Todos</span>
+</button>
+</div>
+<div class="h-4 w-px bg-surface-variant"></div>
+<!-- File Metadata Badge -->
+<div class="flex items-center gap-2 px-2.5 py-1 rounded bg-surface-container text-caption-mono font-caption-mono text-text-muted">
+<span class="material-symbols-outlined text-[14px] text-secondary">check_circle</span>
+<span class="text-on-surface font-label-code text-label-code">extracted_entries.json</span>
+<span>·</span>
+<span class="text-text-primary font-semibold">1.284</span> objetos
+        <span>·</span>
+<span>1.2 MB</span>
+<span class="px-1.5 py-0.2 rounded bg-success-emerald-bg text-secondary font-medium">RFC 8259 Válido</span>
+</div>
+</div>
+<!-- Right Controls: In-editor Search, Token Highlighting & Export -->
+<div class="flex items-center flex-wrap gap-2">
+<!-- In-file Search Bar -->
+<div class="flex items-center bg-surface-container-lowest rounded px-2 py-1 gap-1.5 border border-surface-container-high shadow-inner">
+<span class="material-symbols-outlined text-text-muted text-[15px]">search</span>
+<input class="bg-transparent text-text-primary placeholder:text-text-muted font-label-code text-label-code text-[12px] focus:outline-none w-44" placeholder="Buscar no JSON..." type="text" value="[player_name]">
+<span class="font-caption-mono text-caption-mono text-text-muted px-1 bg-surface-container rounded text-[10px]">1/42</span>
+<button class="text-text-muted hover:text-text-primary flex items-center" title="Anterior"><span class="material-symbols-outlined text-[14px]">keyboard_arrow_up</span></button>
+<button class="text-text-muted hover:text-text-primary flex items-center" title="Próximo"><span class="material-symbols-outlined text-[14px]">keyboard_arrow_down</span></button>
+</div>
+<!-- Token Highlight Pill -->
+<label class="flex items-center gap-1.5 px-2 py-1 rounded bg-surface-container text-caption-mono font-caption-mono text-on-surface-variant cursor-pointer select-none">
+<input checked="" class="w-3 h-3 rounded bg-surface-container text-primary-container focus:ring-0 cursor-pointer" type="checkbox">
+<span>Destacar Tokens (__TOKEN_)</span>
+</label>
+<!-- Copy JSON Button -->
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-text-primary text-caption-mono font-caption-mono transition-colors shadow-sm" title="Copiar JSON Completo">
+<span class="material-symbols-outlined text-[15px] text-primary">content_copy</span>
+<span>Copiar JSON</span>
+</button>
+<!-- Download / Save As Button -->
+<button class="flex items-center gap-1 px-2.5 py-1 rounded bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-text-primary text-caption-mono font-caption-mono transition-colors shadow-sm" title="Salvar Como...">
+<span class="material-symbols-outlined text-[15px]">save_alt</span>
+<span>Salvar Como</span>
+</button>
+</div>
+</div>
+<!-- Main Code Canvas with Line Numbers, Foldable Blocks and Minimap -->
+<div class="flex flex-1 relative overflow-hidden min-h-[560px] bg-[#070d1c]">
+<!-- Line Numbers Gutter -->
+<div class="w-12 py-3 bg-surface-container-lowest text-text-muted select-none font-label-code text-label-code text-[12px] leading-6 text-right pr-3 flex flex-col shrink-0 border-r border-surface-container-high/40">
+<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+<span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+<span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+<span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span>
+<span>41</span><span>42</span><span>43</span><span>44</span><span>45</span><span>46</span><span>47</span><span>48</span><span>49</span><span>50</span>
+</div>
+<!-- Fold Gutter Icons -->
+<div class="w-5 py-3 bg-surface-container-lowest text-text-muted select-none text-[11px] leading-6 text-center flex flex-col shrink-0 border-r border-surface-container-high/20">
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span></span><span></span><span></span><span></span><span></span><span></span>
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span></span><span></span><span></span>
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span></span><span></span><span></span><span></span><span></span><span></span>
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+<span class="material-symbols-outlined text-[12px] leading-6 text-text-muted hover:text-primary cursor-pointer">arrow_drop_down</span>
+<span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+</div>
+<!-- Code Viewer Pane -->
+<div class="flex-1 p-3 overflow-x-auto overflow-y-auto select-text font-label-code text-label-code text-[12px] leading-6 text-text-code">
+<div class="text-text-muted">[</div>
+<!-- Object 1 (say_chap1_84) -->
+<div class="pl-4 relative bg-primary-container/10 -mx-3 px-3 rounded-sm">
+<span class="text-text-muted">{</span>
+<div class="pl-4"><span class="text-primary">"id"</span><span class="text-text-muted">: </span><span class="text-secondary">"say_chapter1_intro_0482"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"type"</span><span class="text-text-muted">: </span><span class="text-secondary">"renpy.ast.Say"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"file"</span><span class="text-text-muted">: </span><span class="text-secondary">"game/scripts/chapter1_intro.rpy"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"line"</span><span class="text-text-muted">: </span><span class="text-tertiary">84</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"who"</span><span class="text-text-muted">: </span><span class="text-secondary">"eileen"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"original_text"</span><span class="text-text-muted">: </span><span class="text-secondary">"Olá, <span class="bg-warning-amber-bg text-tertiary px-1 rounded font-bold underline decoration-tertiary">[player_name]</span>! Bem-vindo à academia {b}Valhalla{/b}."</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"sanitized_text"</span><span class="text-text-muted">: </span><span class="text-secondary">"Olá, <span class="bg-tag-renpy-token-bg text-tag-renpy-token px-1 rounded font-medium border border-tag-renpy-token/30">__TOKEN_VAR_0__</span>! Bem-vindo à academia <span class="bg-tag-renpy-token-bg text-tag-renpy-token px-1 rounded font-medium border border-tag-renpy-token/30">__TOKEN_STYLE_1__</span>."</span><span class="text-text-muted">,</span></div>
+<div class="pl-4">
+<span class="text-primary">"tokens"</span><span class="text-text-muted">: [</span>
+<div class="pl-4"><span class="text-text-muted">{ </span><span class="text-primary">"placeholder"</span><span class="text-text-muted">: </span><span class="text-secondary">"__TOKEN_VAR_0__"</span><span class="text-text-muted">, </span><span class="text-primary">"original"</span><span class="text-text-muted">: </span><span class="text-secondary">"[player_name]"</span><span class="text-text-muted">, </span><span class="text-primary">"type"</span><span class="text-text-muted">: </span><span class="text-secondary">"variable"</span><span class="text-text-muted">, </span><span class="text-primary">"shield_regex"</span><span class="text-text-muted">: </span><span class="text-tertiary">true</span><span class="text-text-muted"> },</span></div>
+<div class="pl-4"><span class="text-text-muted">{ </span><span class="text-primary">"placeholder"</span><span class="text-text-muted">: </span><span class="text-secondary">"__TOKEN_STYLE_1__"</span><span class="text-text-muted">, </span><span class="text-primary">"original"</span><span class="text-text-muted">: </span><span class="text-secondary">"{b}Valhalla{/b}"</span><span class="text-text-muted">, </span><span class="text-primary">"type"</span><span class="text-text-muted">: </span><span class="text-secondary">"text_tag"</span><span class="text-text-muted">, </span><span class="text-primary">"shield_regex"</span><span class="text-text-muted">: </span><span class="text-tertiary">true</span><span class="text-text-muted"> }</span></div>
+<span class="text-text-muted">],</span>
+</div>
+<div class="pl-4"><span class="text-primary">"cache_status"</span><span class="text-text-muted">: { </span><span class="text-primary">"hit"</span><span class="text-text-muted">: </span><span class="text-tertiary">true</span><span class="text-text-muted">, </span><span class="text-primary">"confidence"</span><span class="text-text-muted">: </span><span class="text-tertiary">0.98</span><span class="text-text-muted">, </span><span class="text-primary">"engine"</span><span class="text-text-muted">: </span><span class="text-secondary">"LibreTranslate_v2"</span><span class="text-text-muted"> },</span></div>
+<div class="pl-4"><span class="text-primary">"cached_translation"</span><span class="text-text-muted">: </span><span class="text-secondary">"Hello, [player_name]! Welcome to the {b}Valhalla{/b} academy."</span></div>
+<span class="text-text-muted">},</span>
+</div>
+<!-- Object 2 (choice_01_a) -->
+<div class="pl-4">
+<span class="text-text-muted">{</span>
+<div class="pl-4"><span class="text-primary">"id"</span><span class="text-text-muted">: </span><span class="text-secondary">"choice_chapter1_intro_0483"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"type"</span><span class="text-text-muted">: </span><span class="text-secondary">"renpy.ast.MenuChoice"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"file"</span><span class="text-text-muted">: </span><span class="text-secondary">"game/scripts/chapter1_intro.rpy"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"line"</span><span class="text-text-muted">: </span><span class="text-tertiary">92</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"caption"</span><span class="text-text-muted">: </span><span class="text-secondary">"Aceitar o convite e entrar na guilda secreta"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"tokens"</span><span class="text-text-muted">: [],</span></div>
+<div class="pl-4"><span class="text-primary">"cache_status"</span><span class="text-text-muted">: { </span><span class="text-primary">"hit"</span><span class="text-text-muted">: </span><span class="text-tertiary">true</span><span class="text-text-muted">, </span><span class="text-primary">"match"</span><span class="text-text-muted">: </span><span class="text-secondary">"exact"</span><span class="text-text-muted"> }</span></div>
+<span class="text-text-muted">},</span>
+</div>
+<!-- Object 3 (say_chap1_96) -->
+<div class="pl-4">
+<span class="text-text-muted">{</span>
+<div class="pl-4"><span class="text-primary">"id"</span><span class="text-text-muted">: </span><span class="text-secondary">"say_chapter1_intro_0484"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"type"</span><span class="text-text-muted">: </span><span class="text-secondary">"renpy.ast.Say"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"file"</span><span class="text-text-muted">: </span><span class="text-secondary">"game/scripts/chapter1_intro.rpy"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"line"</span><span class="text-text-muted">: </span><span class="text-tertiary">96</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"who"</span><span class="text-text-muted">: </span><span class="text-secondary">"narrador"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"original_text"</span><span class="text-text-muted">: </span><span class="text-secondary">"O relógio marcava {color=#ffaa00}[current_hour]:00{/color} quando soaram os alarmes."</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"sanitized_text"</span><span class="text-text-muted">: </span><span class="text-secondary">"O relógio marcava <span class="bg-tag-renpy-token-bg text-tag-renpy-token px-1 rounded font-medium border border-tag-renpy-token/30">__TOKEN_FORMAT_2__</span> quando soaram os alarmes."</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"status"</span><span class="text-text-muted">: </span><span class="text-tertiary">"pending_translation"</span><span class="text-text-muted">,</span></div>
+<div class="pl-4"><span class="text-primary">"worker_assigned"</span><span class="text-text-muted">: </span><span class="text-text-muted">null</span></div>
+<span class="text-text-muted">},</span>
+</div>
+<!-- Collapsed indicator banner for remaining 1.281 items -->
+<div class="my-2 pl-4 py-2 bg-surface-container/60 border border-dashed border-surface-container-high rounded flex items-center justify-between pr-4 select-none cursor-pointer hover:bg-surface-container transition-colors">
+<div class="flex items-center gap-2 text-text-muted font-caption-mono text-caption-mono">
+<span class="material-symbols-outlined text-[16px] text-tertiary">more_horiz</span>
+<span class="text-on-surface-variant font-medium">... 1.281 nós adicionais recolhidos na visualização</span>
+<span class="text-text-muted text-[11px]">(Linhas 51 a 18.420)</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container-highest text-primary font-caption-mono text-caption-mono text-[11px]">Expandir Buffer Completo</span>
+</div>
+<div class="text-text-muted">]</div>
+</div>
+<!-- Minimap & Code Density Side Strip -->
+<div class="w-16 bg-surface-container-lowest border-l border-surface-container-high/40 flex flex-col justify-between py-1 select-none shrink-0">
+<!-- Minimap canvas visualization simulation -->
+<div class="flex flex-col gap-0.5 px-1 opacity-70 cursor-pointer">
+<div class="h-1 w-3/4 bg-primary/40 rounded-full"></div>
+<div class="h-1 w-full bg-secondary/40 rounded-full"></div>
+<div class="h-1 w-5/6 bg-secondary/30 rounded-full"></div>
+<div class="h-1 w-1/2 bg-tertiary/50 rounded-full"></div>
+<div class="h-1 w-4/5 bg-secondary/30 rounded-full"></div>
+<div class="h-1.5 w-full bg-warning-amber-bg border border-tertiary/70 rounded-full my-0.5" title="Search Hit #1"></div>
+<div class="h-1 w-2/3 bg-tag-renpy-token/50 rounded-full"></div>
+<div class="h-1 w-3/4 bg-tag-renpy-token/40 rounded-full"></div>
+<div class="h-1 w-full bg-secondary/30 rounded-full"></div>
+<div class="h-1 w-4/5 bg-primary/30 rounded-full"></div>
+<div class="h-1 w-1/3 bg-text-muted/30 rounded-full"></div>
+<div class="h-1 w-2/3 bg-primary/40 rounded-full mt-2"></div>
+<div class="h-1 w-full bg-secondary/30 rounded-full"></div>
+<div class="h-1 w-4/5 bg-secondary/40 rounded-full"></div>
+<div class="h-1 w-1/2 bg-tertiary/40 rounded-full"></div>
+<div class="h-1 w-3/4 bg-primary/30 rounded-full mt-2"></div>
+<div class="h-1 w-full bg-secondary/30 rounded-full"></div>
+<div class="h-1 w-5/6 bg-tag-renpy-token/40 rounded-full"></div>
+<div class="h-1 w-2/3 bg-tertiary/50 rounded-full"></div>
+<div class="h-1 w-1/2 bg-text-muted/40 rounded-full"></div>
+<div class="h-20 w-full bg-surface-container-high/20 border-y border-primary/30 my-2 relative">
+<span class="absolute top-1 right-1 text-[9px] font-caption-mono text-text-muted">42 hits</span>
+</div>
+<div class="h-1 w-3/4 bg-primary/30 rounded-full"></div>
+<div class="h-1 w-full bg-secondary/30 rounded-full"></div>
+<div class="h-1 w-2/3 bg-tertiary/30 rounded-full"></div>
+</div>
+<!-- Minimap bottom coordinate -->
+<div class="text-center font-caption-mono text-[9px] text-text-muted py-1 border-t border-surface-container-high/20">
+        100%
+      </div>
+</div>
+</div>
+</div>
+<!-- Bottom Workspace Footer & Pagination Ribbon -->
+<div class="flex flex-wrap items-center justify-between p-3 bg-surface-container-lowest gap-3"><div class="flex items-center gap-2">
+<span class="flex items-center justify-center w-5 h-5 rounded-full bg-success-emerald-bg text-secondary">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+</span>
+<span class="font-body-dense text-body-dense text-text-primary font-medium">
+    JSON validado sintaticamente · 1.284 nós da AST preservados com tokens de interpolação intactos.
+  </span>
+</div>
+<div class="flex items-center gap-2 font-caption-mono text-caption-mono text-text-muted">
+<span>Modo: <strong class="text-primary">JSON Raw Buffer</strong></span>
+<span>|</span>
+<span>Cursor: <strong class="text-on-surface">Linha 14, Coluna 28</strong></span>
+<span>|</span>
+<span>Tamanho do buffer: <strong class="text-on-surface">1.248.512 bytes</strong></span>
+</div>
+<div class="flex items-center gap-3">
+<span class="font-body-dense text-body-dense text-text-muted">
+    Pronto para processar <strong class="text-tertiary">348</strong> entradas pendentes
+  </span>
+<a class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-primary-container hover:bg-inverse-primary text-text-primary font-body-dense text-body-dense font-medium shadow transition-all" data-path="traducao" href="#">
+<span>Avançar para Tradução</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</a>
+</div></div>
+</div>
+<script>
+  (function() {
+    const btnGrid = document.getElementById('btn-view-grid');
+    const btnRaw = document.getElementById('btn-view-raw');
+
+    if (btnGrid && btnRaw) {
+      btnRaw.addEventListener('click', function() {
+        btnRaw.classList.add('bg-slate-surface-elevated', 'text-text-primary', 'font-medium', 'shadow-sm');
+        btnRaw.classList.remove('text-text-secondary');
+        btnGrid.classList.remove('bg-slate-surface-elevated', 'text-text-primary', 'font-medium', 'shadow-sm');
+        btnGrid.classList.add('text-text-secondary');
+      });
+
+      btnGrid.addEventListener('click', function() {
+        btnGrid.classList.add('bg-slate-surface-elevated', 'text-text-primary', 'font-medium', 'shadow-sm');
+        btnGrid.classList.remove('text-text-secondary');
+        btnRaw.classList.remove('bg-slate-surface-elevated', 'text-text-primary', 'font-medium', 'shadow-sm');
+        btnRaw.classList.add('text-text-secondary');
+      });
+    }
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>

@@ -6,11 +6,21 @@ from typing import Callable, Dict, List, Optional
 
 from .dialogue_output import save_dialogue_rpy, save_language_rpy, save_strings_rpy
 from .syntax_guard import protect_placeholders, restore_placeholders
-from .text_source_parser import extract_translation_entries, save_entries
+from .text_source_parser import extract_translation_entries, find_named_menus, save_entries
 from .translation_entry import TranslationEntry
 
 
 logger = logging.getLogger(__name__)
+
+
+def _normalize_translation(original_text: str, translated_text: str) -> str:
+    if (
+        translated_text.rstrip().endswith('"')
+        and not original_text.rstrip().endswith('"')
+        and translated_text.rstrip().count('"') % 2 == 1
+    ):
+        return translated_text.rstrip()[:-1].rstrip()
+    return translated_text
 
 
 class PipelineStage(str, Enum):
@@ -50,6 +60,13 @@ class TranslationPipeline:
         logger.info("Validando projeto em %s", self.input_path)
         self._validate()
         logger.info("Lendo textos traduzíveis em %s", self.game_path)
+        named_menus = find_named_menus(str(self.game_path))
+        if named_menus:
+            logger.info(
+                "%d menus nomeados detectados: %s",
+                len(named_menus),
+                ", ".join(menu.name for menu in named_menus),
+            )
         entries = extract_translation_entries(str(self.game_path))
         logger.info("%d entradas encontradas", len(entries))
 
@@ -69,7 +86,8 @@ class TranslationPipeline:
                     protected, placeholders = protect_placeholders(entry.original_text)
                     translated_protected = translator(protected)
                     translated = restore_placeholders(translated_protected, placeholders)
-                    cache[entry.original_text] = translated
+                translated = _normalize_translation(entry.original_text, translated)
+                cache[entry.original_text] = translated
                 translations[entry.translation_id] = translated
             logger.info("Tradução concluída para %d entradas", total_entries)
 
@@ -127,6 +145,14 @@ class TranslationPipeline:
             raise FileNotFoundError(f"Pasta game não encontrada: {self.game_path}")
         if not self.game_path.is_dir():
             raise NotADirectoryError(f"Caminho inválido (não é pasta): {self.game_path}")
+
+        source_files = [
+            path
+            for path in self.game_path.rglob("*.rpy")
+            if "tl" not in path.relative_to(self.game_path).parts
+        ]
+        if not source_files:
+            raise FileNotFoundError(f"Nenhum arquivo .rpy encontrado em: {self.game_path}")
 
     @staticmethod
     def _resolve_paths(input_path: Path) -> tuple[Path, Path]:

@@ -126,6 +126,20 @@ class ConfigAndPathTests(unittest.TestCase):
         self.assertEqual(nested.project_root, root_path)
         self.assertEqual(nested.game_path, game_path)
 
+    def test_translation_pipeline_requires_source_rpy_file(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            game_path = Path(temp_dir) / "game"
+            (game_path / "tl" / "portuguese").mkdir(parents=True)
+            (game_path / "tl" / "portuguese" / "strings.rpy").write_text(
+                "translate portuguese strings:\n",
+                encoding="utf-8",
+            )
+
+            pipeline = TranslationPipeline(project_path=temp_dir, output_path="")
+
+            with self.assertRaisesRegex(FileNotFoundError, "Nenhum arquivo .rpy"):
+                pipeline.run()
+
     def test_infer_renpy_language_uses_output_folder_name(self) -> None:
         config = AppConfig()
         config.project.dialogue_output_path = "game/tl/portuguese/dialogue.rpy"
@@ -148,7 +162,7 @@ class ConfigAndPathTests(unittest.TestCase):
 
             pipeline = TranslationPipeline(project_path=str(root_path), output_path=str(root_path / "extracted_entries.json"))
 
-            with self.assertLogs("translation_pipeline", level="INFO") as logs:
+            with self.assertLogs("core.translation_pipeline", level="INFO") as logs:
                 result = pipeline.run(
                     translator=lambda text: f"pt::{text}",
                     cache={},
@@ -162,6 +176,29 @@ class ConfigAndPathTests(unittest.TestCase):
             self.assertTrue(any("Iniciando tradução de" in message for message in logs.output))
             self.assertTrue(any("traduzindo:" in message for message in logs.output))
             self.assertTrue(any("Arquivos gerados" in message for message in logs.output))
+
+    def test_translation_pipeline_removes_spurious_terminal_quote(self) -> None:
+        with TemporaryDirectory() as temp_dir:
+            root_path = Path(temp_dir)
+            game_path = root_path / "game"
+            game_path.mkdir()
+            (game_path / "script.rpy").write_text(
+                'label start:\n'
+                '    l "It ends normally"\n',
+                encoding="utf-8",
+            )
+            pipeline = TranslationPipeline(
+                project_path=str(root_path),
+                output_path=str(root_path / "extracted_entries.json"),
+            )
+
+            result = pipeline.run(
+                translator=lambda text: f"{text} \"",
+                cache={},
+                language="portuguese",
+            )
+
+        self.assertEqual(result.translations[result.entries[0].translation_id], "It ends normally")
 
 
 if __name__ == "__main__":

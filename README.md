@@ -27,29 +27,14 @@ Projeto_traducao_renpy/
 │   ├── dialogue_output.py
 │   ├── syntax_guard.py
 │   ├── text_source_parser.py
+│   ├── tl_parser.py
 │   ├── translation_entry.py
 │   ├── translation_pipeline.py
 │   └── translator.py
 
-├── game/
-│   └── tl/
-│       └── portuguese/
-│           ├── dialogue.rpy
-│           └── strings.rpy
-│
-├── legacy/
-│   ├── extractor.py
-│   ├── extractor_dialogue.py
-│   ├── generator.py
-│   ├── generator_dialogue.py
-│   ├── generate_strings.py
-│   ├── main_menu.py
-│   └── test.py
-
 ├── tests/
 │   ├── fixtures/
 │   │   └── sample_game.rpy
-│   ├── extracted_entries.json
 │   └── test_text_source_parser.py
 │
 ├── venv/
@@ -83,7 +68,7 @@ Projeto_traducao_renpy/
 - [text_source_parser.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/text_source_parser.py): parser de `.rpy`, com extração de diálogos, narração e escolhas.
 - [syntax_guard.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/syntax_guard.py): protege placeholders como `[player]`, `{points}` e `%s`.
 - [translation_entry.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/translation_entry.py): estrutura das entradas e geração de `translation_id`.
-- [dialogue_output.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/dialogue_output.py): gera `game/tl/portuguese/dialogue.rpy`.
+- [core/dialogue_output.py](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/core/dialogue_output.py): gera `game/tl/portuguese/dialogue.rpy`.
 
 ## Pastas e Caminhos
 
@@ -95,8 +80,8 @@ Projeto_traducao_renpy/
 
 ### Saída Ren'Py
 
-- [game/tl/portuguese/dialogue.rpy](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/game/tl/portuguese/dialogue.rpy): blocos `translate portuguese <label>:` com diálogos e narrações.
-- [game/tl/portuguese/strings.rpy](/c:/Users/mathe/OneDrive/Área%20de%20Trabalho/Projeto_traducao_renpy/game/tl/portuguese/strings.rpy): arquivo do fluxo legado de strings.
+- `game/tl/<idioma>/dialogue.rpy`: saída gerada com diálogos e narrações.
+- `game/tl/<idioma>/strings.rpy`: saída gerada com escolhas de menu.
 
 ### Testes
 
@@ -212,20 +197,6 @@ O projeto atualmente depende de:
 ```text
 requests
 ```
-
-## Fluxos Legados
-
-O repositório também contém um fluxo mais antigo baseado em scripts separados, agora reunidos em [legacy/](legacy/).
-
-- [legacy/main_menu.py](legacy/main_menu.py)
-- [legacy/extractor.py](legacy/extractor.py)
-- [legacy/generator.py](legacy/generator.py)
-- [legacy/generate_strings.py](legacy/generate_strings.py)
-- [legacy/extractor_dialogue.py](legacy/extractor_dialogue.py)
-- [legacy/generator_dialogue.py](legacy/generator_dialogue.py)
-- [legacy/test.py](legacy/test.py)
-
-Esses arquivos podem ser úteis para referência, mas o fluxo mais consistente hoje é o de `TranslationPipeline`.
 
 ## Observações
 

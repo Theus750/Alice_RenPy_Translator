@@ -1,0 +1,594 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-caption-mono text-caption-mono text-text-muted">Sincronização</span><span class="font-caption-mono text-caption-mono text-secondary">Online</span></div><div class="w-full bg-surface-container-high h-1 rounded overflow-hidden"><div class="bg-secondary h-full w-full"></div></div></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full">
+<div class="p-6 flex flex-col gap-6 max-w-[1600px] mx-auto w-full">
+<!-- Top Actionable Header -->
+<div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4 bg-surface-container-low p-5 rounded-xl shadow-md">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Varredura e Extração AST em Andamento</h1>
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-surface-container-high text-primary font-caption-mono text-caption-mono font-medium">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+            EM EXECUÇÃO · Etapa 3 de 5
+          </span>
+</div>
+<p class="font-body-dense text-body-dense text-text-secondary">
+          Descompactando pacotes .rpa, analisando nós de sintaxe abstrata (AST) e catalogando strings extraíveis...
+        </p>
+</div>
+<div class="flex items-center gap-2.5 self-start lg:self-center">
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-text-primary font-body-dense text-body-dense transition-all shadow-sm active:scale-95" id="pause-btn" type="button">
+<span class="material-symbols-outlined text-[18px] text-tertiary">pause</span>
+<span>Pausar Análise</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-error-red-bg hover:bg-error-container text-error font-body-dense text-body-dense transition-all shadow-sm active:scale-95" id="cancel-btn" type="button">
+<span class="material-symbols-outlined text-[18px]">close</span>
+<span>Cancelar Varredura</span>
+</button>
+</div>
+</div>
+<!-- Hero Progress Overview Card -->
+<div class="relative overflow-hidden bg-surface-container-low rounded-xl p-6 shadow-md flex flex-col gap-5">
+<div class="absolute -top-24 -right-24 w-80 h-80 bg-primary/5 rounded-full blur-3xl pointer-events-none"></div>
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4 z-10">
+<div class="flex items-baseline gap-3">
+<span class="font-metric-val text-[2.75rem] leading-none text-text-primary tracking-tighter">68<span class="text-primary font-metric-val text-headline-lg">%</span></span>
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-text-primary">Analisando nós de diálogo e scripts Ren'Py</span>
+<span class="font-caption-mono text-caption-mono text-secondary">Taxa de sucesso: 100% (0 nós corrompidos)</span>
+</div>
+</div>
+<div class="flex items-center gap-6 font-caption-mono text-caption-mono text-text-secondary">
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span>
+<span>Decorrido: <strong class="text-text-primary">00:18s</strong></span>
+</div>
+<span class="text-surface-variant">/</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-tertiary">hourglass_top</span>
+<span>Restante: <strong class="text-text-primary">~00:08s</strong></span>
+</div>
+<span class="text-surface-variant">/</span>
+<div class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-secondary">speed</span>
+<span>Velocidade: <strong class="text-text-primary">~58 nós AST/s</strong></span>
+</div>
+</div>
+</div>
+<!-- Master Progress Bar with Glow -->
+<div class="w-full bg-surface-container-lowest h-3 rounded-full overflow-hidden p-0.5 shadow-inner z-10">
+<div class="h-full bg-gradient-to-r from-primary via-primary-container to-secondary rounded-full relative transition-all duration-300" id="master-progress-fill" style="width: 68%;">
+<div class="absolute inset-0 bg-white/20 animate-pulse"></div>
+</div>
+</div>
+<!-- Metric Pills Row -->
+<div class="grid grid-cols-2 md:grid-cols-4 gap-3 z-10">
+<div class="bg-surface-container p-3 rounded-lg flex flex-col gap-0.5">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Arquivos .RPY</span>
+<span class="font-metric-val text-metric-val text-text-primary">29 <span class="text-text-muted text-body-dense">/ 42</span></span>
+<span class="font-body-dense text-caption-mono text-secondary">69.0% concluído</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg flex flex-col gap-0.5">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Strings Detectadas</span>
+<span class="font-metric-val text-metric-val text-primary">1.042</span>
+<span class="font-body-dense text-caption-mono text-text-secondary">+18 nos últimos 2s</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg flex flex-col gap-0.5">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Pacotes RPA Extraídos</span>
+<span class="font-metric-val text-metric-val text-text-primary">2 <span class="text-text-muted text-body-dense">/ 2</span></span>
+<span class="font-body-dense text-caption-mono text-secondary">100% descompactados</span>
+</div>
+<div class="bg-surface-container p-3 rounded-lg flex flex-col gap-0.5">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Memória Heap AST</span>
+<span class="font-metric-val text-metric-val text-text-primary">84.2 <span class="text-text-muted text-body-dense">MB</span></span>
+<span class="font-body-dense text-caption-mono text-text-secondary">Estável (Limiar: 512MB)</span>
+</div>
+</div>
+</div>
+<!-- Multi-Step Pipeline Visualizer -->
+<div class="bg-surface-container-low rounded-xl p-5 shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Etapas do Pipeline de Extração</span>
+<span class="font-caption-mono text-caption-mono text-primary">Pipeline v2 · Ren'Py AST Engine</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-2">
+<!-- Step 1 -->
+<div class="bg-surface-container p-3.5 rounded-lg flex flex-col justify-between gap-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-secondary font-medium">01 · Concluído</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-base text-text-primary">Validação &amp; Manifestos</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">game/ e Ren'Py 8.1.3 OK</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-secondary">0.4s</span>
+</div>
+<!-- Step 2 -->
+<div class="bg-surface-container p-3.5 rounded-lg flex flex-col justify-between gap-3 relative overflow-hidden">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-secondary font-medium">02 · Concluído</span>
+<span class="material-symbols-outlined text-[18px] text-secondary">check_circle</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-base text-text-primary">Descompactação RPA</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">archive.rpa, patch.rpa</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-secondary">3.2s</span>
+</div>
+<!-- Step 3 Active -->
+<div class="bg-surface-container-high p-3.5 rounded-lg flex flex-col justify-between gap-3 relative overflow-hidden shadow-sm">
+<div class="absolute top-0 left-0 bottom-0 w-1 bg-primary"></div>
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-primary font-bold">03 · Em Andamento</span>
+<span class="material-symbols-outlined text-[18px] text-primary animate-spin">sync</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-base text-text-primary">Varredura AST Profunda</span>
+<span class="font-caption-mono text-caption-mono text-primary">chapter2_dialogue.rpy</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 68%;"></div>
+</div>
+</div>
+<!-- Step 4 Pending -->
+<div class="bg-surface-container/60 p-3.5 rounded-lg flex flex-col justify-between gap-3 opacity-60">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted">04 · Na Fila</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted">hourglass_empty</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-base text-text-muted">Sanitização de Strings</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">Detecção _() &amp; interpolação</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Aguardando</span>
+</div>
+<!-- Step 5 Pending -->
+<div class="bg-surface-container/60 p-3.5 rounded-lg flex flex-col justify-between gap-3 opacity-60">
+<div class="flex items-center justify-between">
+<span class="font-caption-mono text-caption-mono text-text-muted">05 · Na Fila</span>
+<span class="material-symbols-outlined text-[18px] text-text-muted">pending_actions</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-headline-sm text-body-base text-text-muted">Indexação e JSON</span>
+<span class="font-caption-mono text-caption-mono text-text-muted">extracted_entries.json</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">Aguardando</span>
+</div>
+</div>
+</div>
+<!-- Split Visualizer & Terminal Console -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+<!-- Left: Active AST Node Preview (7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-4">
+<div class="bg-surface-container-low rounded-xl p-5 shadow-md flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">account_tree</span>
+<span class="font-headline-sm text-headline-sm text-text-primary">Arquivo em Análise no Momento</span>
+</div>
+<span class="px-2 py-0.5 bg-surface-container rounded font-caption-mono text-caption-mono text-secondary">
+              Thread Ativa #1 (Worker-0)
+            </span>
+</div>
+<!-- Current Script Context -->
+<div class="bg-surface-container rounded-lg p-3 flex flex-col gap-2">
+<div class="flex items-center justify-between font-caption-mono text-caption-mono">
+<div class="flex items-center gap-2 text-text-primary">
+<span class="material-symbols-outlined text-[16px] text-tertiary">description</span>
+<span class="font-medium">game/scripts/chapter2_dialogue.rpy</span>
+</div>
+<span class="text-text-muted">Linha 384 de 620</span>
+</div>
+<div class="w-full bg-surface-container-lowest h-1 rounded-full overflow-hidden">
+<div class="bg-secondary h-full rounded-full" style="width: 61%;"></div>
+</div>
+</div>
+<!-- AST Node Inspector Box -->
+<div class="flex flex-col gap-2">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Inspeção de Nó AST Bruto</span>
+<div class="bg-surface-container-lowest p-3.5 rounded-lg font-caption-mono text-caption-mono text-text-code overflow-x-auto shadow-inner">
+<span class="text-primary font-semibold">renpy.ast.Say</span>(<br>
+              &nbsp;&nbsp;who=<span class="text-secondary">"eileen"</span>,<br>
+              &nbsp;&nbsp;what=<span class="text-tertiary">"I wonder what lies ahead in the misty forest..."</span>,<br>
+              &nbsp;&nbsp;interact=<span class="text-primary">True</span>,<br>
+              &nbsp;&nbsp;line=<span class="text-text-muted">384</span><br>
+              )
+            </div>
+</div>
+<!-- Extracted String & Token Metadata -->
+<div class="flex flex-col gap-2">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">String Extraída &amp; Sanitização Prévia</span>
+<div class="bg-surface-container p-3.5 rounded-lg flex flex-col gap-3">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary shrink-0 mt-0.5">format_quote</span>
+<p class="font-body-base text-body-base text-text-primary italic">
+                  "I wonder what lies ahead in the misty forest..."
+                </p>
+</div>
+<div class="flex flex-wrap items-center gap-2 pt-2 bg-surface-container-low p-2 rounded">
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-on-surface-variant font-label-token text-label-token flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-secondary">check</span>
+                  Sem variáveis inline
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-primary font-label-token text-label-token flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">chat_bubble_outline</span>
+                  Tipo: Dialogue (Say)
+                </span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-text-secondary font-label-token text-label-token">
+                  Hash: #a982f1b4
+                </span>
+</div>
+</div>
+</div>
+<!-- Real-Time Metrics Breakdown -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-2 pt-1">
+<div class="bg-surface-container p-2.5 rounded flex flex-col gap-1">
+<span class="font-caption-mono text-caption-mono text-text-muted">Diálogos</span>
+<span class="font-label-code text-headline-sm text-text-primary font-bold">782</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded flex flex-col gap-1">
+<span class="font-caption-mono text-caption-mono text-text-muted">Menus / Opções</span>
+<span class="font-label-code text-headline-sm text-primary font-bold">146</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded flex flex-col gap-1">
+<span class="font-caption-mono text-caption-mono text-text-muted">Strings de UI</span>
+<span class="font-label-code text-headline-sm text-secondary font-bold">114</span>
+</div>
+<div class="bg-surface-container p-2.5 rounded flex flex-col gap-1">
+<span class="font-caption-mono text-caption-mono text-text-muted">Globais _()</span>
+<span class="font-label-code text-headline-sm text-tertiary font-bold">28</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Live Terminal Window (5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-4">
+<div class="bg-surface-container-lowest rounded-xl p-4 shadow-xl flex flex-col h-[570px]">
+<!-- Terminal Header Toolbar -->
+<div class="flex items-center justify-between pb-3 bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<div class="flex items-center gap-1.5 mr-2">
+<span class="w-2.5 h-2.5 rounded-full bg-error-red"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-primary font-semibold">Console de Varredura</span>
+<span class="px-1.5 py-0.2 rounded bg-success-emerald-bg text-secondary font-caption-mono text-caption-mono text-[10px]">LIVE</span>
+</div>
+<div class="flex items-center gap-2 font-caption-mono text-caption-mono">
+<button class="px-2 py-1 bg-surface-container-low hover:bg-surface-container text-text-secondary hover:text-text-primary rounded transition-colors flex items-center gap-1" id="copy-log-btn" title="Copiar saída do log" type="button">
+<span class="material-symbols-outlined text-[14px]">content_copy</span>
+<span>Copiar</span>
+</button>
+</div>
+</div>
+<!-- Terminal Scrollable Stream -->
+<div class="flex-1 overflow-y-auto font-caption-mono text-caption-mono flex flex-col gap-1.5 py-2 pr-1 select-text" id="terminal-stream">
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:01]</span>
+<span class="text-primary font-bold shrink-0">[INFO]</span>
+<span class="text-text-secondary">Inicializando motor de análise AST v2.4 para Ren'Py 8.x</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:02]</span>
+<span class="text-secondary font-bold shrink-0">[OK]</span>
+<span class="text-text-secondary">Diretório game/ validado. SDK alvo detectado: Ren'Py 8.1.3 (Python 3.9)</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:03]</span>
+<span class="text-tertiary font-bold shrink-0">[RPA]</span>
+<span class="text-text-secondary">Inspecionando 'game/archive.rpa'... 124 assets extraídos para buffer</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:04]</span>
+<span class="text-tertiary font-bold shrink-0">[RPA]</span>
+<span class="text-text-secondary">Inspecionando 'game/patch.rpa'... 12 scripts sobrepostos</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:05]</span>
+<span class="text-primary-container font-bold shrink-0">[AST]</span>
+<span class="text-text-secondary">Parseando 'game/script.rpy'... 48 nós Say, 6 nós Menu indexados</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:07]</span>
+<span class="text-primary-container font-bold shrink-0">[AST]</span>
+<span class="text-text-secondary">Parseando 'game/options.rpy'... 4 strings de configuração global extraídas</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:09]</span>
+<span class="text-primary-container font-bold shrink-0">[AST]</span>
+<span class="text-text-secondary">Parseando 'game/screens.rpy'... 114 strings UI e botões mapeados</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:11]</span>
+<span class="text-primary-container font-bold shrink-0">[AST]</span>
+<span class="text-text-secondary">Parseando 'game/gui.rpy'... Ignorando fontes e hex styles declarativos</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:14]</span>
+<span class="text-primary-container font-bold shrink-0">[AST]</span>
+<span class="text-text-secondary">Parseando 'game/scripts/chapter1.rpy'... 340 diálogos indexados</span>
+</div>
+<div class="flex items-start gap-2 text-text-muted">
+<span class="text-text-muted shrink-0">[00:00:16]</span>
+<span class="text-primary-container font-bold shrink-0">[AST]</span>
+<span class="text-text-secondary">Parseando 'game/scripts/chapter1_choices.rpy'... 24 menus detectados</span>
+</div>
+<div class="flex items-start gap-2 text-text-primary bg-surface-container-high/40 p-1 rounded" id="active-log-line">
+<span class="text-text-muted shrink-0">[00:00:18]</span>
+<span class="text-primary font-bold shrink-0">[AST]</span>
+<span class="text-primary">Analisando 'game/scripts/chapter2_dialogue.rpy'... linha 384 [EM PROGRESSO]</span>
+</div>
+</div>
+<!-- Terminal Bottom Status Bar -->
+<div class="pt-3 flex items-center justify-between font-caption-mono text-caption-mono text-text-muted bg-surface-container-lowest">
+<div class="flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>Auto-scroll: Ativo</span>
+</div>
+<span>Nível: Verbose (Debug AST)</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Non-destructive Mode Safety Banner -->
+<div class="bg-surface-container-low p-3.5 rounded-xl flex items-center justify-between gap-3 shadow-sm">
+<div class="flex items-center gap-3">
+<div class="p-1.5 bg-info-blue-bg text-primary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+</div>
+<span class="font-body-dense text-body-dense text-text-secondary">
+<strong class="text-text-primary">Modo não destrutivo ativado:</strong> Nenhuma alteração é gravada no seu diretório original durante a varredura. Todos os nós são compilados em memória segura temporária.
+        </span>
+</div>
+<div class="flex items-center gap-2 shrink-0">
+<span class="font-caption-mono text-caption-mono text-text-muted">PID: 14820</span>
+<span class="text-surface-variant">|</span>
+<span class="font-caption-mono text-caption-mono text-secondary">Isolamento OK</span>
+</div>
+</div>
+</div>
+</div>
+<script>
+  (function() {
+    // Micro-interactions for pause & cancel states
+    const pauseBtn = document.getElementById('pause-btn');
+    const cancelBtn = document.getElementById('cancel-btn');
+    const copyBtn = document.getElementById('copy-log-btn');
+    let isPaused = false;
+
+    if (pauseBtn) {
+      pauseBtn.addEventListener('click', function() {
+        isPaused = !isPaused;
+        const icon = pauseBtn.querySelector('.material-symbols-outlined');
+        const text = pauseBtn.querySelector('span:last-child');
+        if (isPaused) {
+          icon.textContent = 'play_arrow';
+          icon.className = 'material-symbols-outlined text-[18px] text-secondary';
+          text.textContent = 'Retomar Análise';
+          pauseBtn.classList.add('bg-surface-container-highest');
+        } else {
+          icon.textContent = 'pause';
+          icon.className = 'material-symbols-outlined text-[18px] text-tertiary';
+          text.textContent = 'Pausar Análise';
+          pauseBtn.classList.remove('bg-surface-container-highest');
+        }
+      });
+    }
+
+    if (cancelBtn) {
+      cancelBtn.addEventListener('click', function() {
+        if (confirm('Deseja realmente cancelar a extração AST? O progresso não salvo será descartado.')) {
+          window.location.href = '#';
+        }
+      });
+    }
+
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        const originalHtml = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<span class="material-symbols-outlined text-[14px] text-secondary">done</span><span>Copiado</span>';
+        setTimeout(() => {
+          copyBtn.innerHTML = originalHtml;
+        }, 1500);
+      });
+    }
+
+    // Auto-scroll terminal simulation
+    const terminal = document.getElementById('terminal-stream');
+    if (terminal) {
+      terminal.scrollTop = terminal.scrollHeight;
+    }
+  })();
+</script></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>

@@ -14,10 +14,12 @@ env/
 venv/
 .venv/
 
+# Jogos locais usados nos testes
+jogo_teste/
+
 # Cache e artefatos locais do pipeline
 cache.json
 !config.json
-!tests/extracted_entries.json
 
 # Ren'Py temporarios
 *.rpyc

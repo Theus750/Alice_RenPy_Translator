@@ -1,0 +1,685 @@
+<!DOCTYPE html><html class="dark" lang="pt-BR"><head><meta charset="utf-8"><meta content="width=device-width, initial-scale=1.0" name="viewport"><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"><link href="https://fonts.googleapis.com" rel="preconnect"><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "slate-surface-elevated": "#273549",
+          "on-tertiary-fixed-variant": "#653e00",
+          "secondary-fixed-dim": "#4edea3",
+          "on-tertiary-container": "#3e2400",
+          "surface-variant": "#2d3449",
+          "surface-dim": "#0b1326",
+          "secondary": "#4edea3",
+          "surface-container": "#171f33",
+          "tag-renpy-token": "#818CF8",
+          "on-surface-variant": "#c2c6d6",
+          "surface-tint": "#adc6ff",
+          "on-primary": "#002e6a",
+          "surface-container-low": "#131b2e",
+          "text-secondary": "#94A3B8",
+          "outline": "#8c909f",
+          "on-primary-fixed-variant": "#004395",
+          "surface-container-high": "#222a3d",
+          "inverse-primary": "#005ac2",
+          "error-red-bg": "#451A1A",
+          "tertiary-fixed-dim": "#ffb95f",
+          "error-container": "#93000a",
+          "primary-fixed": "#d8e2ff",
+          "surface-bright": "#31394d",
+          "on-primary-fixed": "#001a42",
+          "success-emerald-bg": "#064E3B",
+          "on-secondary": "#003824",
+          "slate-surface": "#1E293B",
+          "tag-renpy-token-bg": "#1E1B4B",
+          "primary-container": "#4d8eff",
+          "on-error": "#690005",
+          "info-blue-bg": "#172554",
+          "tertiary-container": "#ca8100",
+          "on-tertiary-fixed": "#2a1700",
+          "inverse-on-surface": "#283044",
+          "on-error-container": "#ffdad6",
+          "tertiary-fixed": "#ffddb8",
+          "text-muted": "#64748B",
+          "on-background": "#dae2fd",
+          "surface": "#0b1326",
+          "inverse-surface": "#dae2fd",
+          "error-red": "#EF4444",
+          "primary": "#adc6ff",
+          "on-secondary-fixed": "#002113",
+          "surface-container-highest": "#2d3449",
+          "on-surface": "#dae2fd",
+          "secondary-container": "#00a572",
+          "on-tertiary": "#472a00",
+          "warning-amber-bg": "#422006",
+          "surface-container-lowest": "#060e20",
+          "on-secondary-container": "#00311f",
+          "on-primary-container": "#00285d",
+          "on-secondary-fixed-variant": "#005236",
+          "primary-fixed-dim": "#adc6ff",
+          "text-primary": "#F8FAFC",
+          "background": "#0b1326",
+          "slate-border": "#334155",
+          "error": "#ffb4ab",
+          "text-code": "#E2E8F0",
+          "secondary-fixed": "#6ffbbe",
+          "tertiary": "#ffb95f",
+          "slate-border-subtle": "#1E293B",
+          "outline-variant": "#424754"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "px": "1px",
+          "0-5": "0.125rem",
+          "8": "2rem",
+          "header-height": "3.25rem",
+          "2": "0.5rem",
+          "6": "1.5rem",
+          "table-row-height": "2.25rem",
+          "4": "1rem",
+          "1": "0.25rem",
+          "3": "0.75rem",
+          "10": "2.5rem",
+          "5": "1.25rem",
+          "rail-width": "15rem",
+          "1-5": "0.375rem",
+          "status-bar-height": "1.75rem"
+        },
+        "fontFamily": {
+          "headline-sm": [
+            "Inter"
+          ],
+          "caption-mono": [
+            "JetBrains Mono"
+          ],
+          "display": [
+            "Inter"
+          ],
+          "headline-lg": [
+            "Inter"
+          ],
+          "body-base": [
+            "Inter"
+          ],
+          "label-token": [
+            "JetBrains Mono"
+          ],
+          "metric-val": [
+            "JetBrains Mono"
+          ],
+          "label-code": [
+            "JetBrains Mono"
+          ],
+          "body-dense": [
+            "Inter"
+          ]
+        },
+        "fontSize": {
+          "headline-sm": [
+            "1rem",
+            {
+              "lineHeight": "1.5rem",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "600"
+            }
+          ],
+          "caption-mono": [
+            "0.6875rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "400"
+            }
+          ],
+          "display": [
+            "1.75rem",
+            {
+              "lineHeight": "2.25rem",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-lg": [
+            "1.25rem",
+            {
+              "lineHeight": "1.75rem",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "600"
+            }
+          ],
+          "body-base": [
+            "0.875rem",
+            {
+              "lineHeight": "1.375rem",
+              "fontWeight": "400"
+            }
+          ],
+          "label-token": [
+            "0.75rem",
+            {
+              "lineHeight": "1rem",
+              "fontWeight": "500"
+            }
+          ],
+          "metric-val": [
+            "1.5rem",
+            {
+              "lineHeight": "1.875rem",
+              "letterSpacing": "-0.03em",
+              "fontWeight": "700"
+            }
+          ],
+          "label-code": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "500"
+            }
+          ],
+          "body-dense": [
+            "0.8125rem",
+            {
+              "lineHeight": "1.25rem",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      },
+    },
+  }</script></head><body class="bg-surface font-body-base text-body-base text-on-surface select-none antialiased"><header class="fixed top-0 left-0 right-0 h-header-height z-50 bg-surface-container-low flex items-center justify-between px-3"><div class="flex items-center gap-3"><img alt="RenLocalizer Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1VSzgYxj-QVpFNQ2icw2UPrVh1vL0bJIhDEowX5KRs8yv5U2rRX92RH05GLmPlh8ttBqZmgP0Vix6-vSUtEj9RuvU-EbPzEboR9Fpccl6GSrF3BfJPAZeK21RlGE4rmQR0SOrmJNHzjwEunwqaBqd_LDCPfNkz4PhgsWZ5OAd84kIhhQp6CwBBY8ug2IvJno0MwBZWnhuYoWtGPDNxTX5bMvrQzllZsMctvcujhGIn3gVtCN5dx4isHyaON"><div class="flex flex-col justify-center"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-none">RenLocalizer</span><span class="font-caption-mono text-caption-mono text-text-muted mt-0-5">v2.4.0-desktop</span></div><div class="flex items-center gap-2 ml-4 px-2 py-1 bg-surface-container rounded"><span class="material-symbols-outlined text-primary text-[18px]">folder_open</span><div class="flex flex-col text-left"><div class="flex items-center gap-1 cursor-pointer"><span class="font-body-dense text-body-dense text-on-surface font-medium">MeuJogo</span><span class="material-symbols-outlined text-text-muted text-[14px]">arrow_drop_down</span></div><span class="font-caption-mono text-caption-mono text-text-muted">C:\Games\MeuJogo</span></div></div></div><div class="flex items-center gap-2"><a class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" data-path="configuracoes" href="#" title="Configurações"><span class="material-symbols-outlined text-[18px]">settings</span></a><button class="flex items-center justify-center p-1-5 rounded hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface transition-colors" title="Ajuda e Documentação" type="button"><span class="material-symbols-outlined text-[18px]">help_outline</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center ml-1 mr-2"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex items-center ml-2 pl-2"><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Minimizar" type="button"><span class="material-symbols-outlined text-[16px]">remove</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-surface-container-high text-text-muted hover:text-on-surface transition-colors" title="Maximizar" type="button"><span class="material-symbols-outlined text-[16px]">crop_square</span></button><button class="flex items-center justify-center w-8 h-8 rounded hover:bg-error-container text-text-muted hover:text-on-error-container transition-colors" title="Fechar" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button></div></div></header><aside class="fixed left-0 top-header-height bottom-status-bar-height w-rail-width bg-surface-container-low z-40 flex flex-col justify-between py-2"><div class="flex flex-col gap-1 px-2"><div class="px-3 py-1 font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Navegação do Projeto</div><nav class="flex flex-col gap-0-5" data-active-classes="bg-slate-surface-elevated text-on-surface font-medium"><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="visao-geral" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">dashboard</span><span>Visão geral</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="projeto" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">folder</span><span>Projeto</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="traducao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">translate</span><span>Tradução</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="revisao" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">spellcheck</span><span>Revisão</span></div><span class="px-1-5 py-0-5 font-caption-mono text-caption-mono rounded bg-surface-container-highest text-secondary">12</span></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="arquivos-gerados" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">snippet_folder</span><span>Arquivos gerados</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="glossario" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">menu_book</span><span>Glossário</span></div></a><a class="flex items-center justify-between px-3 py-1-5 rounded text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors font-body-dense text-body-dense" data-path="configuracoes" href="#"><div class="flex items-center gap-2"><span class="material-symbols-outlined text-[18px]">tune</span><span>Configurações</span></div></a></nav></div><div class="px-3 py-2 bg-surface-container-lowest mx-2 rounded flex flex-col gap-1"><div class="flex items-center justify-between"><span class="font-caption-mono text-caption-mono text-text-muted">Sincronização</span><span class="font-caption-mono text-caption-mono text-secondary">Online</span></div><div class="w-full bg-surface-container-high h-1 rounded overflow-hidden"><div class="bg-secondary h-full w-full"></div></div></div></aside><div class="pl-rail-width pb-status-bar-height min-h-screen bg-surface"><main class="w-full pt-header-height bg-surface min-h-[calc(100vh-theme(spacing.status-bar-height))]"><div class="flex flex-col w-full">
+<!-- Script para atualizar o estado ativo na sidebar do shell global -->
+<script>
+    (function activateSidebar() {
+      const activeItem = document.querySelector('nav a[data-path="revisao"]');
+      if (activeItem) {
+        document.querySelectorAll('nav a').forEach(el => {
+          el.classList.remove('bg-slate-surface-elevated', 'text-on-surface', 'font-medium');
+          el.classList.add('text-on-surface-variant');
+        });
+        activeItem.classList.add('bg-slate-surface-elevated', 'text-on-surface', 'font-medium');
+        activeItem.classList.remove('text-on-surface-variant');
+      }
+    })();
+  </script>
+<!-- Cabeçalho da Página de Revisão -->
+<header class="w-full bg-surface-container-low px-4 py-3 shadow-sm flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+<div class="flex flex-col gap-0-5">
+<div class="flex items-center gap-2">
+<h1 class="font-headline-lg text-headline-lg text-text-primary tracking-tight">Revisão de Traduções</h1>
+<span class="px-2 py-0-5 rounded bg-surface-container-highest font-caption-mono text-caption-mono text-primary font-medium tracking-wide">
+          v2.4 AST-SAFE
+        </span>
+</div>
+<div class="flex flex-wrap items-center gap-2 font-caption-mono text-caption-mono text-text-muted">
+<span class="text-on-surface-variant font-medium">1.284</span> entradas no total
+        <span class="text-outline-variant">•</span>
+<span class="text-secondary font-medium">1.258 revisadas</span>
+<span class="text-outline-variant">•</span>
+<span class="text-tertiary font-medium">18 pendentes</span>
+<span class="text-outline-variant">•</span>
+<span class="text-error font-medium flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-error animate-pulse"></span>
+          8 com alertas de placeholders
+        </span>
+</div>
+</div>
+<!-- Ações de topo -->
+<div class="flex items-center gap-2 self-start md:self-auto">
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-text-secondary hover:text-text-primary font-body-dense text-body-dense transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">done_all</span>
+<span>Aprovar Filtradas</span>
+</button>
+<button class="flex items-center gap-1.5 px-3 py-1.5 rounded bg-surface-container-high hover:bg-surface-bright text-text-secondary hover:text-text-primary font-body-dense text-body-dense transition-colors" title="Exportar CSV/JSON de divergências" type="button">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Relatório de Erros</span>
+</button>
+<button class="flex items-center gap-1.5 px-3.5 py-1.5 rounded bg-primary-container hover:bg-inverse-primary text-on-primary font-body-dense text-body-dense font-medium shadow transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">save</span>
+<span>Salvar Alterações</span>
+</button>
+</div>
+</header>
+<!-- Faixa de Métricas Rápidas & Telemetria do Motor -->
+<section class="grid grid-cols-2 md:grid-cols-4 gap-2 px-4 py-2 bg-surface-container-lowest">
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Integridade Tokens</span>
+<span class="font-metric-val text-metric-val text-error">99.3%</span>
+</div>
+<div class="w-8 h-8 rounded bg-error-red-bg flex items-center justify-center text-error">
+<span class="material-symbols-outlined text-[18px]">warning</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Taxa de Revisão</span>
+<span class="font-metric-val text-metric-val text-secondary">97.9%</span>
+</div>
+<div class="w-8 h-8 rounded bg-success-emerald-bg flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Hits de Memória/Cache</span>
+<span class="font-metric-val text-metric-val text-primary">936 str</span>
+</div>
+<div class="w-8 h-8 rounded bg-info-blue-bg flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[18px]">cached</span>
+</div>
+</div>
+<div class="flex items-center justify-between p-2 rounded bg-surface-container-low">
+<div class="flex flex-col">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase tracking-wider">Interpolações Ren'Py</span>
+<span class="font-metric-val text-metric-val text-tertiary">412 vars</span>
+</div>
+<div class="w-8 h-8 rounded bg-warning-amber-bg flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined text-[18px]">data_object</span>
+</div>
+</div>
+</section>
+<!-- Barra de Filtros, Pesquisa e Controles de Exibição -->
+<section class="p-4 bg-surface-container-low flex flex-col gap-3">
+<!-- Linha 1: Input de Busca + Pills de Status -->
+<div class="flex flex-col lg:flex-row items-stretch lg:items-center gap-3">
+<!-- Campo de Busca -->
+<div class="relative flex-1">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-muted text-[18px]">search</span>
+<input class="w-full bg-surface-container-highest text-on-surface placeholder:text-text-muted font-body-dense text-body-dense rounded pl-9 pr-14 py-1.5 focus:outline-none focus:bg-slate-surface-elevated" placeholder="Buscar no original ou tradução..." type="text">
+<span class="absolute right-2.5 top-1/2 -translate-y-1/2 font-caption-mono text-caption-mono text-text-muted bg-surface-container px-1.5 py-0.5 rounded">Ctrl+F</span>
+</div>
+<!-- Filtros Rápidos (Pills) -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0">
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-text-secondary font-body-dense text-body-dense whitespace-nowrap transition-colors" type="button">
+          Todas <span class="font-caption-mono text-caption-mono ml-1 text-text-muted">1.284</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-tertiary font-body-dense text-body-dense whitespace-nowrap transition-colors flex items-center gap-1" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+          Pendentes <span class="font-caption-mono text-caption-mono ml-0.5 text-text-muted">18</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-error-red-bg text-error font-body-dense text-body-dense whitespace-nowrap transition-colors flex items-center gap-1 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[14px]">report_problem</span>
+          Com Alertas <span class="font-caption-mono text-caption-mono ml-0.5 bg-error-container text-on-error-container px-1 rounded-sm">8</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-text-secondary font-body-dense text-body-dense whitespace-nowrap transition-colors" type="button">
+          Do Cache <span class="font-caption-mono text-caption-mono ml-1 text-text-muted">936</span>
+</button>
+<button class="px-2.5 py-1 rounded bg-surface-container-high hover:bg-surface-bright text-text-secondary font-body-dense text-body-dense whitespace-nowrap transition-colors" type="button">
+          Via Motor <span class="font-caption-mono text-caption-mono ml-1 text-text-muted">340</span>
+</button>
+</div>
+</div>
+<!-- Linha 2: Dropdowns e Filtro de Sintaxe -->
+<div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+<div class="flex flex-wrap items-center gap-2">
+<!-- Dropdown Tipo -->
+<div class="flex items-center gap-1.5 bg-surface-container-highest px-2.5 py-1 rounded">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Tipo:</span>
+<select class="bg-transparent text-on-surface font-body-dense text-body-dense focus:outline-none cursor-pointer pr-2">
+<option class="bg-surface-container">Todos os tipos</option>
+<option class="bg-surface-container">Diálogo</option>
+<option class="bg-surface-container">Narração</option>
+<option class="bg-surface-container">Menu / Escolha</option>
+<option class="bg-surface-container">Strings de UI</option>
+</select>
+</div>
+<!-- Dropdown Arquivo -->
+<div class="flex items-center gap-1.5 bg-surface-container-highest px-2.5 py-1 rounded">
+<span class="font-caption-mono text-caption-mono text-text-muted uppercase">Arquivo:</span>
+<select class="bg-transparent text-on-surface font-body-dense text-body-dense focus:outline-none cursor-pointer pr-2 font-caption-mono">
+<option class="bg-surface-container">Todos os arquivos</option>
+<option class="bg-surface-container">game/script.rpy</option>
+<option class="bg-surface-container">game/chapter1.rpy</option>
+<option class="bg-surface-container">game/chapter2.rpy</option>
+<option class="bg-surface-container">game/screens.rpy</option>
+</select>
+</div>
+<!-- Toggle Switch de Segurança -->
+<label class="flex items-center gap-2 cursor-pointer select-none bg-surface-container-highest hover:bg-slate-surface-elevated px-2.5 py-1 rounded transition-colors">
+<input checked="" class="w-3.5 h-3.5 rounded bg-surface-container text-primary focus:ring-0 cursor-pointer" type="checkbox">
+<span class="font-body-dense text-body-dense text-on-surface-variant">Destacar placeholders divergentes</span>
+<span class="px-1 py-0.2 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-caption-mono text-caption-mono">AST</span>
+</label>
+</div>
+<div class="flex items-center gap-2 font-caption-mono text-caption-mono text-text-muted">
+<span>Modo de visualização:</span>
+<div class="flex items-center bg-surface-container-highest rounded p-0.5">
+<button class="p-1 rounded bg-surface-container text-primary" title="Split Screen" type="button">
+<span class="material-symbols-outlined text-[16px]">vertical_split</span>
+</button>
+<button class="p-1 rounded text-text-muted hover:text-on-surface" title="Tabela Expandida" type="button">
+<span class="material-symbols-outlined text-[16px]">table_rows</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Layout Principal em Duas Colunas (Split 65% / 35%) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-3 p-4 items-start">
+<!-- COLUNA ESQUERDA / CENTRO: Tabela Densa de Revisão (65% / 8 cols) -->
+<div class="lg:col-span-8 flex flex-col rounded bg-surface-container shadow-md overflow-hidden">
+<!-- Cabeçalho Fixo da Tabela -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2 bg-surface-container-high font-caption-mono text-caption-mono uppercase tracking-wider text-text-muted select-none">
+<div class="col-span-2 flex items-center gap-1">
+<span>Validação</span>
+<span class="material-symbols-outlined text-[14px]">arrow_drop_down</span>
+</div>
+<div class="col-span-2">Tipo / Arquivo</div>
+<div class="col-span-4">Original (EN)</div>
+<div class="col-span-3">Tradução (PT-BR)</div>
+<div class="col-span-1 text-right">Ação</div>
+</div>
+<!-- Linhas de Dados -->
+<div class="flex flex-col text-on-surface divide-y-0 text-body-dense">
+<!-- Linha 1: Alerta Crítico / Selecionada Atual -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2.5 bg-slate-surface-elevated hover:bg-surface-bright transition-colors cursor-pointer relative items-center">
+<!-- Indicador lateral ativo de linha selecionada -->
+<div class="absolute left-0 top-0 bottom-0 w-1 bg-error"></div>
+<!-- Validação / Status -->
+<div class="col-span-2 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error animate-ping"></span>
+<span class="px-1.5 py-0.5 rounded bg-error-red-bg text-error font-caption-mono text-caption-mono font-medium truncate">
+              Placeholder ⚠
+            </span>
+</div>
+<!-- Metadados -->
+<div class="col-span-2 flex flex-col leading-tight min-w-0">
+<span class="font-body-dense text-text-primary font-medium truncate">Narração</span>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">chapter1.rpy:84</span>
+</div>
+<!-- Texto Original (EN) com Token Ren'Py -->
+<div class="col-span-4 font-body-base leading-snug break-words">
+            You gained 
+            <span class="inline-block px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-label-token border-0">{points}</span> 
+            bonus points.
+          </div>
+<!-- Tradução (PT-BR) com Alerta de Token -->
+<div class="col-span-3 font-body-base leading-snug break-words">
+            Você ganhou 
+            <span class="inline-block px-1 py-0.5 rounded bg-error-red-bg text-error font-label-token font-bold animate-pulse">{pontos}</span> 
+            pontos bônus.
+          </div>
+<!-- Ações Rápidas -->
+<div class="col-span-1 flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container-highest text-primary" title="Editar no Inspetor" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Linha 2: Pendente de Revisão -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2.5 bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer items-center">
+<div class="col-span-2 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="px-1.5 py-0.5 rounded bg-warning-amber-bg text-tertiary font-caption-mono text-caption-mono truncate">
+              Pendente
+            </span>
+</div>
+<div class="col-span-2 flex flex-col leading-tight min-w-0">
+<span class="font-body-dense text-text-primary font-medium truncate">Diálogo</span>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">script.rpy:142</span>
+</div>
+<div class="col-span-4 font-body-base leading-snug break-words">
+            Wait, 
+            <span class="inline-block px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-label-token">[player]</span>! 
+            Don't open that door yet.
+          </div>
+<div class="col-span-3 font-body-base leading-snug break-words">
+            Espere, 
+            <span class="inline-block px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-label-token">[player]</span>! 
+            Não abra essa porta ainda.
+          </div>
+<div class="col-span-1 flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-success-emerald-bg text-secondary" title="Aprovar direto" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+</button>
+</div>
+</div>
+<!-- Linha 3: Aprovada / Escolha de Menu -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2.5 bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer items-center">
+<div class="col-span-2 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="px-1.5 py-0.5 rounded bg-success-emerald-bg text-secondary font-caption-mono text-caption-mono truncate">
+              Aprovado
+            </span>
+</div>
+<div class="col-span-2 flex flex-col leading-tight min-w-0">
+<span class="font-body-dense text-text-primary font-medium truncate">Menu / Escolha</span>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">chapter1.rpy:210</span>
+</div>
+<div class="col-span-4 font-body-base leading-snug text-text-secondary break-words">
+            Enter the dark dungeon
+          </div>
+<div class="col-span-3 font-body-base leading-snug text-on-surface break-words">
+            Entrar na masmorra escura
+          </div>
+<div class="col-span-1 flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">done</span>
+</div>
+</div>
+<!-- Linha 4: Aprovada com Origem de Cache -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2.5 bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer items-center">
+<div class="col-span-2 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary text-[15px]">inventory_2</span>
+<span class="px-1.5 py-0.5 rounded bg-info-blue-bg text-primary font-caption-mono text-caption-mono truncate">
+              Cache Hit
+            </span>
+</div>
+<div class="col-span-2 flex flex-col leading-tight min-w-0">
+<span class="font-body-dense text-text-primary font-medium truncate">Diálogo</span>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">script.rpy:15</span>
+</div>
+<div class="col-span-4 font-body-base leading-snug text-text-secondary break-words">
+            Good morning, everyone.
+          </div>
+<div class="col-span-3 font-body-base leading-snug text-on-surface break-words">
+            Bom dia a todos.
+          </div>
+<div class="col-span-1 flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">done</span>
+</div>
+</div>
+<!-- Linha 5: Erro Crítico de Sintaxe Ren'Py -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2.5 bg-surface-container hover:bg-surface-container-high transition-colors cursor-pointer items-center">
+<div class="col-span-2 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-error"></span>
+<span class="px-1.5 py-0.5 rounded bg-error-red-bg text-error font-caption-mono text-caption-mono truncate">
+              Tag Ausente
+            </span>
+</div>
+<div class="col-span-2 flex flex-col leading-tight min-w-0">
+<span class="font-body-dense text-text-primary font-medium truncate">Diálogo</span>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">chapter2.rpy:45</span>
+</div>
+<div class="col-span-4 font-body-base leading-snug break-words">
+            System status: 
+            <span class="inline-block px-1 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-label-token">[sys_status!u]</span>
+</div>
+<div class="col-span-3 font-body-base leading-snug break-words">
+            Status do sistema: 
+            <span class="inline-block px-1 py-0.5 rounded bg-warning-amber-bg text-tertiary font-label-token">[sys_status]</span>
+</div>
+<div class="col-span-1 flex items-center justify-end gap-1">
+<button class="p-1 rounded hover:bg-surface-container-highest text-primary" title="Inspecionar" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+</button>
+</div>
+</div>
+<!-- Linha 6: String de UI / Interface -->
+<div class="grid grid-cols-12 gap-2 px-3 py-2.5 bg-surface-container-low hover:bg-surface-container-high transition-colors cursor-pointer items-center">
+<div class="col-span-2 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="px-1.5 py-0.5 rounded bg-success-emerald-bg text-secondary font-caption-mono text-caption-mono truncate">
+              Aprovado
+            </span>
+</div>
+<div class="col-span-2 flex flex-col leading-tight min-w-0">
+<span class="font-body-dense text-text-primary font-medium truncate">String UI</span>
+<span class="font-caption-mono text-caption-mono text-text-muted truncate">screens.rpy:58</span>
+</div>
+<div class="col-span-4 font-body-base leading-snug text-text-secondary break-words">
+            Load Game
+          </div>
+<div class="col-span-3 font-body-base leading-snug text-on-surface break-words">
+            Carregar Jogo
+          </div>
+<div class="col-span-1 flex items-center justify-end gap-1">
+<span class="material-symbols-outlined text-[16px] text-text-muted">done</span>
+</div>
+</div>
+</div>
+<!-- Rodapé Compacto de Paginação -->
+<footer class="flex items-center justify-between px-3 py-2 bg-surface-container-high font-caption-mono text-caption-mono text-text-muted select-none">
+<div class="flex items-center gap-2">
+<span>Exibindo 1–6 de 1.284 entradas</span>
+<span class="text-outline-variant">|</span>
+<div class="flex items-center gap-1">
+<span>Por página:</span>
+<select class="bg-surface-container text-on-surface rounded px-1 py-0.5 focus:outline-none">
+<option>15</option>
+<option>30</option>
+<option>50</option>
+<option>100</option>
+</select>
+</div>
+</div>
+<div class="flex items-center gap-1">
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-bright text-text-muted hover:text-on-surface transition-colors disabled:opacity-40" disabled="" type="button">
+            Anterior
+          </button>
+<span class="px-2 py-0.5 rounded bg-slate-surface-elevated text-text-primary">1</span>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-bright text-text-muted hover:text-on-surface transition-colors" type="button">
+            2
+          </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-bright text-text-muted hover:text-on-surface transition-colors" type="button">
+            3
+          </button>
+<span>...</span>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-bright text-text-muted hover:text-on-surface transition-colors" type="button">
+            86
+          </button>
+<button class="px-2 py-1 rounded bg-surface-container hover:bg-surface-bright text-text-secondary hover:text-on-surface transition-colors" type="button">
+            Próximo
+          </button>
+</div>
+</footer>
+</div>
+<!-- COLUNA DIREITA: Painel Inspetor / Editor Lateral (35% / 4 cols) -->
+<aside class="lg:col-span-4 flex flex-col gap-3 rounded bg-surface-container-low p-3.5 shadow-md sticky top-header-height">
+<!-- Topo do Inspetor com Status -->
+<div class="flex items-center justify-between pb-2 border-b-0">
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-text-primary">Detalhes da Entrada</span>
+<span class="font-caption-mono text-caption-mono text-primary font-bold">#84</span>
+</div>
+<span class="font-caption-mono text-caption-mono text-text-muted">AST Node ID: rpy_str_0084_nar</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-error-red-bg text-error font-caption-mono text-caption-mono font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">report</span>
+          Placeholder Divergente
+        </span>
+</div>
+<!-- Metadados de Contexto do Ren'Py -->
+<div class="grid grid-cols-2 gap-2 p-2.5 rounded bg-surface-container font-caption-mono text-caption-mono">
+<div class="flex flex-col">
+<span class="text-text-muted uppercase">Arquivo</span>
+<span class="text-on-surface truncate font-label-code" title="game/chapter1.rpy">chapter1.rpy:84</span>
+</div>
+<div class="flex flex-col">
+<span class="text-text-muted uppercase">Label / Contexto</span>
+<span class="text-secondary truncate font-label-code" title="label chapter1_scene3_f98c">scene3_f98c</span>
+</div>
+<div class="flex flex-col">
+<span class="text-text-muted uppercase">Falante / Personagem</span>
+<span class="text-on-surface font-body-dense">Narrador (padrão)</span>
+</div>
+<div class="flex flex-col">
+<span class="text-text-muted uppercase">Sintaxe Ren'Py</span>
+<span class="text-tertiary font-label-code">Ren'Py Format Tag</span>
+</div>
+</div>
+<!-- Campo de Texto Original (Read-only com Syntax Highlight) -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-caption-mono text-caption-mono uppercase tracking-wider text-text-muted">Texto Original (EN)</label>
+<button class="text-text-muted hover:text-primary transition-colors" title="Copiar original" type="button">
+<span class="material-symbols-outlined text-[15px]">content_copy</span>
+</button>
+</div>
+<div class="p-2.5 rounded bg-surface-container-lowest font-body-base leading-relaxed text-text-code select-text">
+          You gained <span class="px-1.5 py-0.5 rounded bg-tag-renpy-token-bg text-tag-renpy-token font-label-token">{points}</span> bonus points.
+        </div>
+</div>
+<!-- Campo de Edição da Tradução -->
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center justify-between">
+<label class="font-caption-mono text-caption-mono uppercase tracking-wider text-text-muted">Tradução Ativa (PT-BR)</label>
+<span class="font-caption-mono text-caption-mono text-text-muted">34 caracteres</span>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-highest text-on-surface font-body-base rounded p-2.5 leading-relaxed focus:outline-none focus:bg-slate-surface-elevated transition-colors resize-none" id="translation-input" rows="3">Você ganhou {pontos} pontos bônus.</textarea>
+</div>
+<!-- Botões Rápidos de Inserção de Token / Helpers -->
+<div class="flex flex-wrap items-center gap-1.5 pt-0.5">
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-tag-renpy-token-bg hover:bg-slate-surface-elevated text-tag-renpy-token font-label-token text-label-token transition-colors shadow-sm" onclick="document.getElementById('translation-input').value = 'Você ganhou {points} pontos bônus.';" title="Inserir placeholder correto" type="button">
+<span class="material-symbols-outlined text-[14px]">add_circle</span>
+<span>+{points}</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container hover:bg-surface-bright text-text-secondary font-caption-mono text-caption-mono transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px]">history</span>
+<span>Restaurar Original</span>
+</button>
+<button class="flex items-center gap-1 px-2 py-0.5 rounded bg-surface-container hover:bg-surface-bright text-primary font-caption-mono text-caption-mono transition-colors" type="button">
+<span class="material-symbols-outlined text-[13px]">auto_fix_high</span>
+<span>Re-traduzir Motor</span>
+</button>
+</div>
+</div>
+<!-- Caixa de Diagnóstico do Validador AST -->
+<div class="p-3 rounded bg-error-red-bg flex flex-col gap-2 shadow-sm">
+<div class="flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] shrink-0 mt-0.5">error</span>
+<div class="flex flex-col gap-1">
+<span class="font-body-dense text-body-dense font-medium text-error">Divergência de Interpolação Detectada</span>
+<p class="font-body-dense text-body-dense text-on-surface-variant leading-tight">
+              O placeholder original <code class="px-1 py-0.5 rounded bg-surface-container-lowest text-tag-renpy-token font-caption-mono">{points}</code> foi convertido indevidamente para <code class="px-1 py-0.5 rounded bg-surface-container-lowest text-error font-caption-mono">{pontos}</code>. O motor do Ren'Py falhará com <code class="text-error font-bold font-caption-mono">NameError</code> ao tentar compilar.
+            </p>
+</div>
+</div>
+<button class="flex items-center justify-center gap-1.5 w-full py-1.5 rounded bg-surface-container-lowest hover:bg-surface-container text-secondary font-caption-mono text-caption-mono uppercase tracking-wider font-semibold transition-colors mt-1" onclick="document.getElementById('translation-input').value = 'Você ganhou {points} pontos bônus.';" type="button">
+<span class="material-symbols-outlined text-[15px] text-secondary">build</span>
+<span>Corrigir Placeholder Automaticamente</span>
+</button>
+</div>
+<!-- Barra de Ações & Navegação do Inspetor -->
+<div class="flex flex-col gap-2 pt-2 border-t-0">
+<div class="grid grid-cols-2 gap-2">
+<button class="flex items-center justify-center gap-1 py-2 rounded bg-surface-container hover:bg-error-red-bg hover:text-error text-text-secondary font-body-dense text-body-dense transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">close</span>
+<span>Marcar com Erro</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 rounded bg-primary-container hover:bg-inverse-primary text-on-primary font-body-dense text-body-dense font-semibold shadow transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">done</span>
+<span>Salvar e Aprovar</span>
+</button>
+</div>
+<!-- Atalhos de Navegação Anterior / Próxima -->
+<div class="flex items-center justify-between pt-1">
+<button class="flex items-center gap-1 text-text-muted hover:text-on-surface font-caption-mono text-caption-mono transition-colors" type="button">
+<span class="material-symbols-outlined text-[15px]">arrow_back</span>
+<span>Entrada Anterior</span>
+</button>
+<span class="font-caption-mono text-caption-mono text-text-muted">Ctrl + Enter p/ aprovar</span>
+<button class="flex items-center gap-1 text-text-muted hover:text-on-surface font-caption-mono text-caption-mono transition-colors" type="button">
+<span>Próxima Entrada</span>
+<span class="material-symbols-outlined text-[15px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</aside>
+</div>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-status-bar-height z-50 bg-surface-container-lowest px-3 flex items-center justify-between"><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1-5"><span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span><span class="text-on-surface">Status: Pronto</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Projeto validado:</span><span class="text-on-surface-variant">MeuJogo/game/</span></div></div><div class="flex items-center gap-4 font-caption-mono text-caption-mono text-text-muted"><div class="flex items-center gap-1.5"><span>Motor:</span><span class="text-on-surface">LibreTranslate</span><span class="text-secondary text-[10px]">●</span><span class="text-on-surface-variant">Conectado (localhost:5000)</span></div><span class="text-outline-variant">|</span><div class="flex items-center gap-1"><span>Cache:</span><span class="text-secondary">Ativo (936)</span></div></div></footer></body></html>
