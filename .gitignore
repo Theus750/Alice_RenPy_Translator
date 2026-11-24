@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc.*
+.pytest_cache/
+.pyinstaller/
+build/
+dist/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Ambientes virtuais
+env/
+venv/
+.venv/
+
+# Jogos locais usados nos testes
+jogo_teste/
+comparacao/
+Comparação/
+front/
+
+# Cache e artefatos locais do pipeline
+cache.json
+!config.json
+
+# Ren'Py temporarios
+*.rpyc
+*.json
+*.rpy~
+*.log
+*.bak
+log/
+saves/
+persistent/
+tl/
+tl/*/*.rpyc
+game/tl/**/dialogue.rpy
+game/tl/**/strings.rpy
+game/tl/**/zzz_alice_language.rpy
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# Documentação interna e configuração local do GitHub
+Docs/
+.github/

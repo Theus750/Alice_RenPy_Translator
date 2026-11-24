@@ -1,0 +1,1 @@
+"""Alice desktop interface."""
